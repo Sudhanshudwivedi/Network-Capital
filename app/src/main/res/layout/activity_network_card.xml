@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.nimeshsachan.url_json_fetcher_data.Main2Activity">
+    android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/rel1"
@@ -82,7 +81,7 @@
             android:layout_below="@id/textView2"
             android:layout_marginTop="6dp"
             android:layout_marginLeft="130dp"
-            android:src="@drawable/ic_launcher_background"/>
+            android:src="@drawable/baseline_location_on_white_18dp"/>
 
         <TextView
             android:id="@+id/textView3"
@@ -122,7 +121,7 @@
             android:id="@+id/txt2"
             android:textSize="12dp"
             android:textColor="#000000"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="10dp"
             android:layout_below="@id/txt1"
             android:text="Wharton-Insted, Young India fellowship, Delhi College of Engineering"
             android:layout_width="match_parent"
@@ -147,8 +146,8 @@
 
         <TextView
             android:id="@+id/txt3"
-            android:layout_below="@id/image5"
-            android:layout_marginTop="78dp"
+            android:layout_below="@+id/v1"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="25dp"
             android:textSize="18dp"
             android:textColor="@color/colorPrimary"
@@ -161,7 +160,7 @@
             android:id="@+id/txt4"
             android:textSize="12dp"
             android:textColor="#000000"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="10dp"
             android:layout_below="@id/txt3"
             android:text="Microsoft, World Economic Forum, Network Capital, Deloitte"
             android:layout_width="match_parent"
@@ -186,8 +185,9 @@
 
         <TextView
             android:id="@+id/txt5"
-            android:layout_marginTop="148dp"
+            android:layout_below="@+id/v2"
             android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
             android:textSize="18dp"
             android:textColor="@color/colorPrimary"
             android:text="I can help in..."
@@ -199,8 +199,8 @@
             android:id="@+id/txt6"
             android:textSize="12dp"
             android:textColor="#000000"
-            android:layout_marginTop="175dp"
-            android:layout_below="@id/txt1"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/txt5"
             android:text="Strategy, Business, Startups, Business Development, Marketing Strategy, Project Management"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -224,7 +224,8 @@
 
         <TextView
             android:id="@+id/txt7"
-            android:layout_marginTop="227dp"
+            android:layout_below="@+id/v3"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="25dp"
             android:textSize="18dp"
             android:textColor="@color/colorPrimary"
@@ -237,8 +238,8 @@
             android:id="@+id/txt8"
             android:textSize="12dp"
             android:textColor="#000000"
-            android:layout_marginTop="260dp"
-            android:layout_below="@id/txt1"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/txt7"
             android:text="Venture Capitalists, Investment, Seed Funding, Incubation, Product Designers, Web Developers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

@@ -19,11 +19,14 @@
             android:id="@+id/textView3"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="20dp"
             android:gravity="center"
+            android:singleLine="true"
             android:padding="1dp"
             android:text="SignUp"
-            android:textColor="@color/white_greyish"
+            android:textColor="@color/white"
+            android:textCursorDrawable="@color/white"
+            android:textColorHint="@color/white"
             android:textSize="25sp"
             android:textStyle="bold" />
 
@@ -31,9 +34,9 @@
             android:id="@+id/fullName"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:background="@android:color/transparent"
-            android:cursorVisible="true"
+            
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="Full Name"
@@ -41,6 +44,7 @@
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/white"
+            android:textCursorDrawable="@color/white"
             android:textColorHint="@color/white"
             android:textSize="16sp" />
 
@@ -55,7 +59,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@android:color/transparent"
-            android:cursorVisible="true"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="Position"
@@ -63,6 +66,7 @@
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/white"
+            android:textCursorDrawable="@color/white"
             android:textColorHint="@color/white"
             android:textSize="16sp" />
 
@@ -77,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:cursorVisible="true"
+            
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="Location"
@@ -104,7 +108,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:cursorVisible="true"
+            
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="Education"
@@ -112,6 +116,7 @@
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/white"
+            android:textCursorDrawable="@color/white"
             android:textColorHint="@color/white"
             android:textSize="16sp" />
 
@@ -126,14 +131,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:cursorVisible="true"
+            
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="Work Experience"
-            android:inputType="textMultiLine|textPassword"
+            android:inputType="textMultiLine"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/white"
+            android:textCursorDrawable="@color/white"
             android:textColorHint="@color/white"
             android:textSize="16sp" />
 
@@ -148,7 +154,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:cursorVisible="true"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="How can you help us?"
@@ -156,8 +161,14 @@
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/white"
+            android:textCursorDrawable="@color/white"
             android:textColorHint="@color/white"
             android:textSize="16sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/white_greyish" />
 
         <EditText
             android:id="@+id/looking"
@@ -165,7 +176,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:cursorVisible="true"
+            
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="What are you looking for?"
@@ -173,6 +184,7 @@
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/white"
+            android:textCursorDrawable="@color/white"
             android:textColorHint="@color/white"
             android:textSize="16sp" />
 
@@ -187,7 +199,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:cursorVisible="true"
+            android:drawableLeft="@drawable/email"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="Email"
@@ -195,6 +207,7 @@
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/white"
+            android:textCursorDrawable="@color/white"
             android:textColorHint="@color/white"
             android:textSize="16sp" />
 
@@ -209,7 +222,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:cursorVisible="true"
+            android:drawableLeft="@drawable/password"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="Password"
@@ -217,6 +230,7 @@
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/white"
+            android:textCursorDrawable="@color/white"
             android:textColorHint="@color/white"
             android:textSize="16sp" />
         <View
@@ -231,7 +245,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:cursorVisible="true"
+            android:drawableLeft="@drawable/password"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="Confirm Password"
@@ -239,6 +253,7 @@
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="@color/white"
+            android:textCursorDrawable="@color/white"
             android:textColorHint="@color/white"
             android:textSize="16sp" />
 
@@ -252,7 +267,7 @@
             android:id="@+id/signUpBtn"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
             android:background="@drawable/loginbutton_selector"
             android:padding="3dp"
             android:text="@string/signUp"
@@ -265,12 +280,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:padding="10dp"
             android:text="@string/already_user"
             android:textColor="@color/white_greyish"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:layout_marginBottom="20dp"/>
 
         <!--    <RelativeLayout
                 android:id="@+id/rel1"
