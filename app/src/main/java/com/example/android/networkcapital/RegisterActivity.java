@@ -34,11 +34,13 @@ public class RegisterActivity extends AppCompatActivity {
     private ProgressDialog mProgress;
     private DatabaseReference mDatabase;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_register);
+
         positon = (EditText) findViewById(R.id.positon);
         location = (EditText) findViewById(R.id.location);
         education = (EditText) findViewById(R.id.education);
@@ -142,7 +144,7 @@ public class RegisterActivity extends AppCompatActivity {
                     userMap.put("education",edu);
                     userMap.put("work",wrk);
                     userMap.put("location",loc);
-                    userMap.put("name",pos);
+                    userMap.put("position",pos);
 
 
 
