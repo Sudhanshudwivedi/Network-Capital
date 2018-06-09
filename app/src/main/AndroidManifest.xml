@@ -28,8 +28,10 @@
         <activity
             android:name=".NetworkCard"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".edit_details"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".edit_details"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".PostActivity"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,40 @@
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.networkcapital.SecondFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="9dp"
+            android:id="@+id/user_image"
+            android:src="@drawable/user"/>
+
+        <TextView
+            android:id="@+id/post"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_button"
+            android:layout_marginLeft="75dp"
+            android:layout_width="280dp"
+            android:paddingTop="15dp"
+            android:textColor="@color/black"
+            android:hint="Make a post."
+            android:paddingLeft="10dp"
+            android:layout_height="60dp"
+            />
+
+    </RelativeLayout>
+</FrameLayout>
+
+</ScrollView>

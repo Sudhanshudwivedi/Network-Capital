@@ -41,12 +41,12 @@ public class RegisterActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_register);
 
-        positon = (EditText) findViewById(R.id.positon);
-        location = (EditText) findViewById(R.id.location);
-        education = (EditText) findViewById(R.id.education);
-        wrkexperience = (EditText) findViewById(R.id.wrkexperience);
-        help = (EditText) findViewById(R.id.help);
-        looking = (EditText) findViewById(R.id.looking);
+//        positon = (EditText) findViewById(R.id.positon);
+//        location = (EditText) findViewById(R.id.location);
+//        education = (EditText) findViewById(R.id.education);
+//        wrkexperience = (EditText) findViewById(R.id.wrkexperience);
+//        help = (EditText) findViewById(R.id.help);
+//        looking = (EditText) findViewById(R.id.looking);
         user = (EditText) findViewById(R.id.fullName);
         email = (EditText) findViewById(R.id.userEmailId);
         pass = (EditText) findViewById(R.id.password);
@@ -79,12 +79,12 @@ public class RegisterActivity extends AppCompatActivity {
         email1 = email.getText().toString().trim();
         pass1 = pass.getText().toString().trim();
         cpass1 = cpass.getText().toString().trim();
-        hel=help.getText().toString().trim();
-        look=looking.getText().toString().trim();
-        pos=positon.getText().toString().trim();
-        loc=location.getText().toString().trim();
-        edu=education.getText().toString().trim();
-        wrk=wrkexperience.getText().toString().trim();
+//        hel=help.getText().toString().trim();
+//        look=looking.getText().toString().trim();
+//        pos=positon.getText().toString().trim();
+//        loc=location.getText().toString().trim();
+//        edu=education.getText().toString().trim();
+//        wrk=wrkexperience.getText().toString().trim();
 
 
         if (!validate()) {
