@@ -10,7 +10,13 @@
 
     <!-- By default the background will be this item -->
     <item><shape android:shape="rectangle">
-            <corners android:radius="3dp" />
+        <corners
+            android:topLeftRadius="10dp"
+            android:topRightRadius="10dp"
+            android:bottomLeftRadius="10dp"
+            android:bottomRightRadius="10dp"
+
+            />
 
             <solid android:color="@color/white_greyish" />
         </shape></item>
