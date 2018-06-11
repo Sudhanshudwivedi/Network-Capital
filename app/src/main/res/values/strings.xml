@@ -23,7 +23,7 @@
     <string name="signUp">SIGN UP</string>
     <string name="already_user">Already have Account? Login here.</string>
     <string name="registered_emailid">Please enter your Registered Email Id below:</string>
-    <string name="submit">SUBMIT</string>
+
     <string name="back">BACK</string>
     <string name="strategy_business_startups_business_development_marketing_strategy_project_management">Strategy, Business, Startups, Business Development, Marketing Strategy, Project Management</string>
     <string name="utkarsh">Utkarsh</string>
@@ -45,5 +45,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="write_something_here">Write Something Here?</string>
+    <string name="submit">SUBMIT</string>
 
 </resources>
