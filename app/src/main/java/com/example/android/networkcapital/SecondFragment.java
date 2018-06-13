@@ -13,10 +13,21 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
 public class SecondFragment extends Fragment {
 
     ImageView imageView;
     TextView post;
+    DatabaseReference mUserDatabase;
+
 
     public SecondFragment() {
         // Required empty public constructor
@@ -29,6 +40,7 @@ public class SecondFragment extends Fragment {
 
         imageView = (ImageView) v.findViewById(R.id.user_image);
         post = (TextView) v.findViewById(R.id.post);
+        Image();
 
         post.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +51,32 @@ public class SecondFragment extends Fragment {
         });
 
         return v;
+    }
+
+
+    public void Image()
+    {
+        FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = current_user.getUid();
+
+
+        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+
+
+        mUserDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                String image=dataSnapshot.child("image").getValue().toString();
+                Context c = getActivity().getApplicationContext();
+                Picasso.with(c).load(image).placeholder(R.drawable.user).into(imageView);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
 

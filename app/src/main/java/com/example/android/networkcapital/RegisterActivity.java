@@ -139,12 +139,13 @@ public class RegisterActivity extends AppCompatActivity {
 
                     userMap.put("name",user1);
                     userMap.put("email",email1);
-                    userMap.put("help",hel);
-                    userMap.put("look",look);
-                    userMap.put("education",edu);
-                    userMap.put("work",wrk);
-                    userMap.put("location",loc);
-                    userMap.put("position",pos);
+                    userMap.put("help","default");
+                    userMap.put("look","default");
+                    userMap.put("education","default");
+                    userMap.put("work","default");
+                    userMap.put("location","default");
+                    userMap.put("position","default");
+                    userMap.put("image","default");
 
 
 
