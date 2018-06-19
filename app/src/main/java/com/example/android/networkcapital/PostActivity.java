@@ -75,7 +75,7 @@ public class PostActivity extends AppCompatActivity {
                 String name=dataSnapshot.child("name").getValue().toString();
 
                 nam.setText(name);
-                String image=dataSnapshot.child("image").getValue().toString();
+                String image=dataSnapshot.child("thumb_image").getValue().toString();
                 Picasso.with(PostActivity.this).load(image).placeholder(R.drawable.user).into(iv);
 
               //  Picasso.with(PostActivity.this).load(image).placeholder(R.drawable.user).into(iv);

@@ -51,7 +51,7 @@ public class NetworkCard extends Activity {
                 String help=dataSnapshot.child("help").getValue().toString();
                 String ed=dataSnapshot.child("education").getValue().toString();
                 String look=dataSnapshot.child("look").getValue().toString();
-                String image=dataSnapshot.child("image").getValue().toString();
+                String image=dataSnapshot.child("thumb_image").getValue().toString();
                 Picasso.with(NetworkCard.this).load(image).placeholder(R.drawable.user).into(img);
 
 

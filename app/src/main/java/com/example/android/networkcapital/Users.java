@@ -6,9 +6,10 @@ package com.example.android.networkcapital;
 
 public class Users {
 
-    public String user_id;
-    public String desc;
-
+    public String name;
+    public String image;
+    public String status;
+    public String thumb_image;
 
 
 
@@ -16,28 +17,43 @@ public class Users {
 
     }
 
-    public Users(String user_id, String desc) {
-        this.user_id = user_id;
-        this.desc = desc;
-
+    public Users(String name, String image, String status, String thumb_image) {
+        this.name = name;
+        this.image = image;
+        this.status = status;
+        this.thumb_image = thumb_image;
     }
 
-    public String getId() {
-        return user_id;
+    public String getName() {
+        return name;
     }
 
-    public void setId(String name) {
-        this.user_id = name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getdesc() {
-        return desc;
+    public String getImage() {
+        return image;
     }
 
-    public void setdesc(String desc) {
-        this.desc = desc;
+    public void setImage(String image) {
+        this.image = image;
     }
 
+    public String getStatus() {
+        return status;
+    }
 
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getThumb_image() {
+        return thumb_image;
+    }
+
+    public void setThumb_image(String thumb_image) {
+        this.thumb_image = thumb_image;
+    }
 
 }

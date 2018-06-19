@@ -29,6 +29,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class SecondFragment extends Fragment {
 
     ImageView imageView;
@@ -59,18 +61,20 @@ public class SecondFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setReverseLayout(true);
         linearLayoutManager.setStackFromEnd(true);
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        //linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         postList.setLayoutManager(linearLayoutManager);
 
         FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = current_user.getUid();
 
         mPostDatabase = FirebaseDatabase.getInstance().getReference().child("Post");
+        mPostDatabase.keepSynced(true);
 
+        display_user_post();
 
         Image();
 
-        display_user_post();
+
 
         post.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,6 +102,7 @@ public class SecondFragment extends Fragment {
             protected void populateViewHolder(postsViewHolder viewHolder, posts model, int position) {
                 viewHolder.setName(model.getName());
                 viewHolder.setDescription(model.getDescription());
+                viewHolder.setThumb_image(model.getThumb_image(), getContext());
             }
         };
 
@@ -122,6 +127,13 @@ public class SecondFragment extends Fragment {
         public void setName(String name) {
             TextView username = (TextView) mView.findViewById(R.id.post_users_name);
             username.setText(name);
+        }
+        public void setThumb_image(String thumb_image, Context ctx){
+
+            CircleImageView userImageView = (CircleImageView) mView.findViewById(R.id.post_profile_img);
+
+            Picasso.with(ctx).load(thumb_image).placeholder(R.drawable.user).into(userImageView);
+
         }
 
 

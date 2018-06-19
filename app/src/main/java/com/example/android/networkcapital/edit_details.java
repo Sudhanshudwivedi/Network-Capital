@@ -51,6 +51,7 @@ public class edit_details extends AppCompatActivity {
     private ProgressDialog mProgressDialog;
     private FirebaseUser mCurrentUser;
     private DatabaseReference mUserDatabase;
+    private DatabaseReference mUserDatabase2;
 
     private Uri mainImageURI = null;
     private static final int GALLERY_PICK = 1;
@@ -225,13 +226,17 @@ public class edit_details extends AppCompatActivity {
 
 
                             mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
-                                    mUserDatabase.child("image").setValue(download_url);
+                                    mUserDatabase.child("thumb_image").setValue(download_url);
 
-                                    mUserDatabase.addValueEventListener(new ValueEventListener() {
+                            mUserDatabase2 = FirebaseDatabase.getInstance().getReference().child("Post").child(uid);
+                            mUserDatabase2.child("thumb_image").setValue(download_url);
+
+
+                            mUserDatabase.addValueEventListener(new ValueEventListener() {
                                         @Override
                                         public void onDataChange(DataSnapshot dataSnapshot) {
 
-                                            String image=dataSnapshot.child("image").getValue().toString();
+                                            String image=dataSnapshot.child("thumb_image").getValue().toString();
                                             Picasso.with(edit_details.this).load(image).placeholder(R.drawable.user).into(mDisplayImage);
                                         }
 
