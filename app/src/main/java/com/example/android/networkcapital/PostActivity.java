@@ -19,6 +19,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.util.Calendar;
+import java.util.HashMap;
+
 public class PostActivity extends AppCompatActivity {
 
 
@@ -29,6 +32,7 @@ public class PostActivity extends AppCompatActivity {
 
     String post;
     private DatabaseReference mDatabase;
+    private DatabaseReference mDatabase2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +47,7 @@ public class PostActivity extends AppCompatActivity {
         nam=(TextView)findViewById(R.id.user_name);
 
         Image();
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,6 +64,7 @@ public class PostActivity extends AppCompatActivity {
 
 
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+        mDatabase2 = FirebaseDatabase.getInstance().getReference().child("Post").child(uid);
 
 
         mDatabase.addValueEventListener(new ValueEventListener() {
@@ -87,10 +93,23 @@ public class PostActivity extends AppCompatActivity {
 
     public void post()
     {
+        Calendar calFordDate = Calendar.getInstance();
+
+
         post=pst.getText().toString().trim();
         FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = current_user.getUid();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+        mDatabase2 = FirebaseDatabase.getInstance().getReference().child("Post").child(uid);
         mDatabase.child("Post").setValue(post);
+//        HashMap postMap = new HashMap();
+//        postMap.put("user_id", uid);
+//        postMap.put("post", post);
+//        mDatabase2.child("Post").setValue(postMap);
+        mDatabase2.child("description").setValue(post);
+        mDatabase2.child("name").setValue(nam.getText());
+        mDatabase2.child("user_id").setValue(uid);
+        //mDatabase2.child("user_id").setValue(post);
+
     }
 }

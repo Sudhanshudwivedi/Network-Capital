@@ -8,31 +8,53 @@
     android:layout_height="match_parent"
     tools:context="com.example.android.networkcapital.SecondFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
-        android:padding="15dp"
+        android:id="@+id/relative1"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="9dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
             android:id="@+id/user_image"
             android:src="@drawable/user"/>
 
         <TextView
             android:id="@+id/post"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/edit_button"
-            android:layout_marginLeft="75dp"
+            android:layout_marginLeft="85dp"
             android:layout_width="280dp"
             android:paddingTop="15dp"
             android:textColor="@color/black"
             android:hint="Make a post."
             android:paddingLeft="10dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             />
+
+        <View
+            android:layout_marginTop="6dp"
+            android:layout_below="@id/post"
+            android:background="#d6d1d1"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:id="@+id/v1"></View>
+
+        <RelativeLayout
+            android:layout_marginTop="17dp"
+            android:layout_below="@+id/post"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/post_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </android.support.v7.widget.RecyclerView>
+
+        </RelativeLayout>
 
     </RelativeLayout>
 </FrameLayout>

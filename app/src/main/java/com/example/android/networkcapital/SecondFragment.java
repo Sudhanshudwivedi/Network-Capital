@@ -4,15 +4,22 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.android.networkcapital.Modules.posts;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -26,11 +33,17 @@ public class SecondFragment extends Fragment {
 
     ImageView imageView;
     TextView post;
-    DatabaseReference mUserDatabase;
-
+    DatabaseReference mUserDatabase, mPostDatabase;
+    private RecyclerView postList;
 
     public SecondFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mPostDatabase = FirebaseDatabase.getInstance().getReference().child("Post");
     }
 
     @Override
@@ -40,7 +53,24 @@ public class SecondFragment extends Fragment {
 
         imageView = (ImageView) v.findViewById(R.id.user_image);
         post = (TextView) v.findViewById(R.id.post);
+
+        postList = (RecyclerView) v.findViewById(R.id.post_recycler);
+        postList.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        postList.setLayoutManager(linearLayoutManager);
+
+        FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = current_user.getUid();
+
+        mPostDatabase = FirebaseDatabase.getInstance().getReference().child("Post");
+
+
         Image();
+
+        display_user_post();
 
         post.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +83,50 @@ public class SecondFragment extends Fragment {
         return v;
     }
 
+    public void display_user_post() {
+
+
+        FirebaseRecyclerAdapter<posts, postsViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<posts, postsViewHolder>(
+                posts.class,
+                R.layout.posts_layout,
+                postsViewHolder.class,
+                mPostDatabase
+        ) {
+
+
+            @Override
+            protected void populateViewHolder(postsViewHolder viewHolder, posts model, int position) {
+                viewHolder.setName(model.getName());
+                viewHolder.setDescription(model.getDescription());
+            }
+        };
+
+        postList.setAdapter(firebaseRecyclerAdapter);
+
+    }
+
+    public static class postsViewHolder extends RecyclerView.ViewHolder{
+
+        View mView;
+
+        public postsViewHolder(View itemView) {
+            super(itemView);
+            mView = itemView;
+        }
+
+        public void setDescription(String description) {
+            TextView desc = (TextView) mView.findViewById(R.id.post_desc);
+            desc.setText(description);
+        }
+
+        public void setName(String name) {
+            TextView username = (TextView) mView.findViewById(R.id.post_users_name);
+            username.setText(name);
+        }
+
+
+    }
+
 
     public void Image()
     {
@@ -61,6 +135,7 @@ public class SecondFragment extends Fragment {
 
 
         mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+//        mPostDatabase = FirebaseDatabase.getInstance().getReference().child("Post").child(uid);
 
 
         mUserDatabase.addValueEventListener(new ValueEventListener() {
