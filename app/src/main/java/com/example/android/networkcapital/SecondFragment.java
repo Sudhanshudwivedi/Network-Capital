@@ -34,9 +34,10 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class SecondFragment extends Fragment {
 
     ImageView imageView;
-    TextView post;
-    DatabaseReference mUserDatabase, mPostDatabase;
+    TextView post,timestamp;
+    DatabaseReference mSUserDatabase, mSPostDatabase;
     private RecyclerView postList;
+    private static Context context = null;
 
     public SecondFragment() {
         // Required empty public constructor
@@ -45,16 +46,18 @@ public class SecondFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mPostDatabase = FirebaseDatabase.getInstance().getReference().child("Post");
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_second, null);
+        context = getActivity();
 
         imageView = (ImageView) v.findViewById(R.id.user_image);
         post = (TextView) v.findViewById(R.id.post);
+        //timestamp=(TextView)v.findViewById(R.id.time);
 
         postList = (RecyclerView) v.findViewById(R.id.post_recycler);
         postList.setHasFixedSize(true);
@@ -67,8 +70,8 @@ public class SecondFragment extends Fragment {
         FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = current_user.getUid();
 
-        mPostDatabase = FirebaseDatabase.getInstance().getReference().child("Post");
-        mPostDatabase.keepSynced(true);
+        mSPostDatabase = FirebaseDatabase.getInstance().getReference().child("Post");
+        mSPostDatabase.keepSynced(true);
 
         display_user_post();
 
@@ -94,15 +97,30 @@ public class SecondFragment extends Fragment {
                 posts.class,
                 R.layout.posts_layout,
                 postsViewHolder.class,
-                mPostDatabase
+                mSPostDatabase
         ) {
 
 
-            @Override
             protected void populateViewHolder(postsViewHolder viewHolder, posts model, int position) {
                 viewHolder.setName(model.getName());
                 viewHolder.setDescription(model.getDescription());
+                viewHolder.setTimestamp(model.getTimestamp());
                 viewHolder.setThumb_image(model.getThumb_image(), getContext());
+                final String user_id = getRef(position).getKey();
+
+                viewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        Intent intent = new Intent(getContext(), CommentActivity.class);
+                        intent.putExtra("user_id", user_id);
+
+                        startActivity(intent);
+
+
+
+                    }
+                });
             }
         };
 
@@ -123,10 +141,18 @@ public class SecondFragment extends Fragment {
             TextView desc = (TextView) mView.findViewById(R.id.post_desc);
             desc.setText(description);
         }
+        public void setTimestamp(String timestamp) {
+            TextView desc = (TextView) mView.findViewById(R.id.time);
+
+            desc.setText(timestamp);
+
+
+        }
 
         public void setName(String name) {
             TextView username = (TextView) mView.findViewById(R.id.post_users_name);
             username.setText(name);
+
         }
         public void setThumb_image(String thumb_image, Context ctx){
 
@@ -146,15 +172,15 @@ public class SecondFragment extends Fragment {
         String uid = current_user.getUid();
 
 
-        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+        mSUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
 //        mPostDatabase = FirebaseDatabase.getInstance().getReference().child("Post").child(uid);
 
 
-        mUserDatabase.addValueEventListener(new ValueEventListener() {
+        mSUserDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                String image=dataSnapshot.child("image").getValue().toString();
+                String image=dataSnapshot.child("thumb_image").getValue().toString();
                 Context c = getActivity().getApplicationContext();
                 Picasso.with(c).load(image).placeholder(R.drawable.user).into(imageView);
             }

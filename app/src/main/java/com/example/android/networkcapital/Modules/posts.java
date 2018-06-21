@@ -8,7 +8,7 @@ public class posts {
 
     public String description;
     public String name;
-    public String user_id;
+    public String timestamp;
     public String thumb_image;
 
     public posts(){
@@ -31,12 +31,12 @@ public class posts {
         this.name = name;
     }
 
-    public String getUser_id() {
-        return user_id;
+    public String getTimestamp() {
+        return timestamp;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
     public String getThumb_image() {
         return thumb_image;
@@ -46,10 +46,10 @@ public class posts {
         this.thumb_image = thumb_image;
     }
 
-    public posts(String desc, String name, String user_id, String thumb_image ){
+    public posts(String desc, String name, String timestamp, String thumb_image ){
         this.description = desc;
         this.name = name ;
-        this.user_id = user_id;
+        this.timestamp= timestamp;
         this.thumb_image = thumb_image;
     }
 

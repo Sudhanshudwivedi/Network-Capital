@@ -18,7 +18,7 @@ import com.squareup.picasso.Picasso;
 
 public class NetworkCard extends Activity {
 
-    private DatabaseReference mUserDatabase;
+    private DatabaseReference mNUserDatabase;
     private FirebaseUser mCurrentUser;
     private TextView mName,mLoc,mPost,mWork,mHelp,mEd,mLook;
     private ImageView img;
@@ -39,9 +39,9 @@ public class NetworkCard extends Activity {
         mLook=(TextView)findViewById(R.id.txt8);
         img=(ImageView)findViewById(R.id.image2);
 
-        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(current_id);
+        mNUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(current_id);
 
-        mUserDatabase.addValueEventListener(new ValueEventListener() {
+        mNUserDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String name=dataSnapshot.child("name").getValue().toString();

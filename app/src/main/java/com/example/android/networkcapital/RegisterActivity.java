@@ -32,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     private ProgressDialog mProgress;
-    private DatabaseReference mDatabase;
+    private DatabaseReference mRDatabase;
 
 
     @Override
@@ -43,6 +43,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 //        positon = (EditText) findViewById(R.id.positon);
 //        location = (EditText) findViewById(R.id.location);
+//        education = (EditText) findViewById(R.id.education);
 //        education = (EditText) findViewById(R.id.education);
 //        wrkexperience = (EditText) findViewById(R.id.wrkexperience);
 //        help = (EditText) findViewById(R.id.help);
@@ -134,7 +135,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     FirebaseUser current_user=FirebaseAuth.getInstance().getCurrentUser();
                     String uid=current_user.getUid();
-                    mDatabase= FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+                    mRDatabase= FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
                     HashMap<String,String> userMap=new HashMap<>();
 
                     userMap.put("name",user1);
@@ -145,14 +146,14 @@ public class RegisterActivity extends AppCompatActivity {
                     userMap.put("work","default");
                     userMap.put("location","default");
                     userMap.put("position","default");
-                    userMap.put("image","default");
+                    userMap.put("thumb_image","default");
 
 
 
 
 
 
-                    mDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    mRDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             Toast.makeText(RegisterActivity.this, "Registration Sucessful", Toast.LENGTH_LONG).show();

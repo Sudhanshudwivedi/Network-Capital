@@ -39,7 +39,7 @@ import id.zelory.compressor.Compressor;
 public class edit_details extends AppCompatActivity {
 
     private EditText loc, role, company, degree, inst, cls, wr, wc, h1, h2, h3, l1, l2, l3, s1, s2, s3;
-    private DatabaseReference mDatabase;
+    private DatabaseReference mEDatabase;
     private Button btn;
     FirebaseAuth mAuth;
     String RegisteredUserID;
@@ -50,8 +50,8 @@ public class edit_details extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
     private FirebaseUser mCurrentUser;
-    private DatabaseReference mUserDatabase;
-    private DatabaseReference mUserDatabase2;
+    private DatabaseReference mEUserDatabase;
+    private DatabaseReference mEUserDatabase2;
 
     private Uri mainImageURI = null;
     private static final int GALLERY_PICK = 1;
@@ -141,15 +141,15 @@ public class edit_details extends AppCompatActivity {
 
         FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = current_user.getUid();
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+        mEDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
 
 
-        mDatabase.child("location").setValue(lo);
-        mDatabase.child("position").setValue(ro);
-        mDatabase.child("work").setValue(wor);
-        mDatabase.child("help").setValue(ho1);
-        mDatabase.child("look").setValue(lo1);
-        mDatabase.child("education").setValue(de);
+        mEDatabase.child("location").setValue(lo);
+        mEDatabase.child("position").setValue(ro);
+        mEDatabase.child("work").setValue(wor);
+        mEDatabase.child("help").setValue(ho1);
+        mEDatabase.child("look").setValue(lo1);
+        mEDatabase.child("education").setValue(de);
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -225,14 +225,14 @@ public class edit_details extends AppCompatActivity {
                             String uid = current_user.getUid();
 
 
-                            mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
-                                    mUserDatabase.child("thumb_image").setValue(download_url);
+                            mEUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+                                    mEUserDatabase.child("thumb_image").setValue(download_url);
 
-                            mUserDatabase2 = FirebaseDatabase.getInstance().getReference().child("Post").child(uid);
-                            mUserDatabase2.child("thumb_image").setValue(download_url);
+                            //mEUserDatabase2 = FirebaseDatabase.getInstance().getReference().child("Post").child(uid);
+                           // mEUserDatabase2.child("thumb_image").setValue(download_url);
 
 
-                            mUserDatabase.addValueEventListener(new ValueEventListener() {
+                            mEUserDatabase.addValueEventListener(new ValueEventListener() {
                                         @Override
                                         public void onDataChange(DataSnapshot dataSnapshot) {
 

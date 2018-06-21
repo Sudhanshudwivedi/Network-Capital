@@ -29,11 +29,11 @@
                 android:orientation="horizontal">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/post_profile_img"
+                    android:id="@+id/cmt_profile_img"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    android:src="@drawable/user"
-                    android:scaleType="centerCrop"/>
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/user" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -41,18 +41,17 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/cmt_users_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/post_users_name"
-                        android:text="Sudhanshu"
-                        android:layout_marginLeft="5dp"
-                        android:paddingLeft="5dp"
-                        android:layout_marginTop="2dp"
-                        android:textAlignment="textStart"
                         android:layout_gravity="start"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="2dp"
+                        android:paddingLeft="5dp"
+                        android:text="Sudhanshu"
+                        android:textAlignment="textStart"
                         android:textSize="16sp"
-                        android:textStyle="bold"
-                        />
+                        android:textStyle="bold" />
 
 
                     <LinearLayout
@@ -63,7 +62,7 @@
 
 
                         <TextView
-                            android:id="@+id/time"
+                            android:id="@+id/ctime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="5dp"
@@ -81,16 +80,15 @@
             </LinearLayout>
 
             <TextView
-                android:text="post description here"
+                android:id="@+id/cmt_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/post_desc"
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="3dp"
                 android:padding="3dp"
+                android:text="post description here"
                 android:textColor="#000000"
-                android:textSize="14sp"
-                />
+                android:textSize="14sp" />
 
             <ImageView
                 android:layout_width="match_parent"
