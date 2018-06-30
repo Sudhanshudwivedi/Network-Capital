@@ -57,18 +57,30 @@
     <string name="dismiss_label">Dismiss</string>
     <string name="clear_all_label">Clear all</string>
 
-    <string-array name="shopping_item">
-        <item>Onion</item>
-        <item>Sausage</item>
-        <item>Milk</item>
-        <item>Garlic</item>
-        <item>Beef</item>
-        <item>Veggies</item>
-        <item>Olive</item>
-        <item>Cheese</item>
-        <item>Tuna</item>
-        <item>Mushrooms</item>
+    <string-array name="helping_item">
+        <item>MBA</item>
+        <item>Entreprenure</item>
+        <item>BusinessDevelopment</item>
+        <item>Project Management</item>
+        <item>Marketing Strategy</item>
+        <item>Startups</item>
+        <item>Mentorship</item>
+        <item>Collaboration</item>
+        <item>Networking</item>
+        <item>Funding</item>
+        <item>CyberSecurity</item>
+        <item>ProductDevelopment</item>
+        <item>VirtualReality</item>
     </string-array>
 
+
+    <string-array name="goals_item">
+        <item>Increase Performance</item>
+        <item>Earn a degree</item>
+        <item>Network</item>
+        <item>Personal Websites</item>
+        <item>Improve Communication Skills</item>
+        <item>Multilingual</item>
+    </string-array>
 
 </resources>

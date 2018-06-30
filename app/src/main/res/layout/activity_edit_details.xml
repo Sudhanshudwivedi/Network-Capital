@@ -194,7 +194,7 @@
             android:layout_below="@+id/edit_work2"
             android:id="@+id/edit_work3"
             android:paddingLeft="20dp"
-            android:hint="Date of Joining"
+            android:hint="Date of Join.."
             android:layout_marginTop="8dp"
             android:layout_width="135dp"
             android:layout_height="30dp" />
@@ -220,21 +220,46 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <Button
+
+        <RelativeLayout
+            android:id="@+id/rl1"
+            android:layout_below="@id/edit_work3"
+            android:layout_alignParentRight="true"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:text="Add"/>
+
+        <ImageView
             android:id="@+id/n1"
-            android:text="Choose"
-            android:layout_below="@id/help"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:src="@drawable/baseline_add_black_48dp"
+            android:layout_marginTop="12dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="7dp"
+            android:layout_width="21dp"
+            android:layout_height="21dp" />
+
+        </RelativeLayout>
 
         <TextView
-            android:layout_below="@+id/n1"
+            android:background="@drawable/edit_button"
+            android:layout_below="@+id/rl1"
             android:id="@+id/help_text"
             android:paddingLeft="20dp"
-            android:hint="Field 1"
+            android:hint="Project Management..."
             android:layout_marginTop="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp" />
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <EditText
             android:background="@drawable/edit_button"
@@ -242,6 +267,7 @@
             android:id="@+id/edit_help"
             android:paddingLeft="20dp"
             android:hint="Field 1"
+            android:visibility="gone"
             android:layout_marginTop="8dp"
             android:layout_width="350dp"
             android:layout_height="30dp" />
@@ -252,6 +278,7 @@
             android:id="@+id/edit_help1"
             android:paddingLeft="20dp"
             android:hint="Field2"
+            android:visibility="gone"
             android:layout_marginTop="8dp"
             android:layout_width="350dp"
             android:layout_height="30dp" />
@@ -262,6 +289,7 @@
             android:id="@+id/edit_help2"
             android:paddingLeft="20dp"
             android:hint="Field3"
+            android:visibility="gone"
             android:layout_marginTop="8dp"
             android:layout_width="350dp"
             android:layout_height="30dp" />
@@ -276,12 +304,53 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <EditText
+        <RelativeLayout
+            android:id="@+id/rl2"
+            android:layout_below="@id/edit_help2"
+            android:layout_alignParentRight="true"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:text="Add"/>
+
+            <ImageView
+                android:id="@+id/n2"
+                android:src="@drawable/baseline_add_black_48dp"
+                android:layout_marginTop="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="7dp"
+                android:layout_width="21dp"
+                android:layout_height="21dp" />
+
+        </RelativeLayout>
+
+        <TextView
             android:background="@drawable/edit_button"
             android:layout_below="@+id/looking"
+            android:id="@+id/look_text"
+            android:paddingLeft="20dp"
+            android:hint="MBA..."
+            android:layout_marginTop="8dp"
+            android:textSize="18dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:background="@drawable/edit_button"
+            android:layout_below="@+id/look_text"
             android:id="@+id/edit_looking"
             android:paddingLeft="20dp"
             android:hint="Field1"
+            android:visibility="gone"
             android:layout_marginTop="8dp"
             android:layout_width="350dp"
             android:layout_height="30dp" />
@@ -292,6 +361,7 @@
             android:id="@+id/edit_looking1"
             android:paddingLeft="20dp"
             android:hint="Field2"
+            android:visibility="gone"
             android:layout_marginTop="8dp"
             android:layout_width="350dp"
             android:layout_height="30dp" />
@@ -302,6 +372,7 @@
             android:id="@+id/edit_looking2"
             android:paddingLeft="20dp"
             android:hint="Field3"
+            android:visibility="gone"
             android:layout_marginTop="8dp"
             android:layout_width="350dp"
             android:layout_height="30dp" />
@@ -316,12 +387,53 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <RelativeLayout
+            android:id="@+id/rl3"
+            android:layout_below="@id/edit_looking2"
+            android:layout_alignParentRight="true"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:text="Add"/>
+
+            <ImageView
+                android:id="@+id/n3"
+                android:src="@drawable/baseline_add_black_48dp"
+                android:layout_marginTop="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="7dp"
+                android:layout_width="21dp"
+                android:layout_height="21dp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:background="@drawable/edit_button"
+            android:layout_below="@+id/rl3"
+            android:id="@+id/goal_text"
+            android:paddingLeft="20dp"
+            android:hint="Skills..."
+            android:layout_marginTop="8dp"
+            android:textSize="18dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <EditText
             android:background="@drawable/edit_button"
-            android:layout_below="@+id/goals"
+            android:layout_below="@+id/goal_text"
             android:id="@+id/edit_goals"
             android:paddingLeft="20dp"
             android:hint="Field1"
+            android:visibility="gone"
             android:layout_marginTop="8dp"
             android:layout_width="350dp"
             android:layout_height="30dp" />
@@ -332,6 +444,7 @@
             android:id="@+id/edit_goals1"
             android:paddingLeft="20dp"
             android:hint="Field2"
+            android:visibility="gone"
             android:layout_marginTop="8dp"
             android:layout_width="350dp"
             android:layout_height="30dp" />
@@ -342,6 +455,7 @@
             android:id="@+id/edit_goals2"
             android:paddingLeft="20dp"
             android:hint="Field3"
+            android:visibility="gone"
             android:layout_marginTop="8dp"
             android:layout_width="350dp"
             android:layout_height="30dp" />

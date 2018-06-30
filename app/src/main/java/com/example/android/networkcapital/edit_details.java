@@ -4,15 +4,20 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,11 +62,18 @@ public class edit_details extends AppCompatActivity {
     private DatabaseReference mEUserDatabase;
     private DatabaseReference mEUserDatabase2;
 
-    Button mOptions;
-    TextView mItemSelected;
+    RelativeLayout rl1,rl2,rl3;
+    ImageView mOptions,mOptions2;
+    TextView mItemSelected,mItemSelected2,mItemSelected3;
     String[] listItems;
+    String [] goalItems;
     boolean[] checkedItems;
+    boolean[] checkedItems2;
+    boolean [] checkedItems3;
     ArrayList<Integer> mUserItems = new ArrayList<>();
+    ArrayList<Integer> mUserItems2 = new ArrayList<>();
+    ArrayList<Integer> mUserItems3 = new ArrayList<>();
+
 
 
 
@@ -83,8 +95,14 @@ public class edit_details extends AppCompatActivity {
 
         mImageStorage= FirebaseStorage.getInstance().getReference();
 
-        mOptions = (Button) findViewById(R.id.n1);
+        mOptions = (ImageView) findViewById(R.id.n1);
+        mOptions2 = (ImageView) findViewById(R.id.n2);
         mItemSelected = (TextView) findViewById(R.id.help_text);
+        mItemSelected2 = (TextView) findViewById(R.id.look_text);
+        mItemSelected3 = (TextView) findViewById(R.id.goal_text);
+        rl1 = (RelativeLayout) findViewById(R.id.rl1);
+        rl2 = (RelativeLayout) findViewById(R.id.rl2);
+        rl3 = (RelativeLayout) findViewById(R.id.rl3);
 
         mImagebtn = (Button) findViewById(R.id.upload);
         mDisplayImage = (ImageView) findViewById(R.id.image2);
@@ -119,10 +137,16 @@ public class edit_details extends AppCompatActivity {
         });
 
 
-        listItems = getResources().getStringArray(R.array.shopping_item);
+        listItems = getResources().getStringArray(R.array.helping_item);
+        goalItems = getResources().getStringArray(R.array.goals_item);
         checkedItems = new boolean[listItems.length];
+        checkedItems2 = new boolean[listItems.length];
+        checkedItems3 = new boolean[goalItems.length];
 
-        mOptions.setOnClickListener(new View.OnClickListener() {
+//        Spannable word = new SpannableString("Your message");
+//        word.setSpan(new Background, 0, word.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        rl1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(edit_details.this);
@@ -179,6 +203,118 @@ public class edit_details extends AppCompatActivity {
 
 
 
+        rl2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(edit_details.this);
+                builder.setTitle("I can help in...");
+                builder.setMultiChoiceItems(listItems, checkedItems2, new DialogInterface.OnMultiChoiceClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int position, boolean isChecked) {
+                        if(isChecked){
+                            mUserItems2.add(position);
+                        }else {
+                            mUserItems2.remove(Integer.valueOf(position));
+                        }
+                    }
+                });
+
+                builder.setCancelable(false);
+                builder.setPositiveButton(R.string.ok_label, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        String item = "";
+                        for (int i = 0; i < mUserItems2.size(); i++) {
+                            item = item + listItems[mUserItems2.get(i)];
+                            if (i != mUserItems2.size() - 1) {
+                                item = item + ", ";
+                            }
+                        }
+                        mItemSelected2.setText(item);
+                    }
+                });
+
+                builder.setNegativeButton(R.string.dismiss_label, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+
+                builder.setNeutralButton(R.string.clear_all_label, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        for (int i = 0; i < checkedItems2.length; i++) {
+                            checkedItems2[i] = false;
+                            mUserItems2.clear();
+                            mItemSelected2.setText("");
+                        }
+                    }
+                });
+
+                AlertDialog mDialog = builder.create();
+                mDialog.show();
+            }
+        });
+
+
+        rl3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(edit_details.this);
+                builder.setTitle("I can help in...");
+                builder.setMultiChoiceItems(goalItems, checkedItems3, new DialogInterface.OnMultiChoiceClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int position, boolean isChecked) {
+                        if(isChecked){
+                            mUserItems3.add(position);
+                        }else {
+                            mUserItems3.remove(Integer.valueOf(position));
+                        }
+                    }
+                });
+
+                builder.setCancelable(false);
+                builder.setPositiveButton(R.string.ok_label, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        String item = "";
+                        for (int i = 0; i < mUserItems3.size(); i++) {
+                            item = item + goalItems[mUserItems3.get(i)];
+                            if (i != mUserItems3.size() - 1) {
+                                item = item + ", ";
+                            }
+                        }
+                        mItemSelected3.setText(item);
+                    }
+                });
+
+                builder.setNegativeButton(R.string.dismiss_label, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+
+                builder.setNeutralButton(R.string.clear_all_label, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        for (int i = 0; i < checkedItems3.length; i++) {
+                            checkedItems3[i] = false;
+                            mUserItems3.clear();
+                            mItemSelected3.setText("");
+                        }
+                    }
+                });
+
+                AlertDialog mDialog = builder.create();
+                mDialog.show();
+            }
+        });
+
+
+
+
 
         btn = (Button) findViewById(R.id.save_button);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -200,21 +336,21 @@ public class edit_details extends AppCompatActivity {
         cl = cls.getText().toString().trim();
         wor = wr.getText().toString().trim();
         woc = wc.getText().toString().trim();
-        ho1 = h1.getText().toString().trim();
-        ho2 = h2.getText().toString().trim();
-        ho3 = h3.getText().toString().trim();
-        lo1 = l1.getText().toString().trim();
-        lo2 = l2.getText().toString().trim();
-        lo3 = l3.getText().toString().trim();
-        so1 = s1.getText().toString().trim();
-        so2 = s2.getText().toString().trim();
-        so3 = s3.getText().toString().trim();
+        ho1 = mItemSelected.getText().toString().trim();
+//        ho2 = h2.getText().toString().trim();
+//        ho3 = h3.getText().toString().trim();
+        lo1 = mItemSelected2.getText().toString().trim();
+//        lo2 = l2.getText().toString().trim();
+//        lo3 = l3.getText().toString().trim();
+        so1 = mItemSelected3.getText().toString().trim();
+//        so2 = s2.getText().toString().trim();
+//        so3 = s3.getText().toString().trim();
 
         ro = ro + "," + co;
         de = de + " " + in;
         wor = wor + "-" + woc;
-        ho1 = ho1 + "," + ho2 + "," + ho3;
-        lo1 = lo1 + "," + lo2 + "," + lo3;
+        //ho1 = ho1 + "," + ho2 + "," + ho3;
+        //lo1 = lo1 + "," + lo2 + "," + lo3;
 
 
         FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
