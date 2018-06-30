@@ -1,16 +1,19 @@
 package com.example.android.networkcapital;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,6 +34,7 @@ import com.theartofdev.edmodo.cropper.CropImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -53,6 +57,16 @@ public class edit_details extends AppCompatActivity {
     private DatabaseReference mEUserDatabase;
     private DatabaseReference mEUserDatabase2;
 
+    Button mOptions;
+    TextView mItemSelected;
+    String[] listItems;
+    boolean[] checkedItems;
+    ArrayList<Integer> mUserItems = new ArrayList<>();
+
+
+
+
+
     private Uri mainImageURI = null;
     private static final int GALLERY_PICK = 1;
 
@@ -68,6 +82,9 @@ public class edit_details extends AppCompatActivity {
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         mImageStorage= FirebaseStorage.getInstance().getReference();
+
+        mOptions = (Button) findViewById(R.id.n1);
+        mItemSelected = (TextView) findViewById(R.id.help_text);
 
         mImagebtn = (Button) findViewById(R.id.upload);
         mDisplayImage = (ImageView) findViewById(R.id.image2);
@@ -100,6 +117,67 @@ public class edit_details extends AppCompatActivity {
                 startActivityForResult(Intent.createChooser(galleryIntent, "SELECT IMAGE"), GALLERY_PICK);
             }
         });
+
+
+        listItems = getResources().getStringArray(R.array.shopping_item);
+        checkedItems = new boolean[listItems.length];
+
+        mOptions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(edit_details.this);
+                builder.setTitle("I can help in...");
+                builder.setMultiChoiceItems(listItems, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int position, boolean isChecked) {
+                        if(isChecked){
+                            mUserItems.add(position);
+                        }else {
+                            mUserItems.remove(Integer.valueOf(position));
+                        }
+                    }
+                });
+
+                builder.setCancelable(false);
+                builder.setPositiveButton(R.string.ok_label, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        String item = "";
+                        for (int i = 0; i < mUserItems.size(); i++) {
+                            item = item + listItems[mUserItems.get(i)];
+                            if (i != mUserItems.size() - 1) {
+                                item = item + ", ";
+                            }
+                        }
+                        mItemSelected.setText(item);
+                    }
+                });
+
+                builder.setNegativeButton(R.string.dismiss_label, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+
+                builder.setNeutralButton(R.string.clear_all_label, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        for (int i = 0; i < checkedItems.length; i++) {
+                            checkedItems[i] = false;
+                            mUserItems.clear();
+                            mItemSelected.setText("");
+                        }
+                    }
+                });
+
+                AlertDialog mDialog = builder.create();
+                mDialog.show();
+            }
+        });
+
+
+
 
 
         btn = (Button) findViewById(R.id.save_button);
