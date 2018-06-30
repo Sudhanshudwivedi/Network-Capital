@@ -261,43 +261,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <EditText
-            android:background="@drawable/edit_button"
-            android:layout_below="@+id/help_text"
-            android:id="@+id/edit_help"
-            android:paddingLeft="20dp"
-            android:hint="Field 1"
-            android:visibility="gone"
-            android:layout_marginTop="8dp"
-            android:layout_width="350dp"
-            android:layout_height="30dp" />
-
-        <EditText
-            android:background="@drawable/edit_button"
-            android:layout_below="@+id/edit_help"
-            android:id="@+id/edit_help1"
-            android:paddingLeft="20dp"
-            android:hint="Field2"
-            android:visibility="gone"
-            android:layout_marginTop="8dp"
-            android:layout_width="350dp"
-            android:layout_height="30dp" />
-
-        <EditText
-            android:background="@drawable/edit_button"
-            android:layout_below="@+id/edit_help1"
-            android:id="@+id/edit_help2"
-            android:paddingLeft="20dp"
-            android:hint="Field3"
-            android:visibility="gone"
-            android:layout_marginTop="8dp"
-            android:layout_width="350dp"
-            android:layout_height="30dp" />
 
         <TextView
             android:id="@+id/looking"
             android:layout_marginTop="10dp"
-            android:layout_below="@id/edit_help2"
+            android:layout_below="@id/help_text"
             android:text="I am looking for..."
             android:textSize="18dp"
             android:textColor="@color/black"
@@ -306,7 +274,7 @@
 
         <RelativeLayout
             android:id="@+id/rl2"
-            android:layout_below="@id/edit_help2"
+            android:layout_below="@id/help_text"
             android:layout_alignParentRight="true"
             android:layout_width="60dp"
             android:layout_height="wrap_content">
@@ -344,43 +312,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <EditText
-            android:background="@drawable/edit_button"
-            android:layout_below="@+id/look_text"
-            android:id="@+id/edit_looking"
-            android:paddingLeft="20dp"
-            android:hint="Field1"
-            android:visibility="gone"
-            android:layout_marginTop="8dp"
-            android:layout_width="350dp"
-            android:layout_height="30dp" />
-
-        <EditText
-            android:background="@drawable/edit_button"
-            android:layout_below="@+id/edit_looking"
-            android:id="@+id/edit_looking1"
-            android:paddingLeft="20dp"
-            android:hint="Field2"
-            android:visibility="gone"
-            android:layout_marginTop="8dp"
-            android:layout_width="350dp"
-            android:layout_height="30dp" />
-
-        <EditText
-            android:background="@drawable/edit_button"
-            android:layout_below="@+id/edit_looking1"
-            android:id="@+id/edit_looking2"
-            android:paddingLeft="20dp"
-            android:hint="Field3"
-            android:visibility="gone"
-            android:layout_marginTop="8dp"
-            android:layout_width="350dp"
-            android:layout_height="30dp" />
 
         <TextView
             android:id="@+id/goals"
             android:layout_marginTop="10dp"
-            android:layout_below="@id/edit_looking2"
+            android:layout_below="@id/look_text"
             android:text="Your short-term career goals"
             android:textSize="18dp"
             android:textColor="@color/black"
@@ -389,7 +325,7 @@
 
         <RelativeLayout
             android:id="@+id/rl3"
-            android:layout_below="@id/edit_looking2"
+            android:layout_below="@id/look_text"
             android:layout_alignParentRight="true"
             android:layout_width="60dp"
             android:layout_height="wrap_content">
@@ -427,39 +363,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <EditText
-            android:background="@drawable/edit_button"
-            android:layout_below="@+id/goal_text"
-            android:id="@+id/edit_goals"
-            android:paddingLeft="20dp"
-            android:hint="Field1"
-            android:visibility="gone"
-            android:layout_marginTop="8dp"
-            android:layout_width="350dp"
-            android:layout_height="30dp" />
-
-        <EditText
-            android:background="@drawable/edit_button"
-            android:layout_below="@+id/edit_goals"
-            android:id="@+id/edit_goals1"
-            android:paddingLeft="20dp"
-            android:hint="Field2"
-            android:visibility="gone"
-            android:layout_marginTop="8dp"
-            android:layout_width="350dp"
-            android:layout_height="30dp" />
-
-        <EditText
-            android:background="@drawable/edit_button"
-            android:layout_below="@+id/edit_goals1"
-            android:id="@+id/edit_goals2"
-            android:paddingLeft="20dp"
-            android:hint="Field3"
-            android:visibility="gone"
-            android:layout_marginTop="8dp"
-            android:layout_width="350dp"
-            android:layout_height="30dp" />
-
         <Button
             android:id="@+id/save_button"
             android:layout_marginTop="10dp"
@@ -470,9 +373,9 @@
             android:textColor="@color/background_color"
             android:textSize="17sp"
             android:textStyle="bold"
-            android:layout_below="@id/edit_goals2"
+            android:layout_below="@id/goal_text"
             android:layout_width="130dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="50dp" />
         </RelativeLayout>
 
 
