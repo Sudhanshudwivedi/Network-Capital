@@ -114,15 +114,6 @@ public class edit_details extends AppCompatActivity {
         cls = (EditText) findViewById(R.id.edit_edu2);
         wr = (EditText) findViewById(R.id.edit_work1);
         wc = (EditText) findViewById(R.id.edit_work2);
-        h1 = (EditText) findViewById(R.id.edit_help);
-        h2 = (EditText) findViewById(R.id.edit_help1);
-        h3 = (EditText) findViewById(R.id.edit_help2);
-        l1 = (EditText) findViewById(R.id.edit_looking);
-        l2 = (EditText) findViewById(R.id.edit_looking1);
-        l3 = (EditText) findViewById(R.id.edit_looking2);
-        s1 = (EditText) findViewById(R.id.edit_goals);
-        s2 = (EditText) findViewById(R.id.edit_goals1);
-        s3 = (EditText) findViewById(R.id.edit_goals2);
 
 
         mImagebtn.setOnClickListener(new View.OnClickListener() {
@@ -346,9 +337,12 @@ public class edit_details extends AppCompatActivity {
 //        so2 = s2.getText().toString().trim();
 //        so3 = s3.getText().toString().trim();
 
-        ro = ro + "," + co;
-        de = de + " " + in;
-        wor = wor + "-" + woc;
+        if(!co.isEmpty())
+            ro = ro + "," + co;
+        if(!in.isEmpty())
+            de = de + " " + in;
+        if(!woc.isEmpty())
+            wor = wor + "-" + woc;
         //ho1 = ho1 + "," + ho2 + "," + ho3;
         //lo1 = lo1 + "," + lo2 + "," + lo3;
 
@@ -364,6 +358,14 @@ public class edit_details extends AppCompatActivity {
         mEDatabase.child("help").setValue(ho1);
         mEDatabase.child("look").setValue(lo1);
         mEDatabase.child("education").setValue(de);
+
+
+        Intent intent = new Intent(edit_details.this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+
+
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

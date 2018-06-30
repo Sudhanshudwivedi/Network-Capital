@@ -59,8 +59,8 @@
 
     <string-array name="helping_item">
         <item>MBA</item>
-        <item>Entreprenure</item>
-        <item>BusinessDevelopment</item>
+        <item>entrepreneur</item>
+        <item>Business Development</item>
         <item>Project Management</item>
         <item>Marketing Strategy</item>
         <item>Startups</item>
@@ -68,9 +68,9 @@
         <item>Collaboration</item>
         <item>Networking</item>
         <item>Funding</item>
-        <item>CyberSecurity</item>
-        <item>ProductDevelopment</item>
-        <item>VirtualReality</item>
+        <item>Cyber Security</item>
+        <item>Product Development</item>
+        <item>Virtual Reality</item>
     </string-array>
 
 
