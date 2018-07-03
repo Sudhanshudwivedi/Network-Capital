@@ -62,6 +62,7 @@ public class edit_details extends AppCompatActivity {
     private DatabaseReference mEUserDatabase;
     private DatabaseReference mEUserDatabase2;
     private DatabaseReference mLUserDatabase;
+    private DatabaseReference mEHelpDatabase;
     private String uid;
 
     RelativeLayout rl1,rl2,rl3;
@@ -167,7 +168,33 @@ public class edit_details extends AppCompatActivity {
                             String sd=listItems[mUserItems.get(i)];
                             item = item + listItems[mUserItems.get(i)];
                             mLUserDatabase = FirebaseDatabase.getInstance().getReference().child(sd).child(uid);
-                            mLUserDatabase.child("user").setValue("dsdd");
+
+                            mEHelpDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+                            //mDatabase2 = FirebaseDatabase.getInstance().getReference().child("Post").child(uid);
+
+
+                            mEHelpDatabase.addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+
+
+                                    String name = dataSnapshot.child("name").getValue().toString();
+
+
+                                    String image = dataSnapshot.child("thumb_image").getValue().toString();
+                                    mLUserDatabase.child("name").setValue(name);
+                                    mLUserDatabase.child("thumb_image").setValue(image);
+
+
+                                    //  Picasso.with(PostActivity.this).load(image).placeholder(R.drawable.user).into(iv);
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
+                                }
+                            });
+
 
 
                             if (i != mUserItems.size() - 1) {

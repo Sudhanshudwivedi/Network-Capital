@@ -39,7 +39,8 @@
             android:name=".edit_details"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".PostActivity" />
-        <activity android:name=".CommentActivity"></activity>
+        <activity android:name=".CommentActivity" />
+        <activity android:name=".HelpUsers"></activity>
     </application>
 
 </manifest>
