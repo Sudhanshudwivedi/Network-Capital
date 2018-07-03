@@ -61,6 +61,8 @@ public class edit_details extends AppCompatActivity {
     private FirebaseUser mCurrentUser;
     private DatabaseReference mEUserDatabase;
     private DatabaseReference mEUserDatabase2;
+    private DatabaseReference mLUserDatabase;
+    private String uid;
 
     RelativeLayout rl1,rl2,rl3;
     ImageView mOptions,mOptions2;
@@ -94,6 +96,8 @@ public class edit_details extends AppCompatActivity {
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         mImageStorage= FirebaseStorage.getInstance().getReference();
+        FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
+        uid = current_user.getUid();
 
         mOptions = (ImageView) findViewById(R.id.n1);
         mOptions2 = (ImageView) findViewById(R.id.n2);
@@ -159,7 +163,13 @@ public class edit_details extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int which) {
                         String item = "";
                         for (int i = 0; i < mUserItems.size(); i++) {
+
+                            String sd=listItems[mUserItems.get(i)];
                             item = item + listItems[mUserItems.get(i)];
+                            mLUserDatabase = FirebaseDatabase.getInstance().getReference().child(sd).child(uid);
+                            mLUserDatabase.child("user").setValue("dsdd");
+
+
                             if (i != mUserItems.size() - 1) {
                                 item = item + ", ";
                             }
@@ -347,8 +357,7 @@ public class edit_details extends AppCompatActivity {
         //lo1 = lo1 + "," + lo2 + "," + lo3;
 
 
-        FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
-        String uid = current_user.getUid();
+
         mEDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
 
 
