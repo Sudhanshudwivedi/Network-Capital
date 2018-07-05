@@ -23,8 +23,12 @@
           }
         },
         {
-          "client_id": "875779976718-tbqcfl06prknhj2j8at1qi8t43l44530.apps.googleusercontent.com",
-          "client_type": 3
+          "client_id": "875779976718-qjum0u4bv479fc897lk9c9t4sji798bo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.networkcapital",
+            "certificate_hash": "dae735989cb6c5e603ee6f5cd9b0da5da667e79c"
+          }
         },
         {
           "client_id": "875779976718-tbqcfl06prknhj2j8at1qi8t43l44530.apps.googleusercontent.com",
