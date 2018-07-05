@@ -18,6 +18,7 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -53,6 +54,8 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".FriendsActivity" />
+        <activity android:name=".ChatActivity"></activity>
     </application>
 
 </manifest>

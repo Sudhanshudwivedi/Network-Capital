@@ -20,8 +20,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private DatabaseReference mUserRef;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +45,7 @@ public class MainActivity extends AppCompatActivity
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tbl_pages);
         tabLayout.setupWithViewPager(pager);
+        mAuth = FirebaseAuth.getInstance();
 
 
 
@@ -47,7 +57,53 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        if (mAuth.getCurrentUser() != null) {
+
+
+            mUserRef = FirebaseDatabase.getInstance().getReference().child("Users").child(mAuth.getCurrentUser().getUid());
+
+        }
     }
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        if(currentUser == null){
+
+            sendToStart();
+
+        } else {
+
+            mUserRef.child("online").setValue("true");
+
+        }
+
+    }
+    protected void onStop() {
+        super.onStop();
+
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        if(currentUser != null) {
+
+            mUserRef.child("online").setValue(ServerValue.TIMESTAMP);
+
+        }
+
+    }
+
+
+
+
+    private void sendToStart() {
+
+        Intent startIntent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(startIntent);
+        finish();
+
+    }
+
 
     @Override
     public void onBackPressed() {
@@ -104,6 +160,10 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         
         } else if (id == R.id.nav_manage) {
+            mUserRef.child("online").setValue(ServerValue.TIMESTAMP);
+            FirebaseAuth.getInstance().signOut();
+            sendToStart();
+
 
         } else if (id == R.id.nav_share) {
 
@@ -130,15 +190,18 @@ public class MainActivity extends AppCompatActivity
                     return new PrimaryFragment();
                 case 1:
                     return new SecondFragment();
-//                case 2:
-//                    return new YourFragment3();
+             case 2:
+                  return new FriendsFragment();
+
+                case 3:
+                    return new ChatsFragment();
             }
             return null;
         }
 
         @Override
         public int getCount() {
-            return 2;
+            return 4;
         }
 
 
@@ -150,6 +213,9 @@ public class MainActivity extends AppCompatActivity
                 //
                 case 0:return "Today's Connections";
                 case 1:return "Newsfeed";
+                case 2:return "Connections";
+                case 3:return "Chats";
+
                 default:return null;
             }
         }
