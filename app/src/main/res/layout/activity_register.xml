@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!--<ScrollView-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--&gt;-->
 
-    <LinearLayout
+
+<LinearLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -118,12 +126,39 @@
             android:layout_height="1px"
             android:background="@color/white_greyish" />
 
+    <!--<TextView-->
+        <!--android:id="@+id/network_text"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:gravity="center"-->
+        <!--android:padding="10dp"-->
+        <!--android:text="* Please fill your network card details below"-->
+        <!--android:textColor="@color/white_greyish"-->
+        <!--android:textSize="15sp"/>-->
+
+    <!--<Button-->
+        <!--android:id="@+id/network_btn"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_width="150dp"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:background="@drawable/loginbutton_selector"-->
+        <!--android:padding="3dp"-->
+        <!--android:text="Card Details"-->
+        <!--android:textColor="@color/background_color"-->
+        <!--android:textSize="17sp"-->
+        <!--android:textStyle="bold"-->
+        <!--android:onClick="onClick"/>-->
+
+
 
         <Button
             android:id="@+id/signUpBtn"
             android:layout_gravity="center"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
             android:layout_marginTop="25dp"
             android:background="@drawable/loginbutton_selector"
             android:padding="3dp"
@@ -402,3 +437,4 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
     > -->
+<!--</ScrollView>-->

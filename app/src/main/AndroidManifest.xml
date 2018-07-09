@@ -55,7 +55,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".FriendsActivity" />
-        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".Modules.FriendsActivity" />
+        <activity android:name=".ChatListActivity"></activity>
     </application>
 
 </manifest>

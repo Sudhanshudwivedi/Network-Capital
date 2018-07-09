@@ -20,6 +20,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.android.networkcapital.Modules.FriendsActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -149,26 +150,28 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+//        if (id == R.id.nav_camera) {
+//            // Handle the camera action}
+          if (id == R.id.nav_card) {
             Intent intent2 = new Intent(MainActivity.this, NetworkCard.class);
             startActivity(intent2);
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_edit_details) {
             Intent intent = new Intent(MainActivity.this,edit_details.class);
             startActivity(intent);
         
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_logout) {
             mUserRef.child("online").setValue(ServerValue.TIMESTAMP);
             FirebaseAuth.getInstance().signOut();
             sendToStart();
 
+        } else if (id == R.id.nav_chat) {
+            Intent intent = new Intent(MainActivity.this, ChatListActivity.class);
+            startActivity(intent);
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_friends) {
+            Intent intent = new Intent(MainActivity.this, FriendsActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

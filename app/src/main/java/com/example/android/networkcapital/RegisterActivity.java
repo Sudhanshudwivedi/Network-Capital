@@ -30,6 +30,10 @@ public class RegisterActivity extends AppCompatActivity {
     TextView login;
     FirebaseAuth mAuth;
 
+    Button card_btn;
+
+    Boolean details_fill = false;
+
 
     private ProgressDialog mProgress;
     private DatabaseReference mRDatabase;
@@ -54,20 +58,35 @@ public class RegisterActivity extends AppCompatActivity {
         cpass = (EditText) findViewById(R.id.confirmPassword);
         btn = (Button) findViewById(R.id.signUpBtn);
         login = (TextView) findViewById(R.id.already_user);
+
+//        card_btn = (Button) findViewById(R.id.network_btn);
+
+
         mAuth = FirebaseAuth.getInstance();
         mProgress = new ProgressDialog(this);
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
             }
         });
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 register();
             }
         });
+
+        /*card_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterActivity.this, edit_details.class);
+                startActivity(intent);
+            }
+        });*/
+
 
     }
 
@@ -147,11 +166,6 @@ public class RegisterActivity extends AppCompatActivity {
                     userMap.put("location","default");
                     userMap.put("position","default");
                     userMap.put("thumb_image","default");
-
-
-
-
-
 
                     mRDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
