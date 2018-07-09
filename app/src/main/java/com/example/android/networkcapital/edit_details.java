@@ -374,33 +374,87 @@ public class edit_details extends AppCompatActivity {
 //        so2 = s2.getText().toString().trim();
 //        so3 = s3.getText().toString().trim();
 
+//        boolean valid = check(lo,ro,wor,ho1,lo1,de);
+
+
         if(!co.isEmpty())
             ro = ro + "," + co;
         if(!in.isEmpty())
             de = de + " " + in;
         if(!woc.isEmpty())
             wor = wor + "-" + woc;
-        //ho1 = ho1 + "," + ho2 + "," + ho3;
-        //lo1 = lo1 + "," + lo2 + "," + lo3;
 
 
-
-        mEDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
-
-
-        mEDatabase.child("location").setValue(lo);
-        mEDatabase.child("position").setValue(ro);
-        mEDatabase.child("work").setValue(wor);
-        mEDatabase.child("help").setValue(ho1);
-        mEDatabase.child("look").setValue(lo1);
-        mEDatabase.child("education").setValue(de);
+        if(!check(lo,ro,wor,ho1,lo1,de,in,co)){
+            Toast.makeText(getApplicationContext(), "Please fill all the details", Toast.LENGTH_SHORT).show();
+        }
+        else {
 
 
-        Intent intent = new Intent(edit_details.this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
+            //ho1 = ho1 + "," + ho2 + "," + ho3;
+            //lo1 = lo1 + "," + lo2 + "," + lo3;
 
+            if(wor.isEmpty()){
+                wor = "No previous work experience.";
+            }
+
+
+            mEDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+
+
+            mEDatabase.child("location").setValue(lo);
+            mEDatabase.child("position").setValue(ro);
+            mEDatabase.child("work").setValue(wor);
+            mEDatabase.child("help").setValue(ho1);
+            mEDatabase.child("look").setValue(lo1);
+            mEDatabase.child("education").setValue(de);
+
+
+            Intent intent = new Intent(edit_details.this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
+
+
+    }
+
+    private boolean check(String lo, String ro, String wor, String ho1, String lo1, String de, String in, String co) {
+
+        boolean valid = true;
+        if(lo.isEmpty()){
+            loc.setError("Please enter your location");
+            valid=false;
+        }
+        if(ro.isEmpty()){
+            role.setError("Please enter your current role");
+            valid = false;
+        }
+//        if(wor.isEmpty()){
+//            wr.setError("Please enter your work ex.");
+//            valid = false;
+//        }
+//        if(ho1.isEmpty()){
+//            mItemSelected.setError("Please select options");
+//            valid = false;
+//        }
+//        if(lo1.isEmpty()){
+//            mItemSelected2.setError("Please select options");
+//            valid = false;
+//        }
+        if(de.isEmpty()){
+            degree.setError("Please enter your education details");
+            valid = false;
+        }
+        if(in.isEmpty()){
+            inst.setError("Please enter your education details");
+            valid = false;
+        }
+        if(co.isEmpty()){
+            company.setError("Please enter the company name");
+        }
+
+        return valid;
 
     }
 

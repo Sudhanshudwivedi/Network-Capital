@@ -188,20 +188,20 @@ public class MainActivity extends AppCompatActivity
             switch (position){
                 case 0:
                     return new PrimaryFragment();
-                case 1:
-                    return new SecondFragment();
-             case 2:
-                  return new FriendsFragment();
-
-                case 3:
-                    return new ChatsFragment();
+//                case 1:
+//                    return new SecondFragment();
+//                case 2:
+//                  return new FriendsFragment();
+//
+//                case 3:
+//                    return new ChatsFragment();
             }
             return null;
         }
 
         @Override
         public int getCount() {
-            return 4;
+            return 1;
         }
 
 
@@ -212,9 +212,9 @@ public class MainActivity extends AppCompatActivity
                 //Your tab titles
                 //
                 case 0:return "Today's Connections";
-                case 1:return "Newsfeed";
-                case 2:return "Connections";
-                case 3:return "Chats";
+//                case 1:return "Newsfeed";
+//                case 2:return "Connections";
+//                case 3:return "Chats";
 
                 default:return null;
             }
