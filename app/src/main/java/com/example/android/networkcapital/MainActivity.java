@@ -211,7 +211,7 @@ public class MainActivity extends AppCompatActivity
                 //
                 //Your tab titles
                 //
-                case 0:return "Today's Connections";
+                case 0:return "Select one option";
 //                case 1:return "Newsfeed";
 //                case 2:return "Connections";
 //                case 3:return "Chats";

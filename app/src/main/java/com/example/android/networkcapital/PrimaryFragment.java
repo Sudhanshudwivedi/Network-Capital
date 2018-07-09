@@ -74,7 +74,10 @@ public class PrimaryFragment extends Fragment implements View.OnClickListener{
                 if(button_select.isEmpty())
                     Toast.makeText(getContext()," Please select an option ",Toast.LENGTH_SHORT).show();
                 else {
-                    Toast.makeText(getContext(),button_select,Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getContext(),button_select,Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getContext(), HelpUsers.class);
+                    intent.putExtra("button_select_text", button_select );
+                    startActivity(intent);
                 }
             }
         });

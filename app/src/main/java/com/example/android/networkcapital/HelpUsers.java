@@ -36,7 +36,7 @@ public class HelpUsers extends AppCompatActivity {
         mUsersList.setHasFixedSize(true);
         mUsersList.setLayoutManager(mLayoutManager);
         Bundle bundle = getIntent().getExtras();
-        String search = bundle.getString("Search");
+        String search = bundle.getString("button_select_text");
         mUsersDatabase = FirebaseDatabase.getInstance().getReference().child(search);
 
        Toast.makeText(HelpUsers.this, search, Toast.LENGTH_LONG).show();

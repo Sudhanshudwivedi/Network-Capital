@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -258,9 +266,10 @@
             android:id="@+id/profile_send_req_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/profile_decline_btn"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="12dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/v4"
             android:backgroundTint="@color/colorAccent"
             android:text="SEND FRIEND REQUEST"
             android:textColor="@android:color/white" />
@@ -271,7 +280,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/profile_send_req_btn"
             android:backgroundTint="@color/colorAccent"
             android:text="DECLINE FRIEND REQUEST"
             android:textColor="@android:color/white" />
@@ -283,3 +292,5 @@
 
 
 </LinearLayout>
+
+</ScrollView>
