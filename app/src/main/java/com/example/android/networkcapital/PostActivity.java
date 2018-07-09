@@ -32,13 +32,14 @@ public class PostActivity extends AppCompatActivity {
     private EditText pst;
     private TextView nam;
     private Button btn;
-    private ImageView iv;
+    private ImageView iv,ip;
 
     String post;
     private DatabaseReference mPDatabase;
     private DatabaseReference mPDatabase2;
     private String saveCurrentDate;
     private ProgressDialog mProgress;
+
 
     private String image;
     @Override
