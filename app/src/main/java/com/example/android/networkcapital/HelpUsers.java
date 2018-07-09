@@ -61,6 +61,7 @@ public class HelpUsers extends AppCompatActivity {
             protected void populateViewHolder(HUsersViewHolder HusersViewHolder, HUsers Husers, int position) {
 
                 HusersViewHolder.setDisplayName(Husers.getName());
+                HusersViewHolder.setPosition(Husers.getPosition());
 
                 HusersViewHolder.setUserImage(Husers.getThumb_image(), getApplicationContext());
                 final String user_id = getRef(position).getKey();
@@ -100,6 +101,12 @@ public class HelpUsers extends AppCompatActivity {
 
             TextView userNameView = (TextView) mView.findViewById(R.id.user_single_name);
             userNameView.setText(name);
+
+        }
+        public void setPosition(String position) {
+
+            TextView pose= (TextView) mView.findViewById(R.id.user_single_status);
+            pose.setText(position);
 
         }
         public void setUserImage(String thumb_image, Context ctx){

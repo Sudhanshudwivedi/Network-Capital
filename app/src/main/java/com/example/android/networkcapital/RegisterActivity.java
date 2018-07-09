@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.HashMap;
 
@@ -32,7 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     Button card_btn;
 
-    Boolean details_fill = false;
+
 
 
     private ProgressDialog mProgress;
@@ -154,6 +155,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     FirebaseUser current_user=FirebaseAuth.getInstance().getCurrentUser();
                     String uid=current_user.getUid();
+                    String deviceToken= FirebaseInstanceId.getInstance().getToken();
                     mRDatabase= FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
                     HashMap<String,String> userMap=new HashMap<>();
 
@@ -166,13 +168,16 @@ public class RegisterActivity extends AppCompatActivity {
                     userMap.put("location","default");
                     userMap.put("position","default");
                     userMap.put("thumb_image","default");
+                    userMap.put("device_token",deviceToken);
+                    String details_fill = "true";
+                    userMap.put("First Login",details_fill);
 
                     mRDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             Toast.makeText(RegisterActivity.this, "Registration Sucessful", Toast.LENGTH_LONG).show();
                             Intent intent=new Intent(RegisterActivity.this, LoginActivity.class);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
 
                             startActivity(intent);
 
@@ -195,9 +200,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
-    public void LoginPage(View view) {
-        startActivity(new Intent(RegisterActivity.this, MainActivity.class));
-    }
+
 }
 
 

@@ -26,6 +26,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
@@ -71,12 +72,12 @@ public class SecondFragment extends Fragment {
         String uid = current_user.getUid();
 
         mSPostDatabase = FirebaseDatabase.getInstance().getReference().child("Post");
+
         mSPostDatabase.keepSynced(true);
 
         display_user_post();
 
         Image();
-
 
 
         post.setOnClickListener(new View.OnClickListener() {
@@ -91,13 +92,14 @@ public class SecondFragment extends Fragment {
     }
 
     public void display_user_post() {
+        Query query =  mSPostDatabase.orderByChild("time");
 
 
         FirebaseRecyclerAdapter<posts, postsViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<posts, postsViewHolder>(
                 posts.class,
                 R.layout.posts_layout,
                 postsViewHolder.class,
-                mSPostDatabase
+                query
         ) {
 
 
@@ -156,9 +158,10 @@ public class SecondFragment extends Fragment {
         }
         public void setThumb_image(String thumb_image, Context ctx){
 
-            CircleImageView userImageView = (CircleImageView) mView.findViewById(R.id.post_profile_img);
+           CircleImageView userImageView = (CircleImageView) mView.findViewById(R.id.post_profile_img);
 
-            Picasso.with(ctx).load(thumb_image).placeholder(R.drawable.user).into(userImageView);
+           Picasso.with(ctx).load(thumb_image).placeholder(R.drawable.user).into(userImageView);
+
 
         }
 
@@ -180,9 +183,11 @@ public class SecondFragment extends Fragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                String image=dataSnapshot.child("thumb_image").getValue().toString();
-                Context c = getActivity().getApplicationContext();
-                Picasso.with(c).load(image).placeholder(R.drawable.user).into(imageView);
+               String image=dataSnapshot.child("thumb_image").getValue().toString();
+                if(!image.equals("default")) {
+
+                   Picasso.with(context).load(image).placeholder(R.drawable.user).into(imageView);
+                }
             }
 
             @Override

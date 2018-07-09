@@ -270,15 +270,15 @@
 
         <Button
             android:id="@+id/next"
-            android:layout_marginTop="20dp"
-            android:layout_centerInParent="true"
-            android:layout_below="@id/b7"
-            android:text="Next"
-            android:textColor="@color/background_color"
-            android:background="@drawable/loginbutton_selector"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="onClick"/>
+            android:layout_below="@id/b7"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/loginbutton_selector"
+            android:onClick="onClick"
+            android:text="Next"
+            android:textColor="@color/background_color" />
 
     </RelativeLayout>
 

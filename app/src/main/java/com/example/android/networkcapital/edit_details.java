@@ -179,11 +179,11 @@ public class edit_details extends AppCompatActivity {
 
 
                                     String name = dataSnapshot.child("name").getValue().toString();
-
-
+                                    String position=dataSnapshot.child("position").getValue().toString();
                                     String image = dataSnapshot.child("thumb_image").getValue().toString();
                                     mLUserDatabase.child("name").setValue(name);
                                     mLUserDatabase.child("thumb_image").setValue(image);
+                                    mLUserDatabase.child("position").setValue(position);
 
 
                                     //  Picasso.with(PostActivity.this).load(image).placeholder(R.drawable.user).into(iv);
@@ -411,9 +411,9 @@ public class edit_details extends AppCompatActivity {
 
 
             Intent intent = new Intent(edit_details.this, MainActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
             startActivity(intent);
+            finish();
         }
 
 

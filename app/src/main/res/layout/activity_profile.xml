@@ -262,28 +262,33 @@
             android:layout_below="@+id/txt8"
             android:background="@color/colorPrimary"
             />
+
         <Button
             android:id="@+id/profile_send_req_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="5dp"
             android:layout_below="@+id/v4"
-            android:backgroundTint="@color/colorAccent"
-            android:text="SEND FRIEND REQUEST"
-            android:textColor="@android:color/white" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/loginbutton_selector"
+            android:backgroundTint="@color/white_greyish"
+            android:text="SEND CONNECTIONS REQUEST"
+            android:textColor="@color/background_color"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/profile_decline_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
             android:layout_below="@+id/profile_send_req_btn"
-            android:backgroundTint="@color/colorAccent"
-            android:text="DECLINE FRIEND REQUEST"
-            android:textColor="@android:color/white" />
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/loginbutton_selector"
+            android:backgroundTint="@color/white"
+            android:text="DECLINE CONNECTIONS REQUEST"
+            android:textColor="@color/background_color"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>

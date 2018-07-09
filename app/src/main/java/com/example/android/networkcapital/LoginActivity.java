@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(i);
         } else {
             // User is signed out
-            
+
         }
 
         setContentView(R.layout.activity_login);

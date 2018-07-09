@@ -13,18 +13,21 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="47dp"
         android:src="@drawable/user"
-        app:srcCompat="@drawable/user" />
+        app:srcCompat="@drawable/user"
+        android:layout_marginLeft="30dp" />
 
     <TextView
         android:id="@+id/user_single_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/user_single_image"
+        android:layout_marginLeft="20dp"
         android:layout_marginStart="20dp"
         android:layout_toEndOf="@+id/user_single_image"
+        android:layout_toRightOf="@+id/user_single_image"
         android:text="Display Name"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="21sp"
         android:textStyle="bold" />
 
     <TextView
@@ -34,7 +37,8 @@
         android:layout_alignBottom="@+id/user_single_image"
         android:layout_alignStart="@+id/user_single_name"
         android:layout_marginTop="10dp"
-        android:text="User Default Status" />
+        android:text="Position"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
     <ImageView
         android:id="@+id/user_single_online_icon"
         android:layout_width="8dp"
@@ -44,5 +48,14 @@
         android:layout_toEndOf="@+id/user_single_name"
         android:visibility="invisible"
         app:srcCompat="@drawable/online_icon" />
+
+    <View
+        android:id="@+id/v1"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="123dp"
+        android:background="#d6d1d1"></View>
 
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.example.android.networkcapital;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
@@ -36,6 +38,7 @@ public class PostActivity extends AppCompatActivity {
     private DatabaseReference mPDatabase;
     private DatabaseReference mPDatabase2;
     private String saveCurrentDate;
+    private ProgressDialog mProgress;
 
     private String image;
     @Override
@@ -46,6 +49,7 @@ public class PostActivity extends AppCompatActivity {
 
 
         pst=(EditText)findViewById(R.id.post);
+        mProgress = new ProgressDialog(this);
         btn=(Button)findViewById(R.id.Submit);
         iv=(ImageView)findViewById(R.id.user_img);
         nam=(TextView)findViewById(R.id.user_name);
@@ -55,6 +59,12 @@ public class PostActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+                mProgress.setTitle("Saving Changes");
+                mProgress.setMessage("Please wait while we save the changes");
+                mProgress.show();
+
                 post();
             }
         });
@@ -72,6 +82,7 @@ public class PostActivity extends AppCompatActivity {
 
 
         mPDatabase.addValueEventListener(new ValueEventListener() {
+
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -98,6 +109,7 @@ public class PostActivity extends AppCompatActivity {
 
     public void post()
     {
+
         Calendar calFordDate = Calendar.getInstance();
 
         SimpleDateFormat currentDate = new SimpleDateFormat("dd-MMMM-yyyy");
@@ -124,6 +136,9 @@ public class PostActivity extends AppCompatActivity {
         mPDatabase2.child("name").setValue(nam.getText());
         mPDatabase2.child("user_id").setValue(uid);
         //mDatabase2.child("user_id").setValue(post);
+        mPDatabase2.child("time").setValue((ServerValue.TIMESTAMP));
+
+        mProgress.dismiss();
 
     }
 }

@@ -1,8 +1,6 @@
 package com.example.android.networkcapital;
 
-/**
- * Created by AkshayeJH on 30/11/17.
- */
+
 
 public class Conv {
 
