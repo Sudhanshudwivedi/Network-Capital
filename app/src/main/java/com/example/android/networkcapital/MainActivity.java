@@ -191,8 +191,8 @@ public class MainActivity extends AppCompatActivity
             switch (position){
                 case 0:
                     return new PrimaryFragment();
-//                case 1:
-//                    return new SecondFragment();
+                case 1:
+                    return new SecondFragment();
 //                case 2:
 //                  return new FriendsFragment();
 //
@@ -204,7 +204,7 @@ public class MainActivity extends AppCompatActivity
 
         @Override
         public int getCount() {
-            return 1;
+            return 2;
         }
 
 
@@ -215,7 +215,7 @@ public class MainActivity extends AppCompatActivity
                 //Your tab titles
                 //
                 case 0:return "Select one option";
-//                case 1:return "Newsfeed";
+                case 1:return "Newsfeed";
 //                case 2:return "Connections";
 //                case 3:return "Chats";
 
