@@ -38,20 +38,20 @@
         <RelativeLayout
             android:id="@+id/relat1"
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="120dp"
             android:background="#922cc9">
 
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/img1"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="25dp"
                 android:layout_centerHorizontal="true"
                 app:civ_circle_background_color="#a632e5"
                 app:civ_border_width="1dp"
                 app:civ_border_color="@color/white"
                 android:src="@drawable/baseline_waves_white_48dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
 
 
             <TextView
@@ -59,6 +59,7 @@
                 android:layout_centerInParent="true"
                 android:textStyle="bold"
                 android:textSize="18dp"
+                android:fontFamily="sans-serif"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/white"
                 android:text="Pick your interests"
