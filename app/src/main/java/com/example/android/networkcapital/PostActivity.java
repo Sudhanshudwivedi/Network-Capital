@@ -163,7 +163,7 @@ public class PostActivity extends AppCompatActivity {
                 startActivity(intent);
 
                 mProgressDialog.dismiss();
-                
+
 
             }
         });
