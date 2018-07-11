@@ -1,3 +1,8 @@
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -29,7 +34,55 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
+        <RelativeLayout
+            android:id="@+id/relat1"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:background="#922cc9">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img1"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                app:civ_circle_background_color="#a632e5"
+                app:civ_border_width="1dp"
+                app:civ_border_color="@color/white"
+                android:src="@drawable/baseline_waves_white_48dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:layout_below="@+id/img1"
+                android:layout_centerInParent="true"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:text="Pick your interests"
+                android:id="@+id/text_1"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_below="@+id/relat1"
+            android:textColor="#696945"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:text="Pick only one option in which you want help"
+            android:id="@+id/text_highlight"
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_height="wrap_content" />
+
+
         <LinearLayout
+            android:layout_below="@id/text_highlight"
             android:id="@+id/b1"
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -270,14 +323,15 @@
 
         <Button
             android:id="@+id/next"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/b7"
             android:layout_centerInParent="true"
             android:layout_marginTop="20dp"
             android:background="@drawable/loginbutton_selector"
             android:onClick="onClick"
-            android:text="Next"
+            android:text="Choose only 1"
+            android:layout_marginBottom="10dp"
             android:textColor="@color/background_color" />
 
     </RelativeLayout>
@@ -287,3 +341,5 @@
 
 
 </RelativeLayout>
+
+</ScrollView>

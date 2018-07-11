@@ -233,7 +233,6 @@ public class MainActivity extends AppCompatActivity
                     return new SecondFragment();
 //                case 2:
 //                  return new FriendsFragment();
-//
 //                case 3:
 //                    return new ChatsFragment();
             }
