@@ -5,7 +5,7 @@ android {
     defaultConfig {
         applicationId "com.example.android.networkcapital"
         minSdkVersion 16
-        targetSdkVersion 27
+        targetSdkVersion 20
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
