@@ -249,7 +249,7 @@ public class ProfileActivity extends Activity {
                     notificationData.put("type", "request");
 
                     Map requestMap = new HashMap();
-                    requestMap.put("Friend_req/" + mCurrent_user.getUid() + "/" + current_id + "/request_type", "sent");
+                    //requestMap.put("Friend_req/" + mCurrent_user.getUid() + "/" + current_id + "/request_type", "sent");
                     requestMap.put("Friend_req/" + current_id + "/" + mCurrent_user.getUid() + "/request_type", "received");
                     requestMap.put("notifications/" + current_id + "/" + newNotificationId, notificationData);
 

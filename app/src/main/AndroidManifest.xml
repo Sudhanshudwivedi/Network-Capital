@@ -18,6 +18,7 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@drawable/nc"/>
 
         <activity
             android:name=".MainActivity"
@@ -48,16 +49,20 @@
         <activity android:name=".CommentActivity" />
         <activity android:name=".HelpUsers" />
         <activity android:name=".ProfileActivity">
+
             <intent-filter>
                 <action android:name="com.example.android.networkcapital_TARGET_NOTIFICATION" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".FriendsActivity" />
-        <activity android:name=".ChatActivity" />
+
+        <activity android:name=".ChatActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".Modules.FriendsActivity" />
-        <activity android:name=".ChatListActivity"></activity>
+        <activity android:name=".ChatListActivity" />
+        <activity android:name=".RequestActivity"></activity>
     </application>
 
 </manifest>

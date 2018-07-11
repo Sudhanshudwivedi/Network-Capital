@@ -17,6 +17,11 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Edit Your Details" />
         <item
+            android:id="@+id/nav_connectionRequest"
+            android:icon="@drawable/help"
+            android:title="Connection Request" />
+
+        <item
             android:id="@+id/nav-chat"
             android:icon="@drawable/baseline_message_black_48dp"
             android:title="Chats" />

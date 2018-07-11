@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     android:background="#ededed"
     tools:context=".ChatActivity">
+    <include
+        android:id="@+id/chat_app_bar"
+        layout="@layout/app_bar_layout" />
 
 
     <android.support.v4.widget.SwipeRefreshLayout

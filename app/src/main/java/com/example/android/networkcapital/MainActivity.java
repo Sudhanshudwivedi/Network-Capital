@@ -22,6 +22,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.android.networkcapital.Modules.FriendsActivity;
+import com.example.android.networkcapital.Modules.RequestFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -203,7 +204,12 @@ public class MainActivity extends AppCompatActivity
             FirebaseAuth.getInstance().signOut();
             sendToStart();
 
-        } else if (id == R.id.nav_chat) {
+        }
+          else if (id == R.id.nav_connectionRequest) {
+              Intent intent = new Intent(MainActivity.this, RequestActivity.class);
+              startActivity(intent);
+
+          }else if (id == R.id.nav_chat) {
             Intent intent = new Intent(MainActivity.this, ChatListActivity.class);
             startActivity(intent);
 
@@ -228,9 +234,9 @@ public class MainActivity extends AppCompatActivity
         public Fragment getItem(int position) {
             switch (position){
                 case 0:
-                    return new PrimaryFragment();
-                case 1:
                     return new SecondFragment();
+                case 1:
+                    return new PrimaryFragment();
 //                case 2:
 //                  return new FriendsFragment();
 //                case 3:
@@ -251,8 +257,8 @@ public class MainActivity extends AppCompatActivity
                 //
                 //Your tab titles
                 //
-                case 0:return "Select one option";
-                case 1:return "Newsfeed";
+                case 0:return "Newsfeed";
+                case 1:return "Connections";
 //                case 2:return "Connections";
 //                case 3:return "Chats";
 

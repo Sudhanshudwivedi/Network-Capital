@@ -2,7 +2,9 @@ package com.example.android.networkcapital;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -38,7 +43,7 @@ public class PostActivity extends AppCompatActivity {
     private DatabaseReference mPDatabase;
     private DatabaseReference mPDatabase2;
     private String saveCurrentDate;
-    private ProgressDialog mProgress;
+    private ProgressDialog mProgressDialog;
 
 
     private String image;
@@ -50,25 +55,31 @@ public class PostActivity extends AppCompatActivity {
 
 
         pst=(EditText)findViewById(R.id.post);
-        mProgress = new ProgressDialog(this);
+
         btn=(Button)findViewById(R.id.Submit);
+        mProgressDialog = new ProgressDialog(this);
         iv=(ImageView)findViewById(R.id.user_img);
         nam=(TextView)findViewById(R.id.user_name);
 
         Image();
 
         btn.setOnClickListener(new View.OnClickListener() {
+
             @Override
+
+
             public void onClick(View v) {
 
+                mProgressDialog.setTitle("Saving the post");
+                mProgressDialog.setMessage("Please wait while we post your data to newsfeed");
+                mProgressDialog.setCanceledOnTouchOutside(false);
+                mProgressDialog.show();
 
-                mProgress.setTitle("Saving Changes");
-                mProgress.setMessage("Please wait while we save the changes");
-                mProgress.show();
 
                 post();
             }
         });
+
     }
 
 
@@ -96,6 +107,7 @@ public class PostActivity extends AppCompatActivity {
                 Picasso.with(PostActivity.this).load(image).placeholder(R.drawable.user).into(iv);
 
               //  Picasso.with(PostActivity.this).load(image).placeholder(R.drawable.user).into(iv);
+
             }
 
             @Override
@@ -110,6 +122,8 @@ public class PostActivity extends AppCompatActivity {
 
     public void post()
     {
+
+
 
         Calendar calFordDate = Calendar.getInstance();
 
@@ -137,9 +151,22 @@ public class PostActivity extends AppCompatActivity {
         mPDatabase2.child("name").setValue(nam.getText());
         mPDatabase2.child("user_id").setValue(uid);
         //mDatabase2.child("user_id").setValue(post);
-        mPDatabase2.child("time").setValue((ServerValue.TIMESTAMP));
+        mPDatabase2.child("time");
 
-        mProgress.dismiss();
+        mPDatabase2.setValue(ServerValue.TIMESTAMP).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                //Toast.makeText(RegisterActivity.this, "Registration Sucessful", Toast.LENGTH_LONG).show();
+                Intent intent=new Intent(PostActivity.this, MainActivity.class);
+
+
+                startActivity(intent);
+
+                mProgressDialog.dismiss();
+                
+
+            }
+        });
 
     }
 }

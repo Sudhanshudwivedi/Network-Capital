@@ -52,7 +52,7 @@ public class HelpUsers extends AppCompatActivity {
 
                 HUsers.class,
 
-                R.layout.users_single_layout,
+                R.layout.help_user_single,
                 HUsersViewHolder.class,
                 mUsersDatabase
 
@@ -99,19 +99,19 @@ public class HelpUsers extends AppCompatActivity {
 
         public void setDisplayName(String name) {
 
-            TextView userNameView = (TextView) mView.findViewById(R.id.user_single_name);
+            TextView userNameView = (TextView) mView.findViewById(R.id.help_single_name);
             userNameView.setText(name);
 
         }
         public void setPosition(String position) {
 
-            TextView pose= (TextView) mView.findViewById(R.id.user_single_status);
+            TextView pose= (TextView) mView.findViewById(R.id.help_single_status);
             pose.setText(position);
 
         }
         public void setUserImage(String thumb_image, Context ctx){
 
-            CircleImageView userImageView = (CircleImageView) mView.findViewById(R.id.user_single_image);
+            CircleImageView userImageView = (CircleImageView) mView.findViewById(R.id.help_single_image);
 
             Picasso.with(ctx).load(thumb_image).placeholder(R.drawable.user).into(userImageView);
 

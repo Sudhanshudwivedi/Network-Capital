@@ -92,7 +92,13 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
+        mChatToolbar = (Toolbar) findViewById(R.id.chat_app_bar);
+        setSupportActionBar(mChatToolbar);
 
+        ActionBar actionBar = getSupportActionBar();
+
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowCustomEnabled(true);
 
 
 
@@ -103,8 +109,14 @@ public class ChatActivity extends AppCompatActivity {
         mChatUser = getIntent().getStringExtra("user_id");
         String userName = getIntent().getStringExtra("user_name");
 
+
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View action_bar_view = inflater.inflate(R.layout.chat_custom_bar, null);
+
+        actionBar.setCustomView(action_bar_view);
+
+        // ---- Custom Action bar Items ----
+
 
 
 
@@ -137,7 +149,7 @@ public class ChatActivity extends AppCompatActivity {
         loadMessages();
 
 
-
+        mTitleView.setText(userName);
 
         mRootRef.child("Users").child(mChatUser).addValueEventListener(new ValueEventListener() {
             @Override
@@ -158,7 +170,7 @@ public class ChatActivity extends AppCompatActivity {
 
                     String lastSeenTime = getTimeAgo.getTimeAgo(lastTime, getApplicationContext());
 
-                  //  mLastSeenView.setText(lastSeenTime);
+                   mLastSeenView.setText(lastSeenTime);
 
                 }
 

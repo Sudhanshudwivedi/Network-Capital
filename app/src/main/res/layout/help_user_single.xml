@@ -5,7 +5,7 @@
     android:layout_height="wrap_content">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/user_single_image"
+        android:id="@+id/help_single_image"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_alignParentStart="true"
@@ -17,34 +17,35 @@
         android:layout_marginLeft="30dp" />
 
     <TextView
-        android:id="@+id/user_single_name"
+        android:id="@+id/help_single_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/user_single_image"
+        android:layout_alignTop="@+id/help_single_image"
         android:layout_marginLeft="20dp"
         android:layout_marginStart="20dp"
-        android:layout_toEndOf="@+id/user_single_image"
-        android:layout_toRightOf="@+id/user_single_image"
+        android:layout_toEndOf="@+id/help_single_image"
+        android:layout_toRightOf="@+id/help_single_image"
         android:text="Display Name"
         android:textColor="@color/black"
         android:textSize="21sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/user_single_status"
+        android:id="@+id/help_single_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/user_single_image"
-        android:layout_alignStart="@+id/user_single_name"
-        android:layout_marginTop="10dp"
+        android:layout_alignBottom="@+id/help_single_image"
+        android:layout_alignStart="@+id/help_single_name"
+        android:layout_marginBottom="18dp"
+        android:text="Position"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
     <ImageView
-        android:id="@+id/user_single_online_icon"
+        android:id="@+id/help_single_online_icon"
         android:layout_width="8dp"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/user_single_name"
+        android:layout_alignTop="@+id/help_single_name"
         android:layout_marginLeft="10dp"
-        android:layout_toEndOf="@+id/user_single_name"
+        android:layout_toEndOf="@+id/help_single_name"
         android:visibility="invisible"
         app:srcCompat="@drawable/online_icon" />
 

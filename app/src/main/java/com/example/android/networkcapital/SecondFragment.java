@@ -1,5 +1,6 @@
 package com.example.android.networkcapital;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -39,6 +40,7 @@ public class SecondFragment extends Fragment {
     DatabaseReference mSUserDatabase, mSPostDatabase;
     private RecyclerView postList;
     private static Context context = null;
+    private ProgressDialog mProgressDialog;
 
     public SecondFragment() {
         // Required empty public constructor
@@ -92,6 +94,13 @@ public class SecondFragment extends Fragment {
     }
 
     public void display_user_post() {
+
+        mProgressDialog = new ProgressDialog(getActivity());
+        mProgressDialog.setTitle("Loading Newsfeed");
+        mProgressDialog.setMessage("Please wait while we load the user data.");
+        mProgressDialog.setCanceledOnTouchOutside(false);
+        mProgressDialog.show();
+
         Query query =  mSPostDatabase.orderByChild("time");
 
 
@@ -188,6 +197,7 @@ public class SecondFragment extends Fragment {
 
                    Picasso.with(context).load(image).placeholder(R.drawable.user).into(imageView);
                 }
+                mProgressDialog.dismiss();
             }
 
             @Override
