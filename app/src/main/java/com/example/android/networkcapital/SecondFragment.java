@@ -38,12 +38,16 @@ public class SecondFragment extends Fragment {
 
     ImageView imageView;
     TextView post,timestamp;
-    DatabaseReference mSUserDatabase, mSPostDatabase,msLikeDatabase;
+    DatabaseReference mSUserDatabase;
+    DatabaseReference mSPostDatabase;
+    DatabaseReference msLikeDatabase;
+    DatabaseReference cmnt;
     private RecyclerView postList;
     private static Context context = null;
     private ProgressDialog mProgressDialog;
     Boolean LikeChecker = false;
     String uid;
+
 
     public SecondFragment() {
         // Required empty public constructor
@@ -78,6 +82,8 @@ public class SecondFragment extends Fragment {
 
         mSPostDatabase = FirebaseDatabase.getInstance().getReference().child("Post");
         msLikeDatabase = FirebaseDatabase.getInstance().getReference().child("Likes");
+
+
 
         mSPostDatabase.keepSynced(true);
 
@@ -125,6 +131,8 @@ public class SecondFragment extends Fragment {
                 final String user_id = getRef(position).getKey();
 
                 viewHolder.setLikeButtonStatus(user_id);
+                viewHolder.setCommentCount(user_id);
+
 
 
 
@@ -181,10 +189,13 @@ public class SecondFragment extends Fragment {
         ImageButton Likepostbutton;
         TextView Commentbutton;
         TextView Displaynofolikes;
+        TextView CommentLikes;
 
         int countlikes;
+        int commentCount;
         String currentuserId;
         DatabaseReference likesref;
+        DatabaseReference cmnt;
 
 
         public postsViewHolder(View itemView) {
@@ -194,10 +205,28 @@ public class SecondFragment extends Fragment {
             Likepostbutton = (ImageButton) mView.findViewById(R.id.dislike);
             Commentbutton = (TextView) mView.findViewById(R.id.comment);
             Displaynofolikes = (TextView) mView.findViewById(R.id.display_no_of_likes);
+            CommentLikes=(TextView)mView.findViewById(R.id.comment);
 
             likesref = FirebaseDatabase.getInstance().getReference().child("Likes");
             currentuserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            cmnt=FirebaseDatabase.getInstance().getReference().child("Post");
 
+        }
+        public void setCommentCount(final String PostKey)
+        {
+            final DatabaseReference comment = cmnt.child(PostKey).child("Comment");
+            comment.addValueEventListener(new ValueEventListener() {
+             @Override
+             public void onDataChange(DataSnapshot dataSnapshot) {
+                 commentCount = (int) dataSnapshot.getChildrenCount();
+                 CommentLikes.setText(Integer.toString(commentCount) + (" Comment"));
+             }
+
+             @Override
+             public void onCancelled(DatabaseError databaseError) {
+
+             }
+         });
         }
 
         public void setLikeButtonStatus(final String PostKey){

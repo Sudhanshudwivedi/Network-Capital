@@ -151,7 +151,9 @@
                     android:padding="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Comments"/>
+
+                    android:textColor="@color/black"
+                    android:text=" 0 Comments"/>
                 </LinearLayout>
                 
             </LinearLayout>

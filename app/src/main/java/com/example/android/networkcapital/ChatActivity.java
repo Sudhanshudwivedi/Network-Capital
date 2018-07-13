@@ -36,6 +36,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
 
 import org.w3c.dom.Text;
@@ -157,6 +158,7 @@ public class ChatActivity extends AppCompatActivity {
 
                 String online = dataSnapshot.child("online").getValue().toString();
                 String image = dataSnapshot.child("thumb_image").getValue().toString();
+                Picasso.with(ChatActivity.this).load(image).placeholder(R.drawable.user).into(mProfileImage);
 
                 if(online.equals("true")) {
 

@@ -135,6 +135,7 @@ public class PostActivity extends AppCompatActivity {
         final String randomName = UUID.randomUUID().toString();
         mPDatabase2 = FirebaseDatabase.getInstance().getReference().child("Post").child(randomName);
         mPDatabase2.child("thumb_image").setValue(image);
+
         post=pst.getText().toString().trim();
         FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = current_user.getUid();
@@ -169,4 +170,6 @@ public class PostActivity extends AppCompatActivity {
         });
 
     }
+
+
 }

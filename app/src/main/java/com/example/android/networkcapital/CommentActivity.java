@@ -44,6 +44,7 @@ public class CommentActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private String saveCurrentDate;
     private String user_id,uid;
+    private int countCmnt;
 
     private DatabaseReference mCDatabase,mCUserDatabase,mCUsersDatabase;
     @Override
