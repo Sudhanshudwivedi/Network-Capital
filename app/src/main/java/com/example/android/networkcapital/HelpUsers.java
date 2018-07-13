@@ -39,7 +39,6 @@ public class HelpUsers extends AppCompatActivity {
         String search = bundle.getString("button_select_text");
         mUsersDatabase = FirebaseDatabase.getInstance().getReference().child(search);
 
-       Toast.makeText(HelpUsers.this, search, Toast.LENGTH_LONG).show();
 
 
     }

@@ -219,7 +219,7 @@ public class SecondFragment extends Fragment {
              @Override
              public void onDataChange(DataSnapshot dataSnapshot) {
                  commentCount = (int) dataSnapshot.getChildrenCount();
-                 CommentLikes.setText(Integer.toString(commentCount) + (" Comment"));
+                 CommentLikes.setText(Integer.toString(commentCount) + (" Comments"));
              }
 
              @Override
@@ -235,12 +235,12 @@ public class SecondFragment extends Fragment {
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     if(dataSnapshot.child(PostKey).hasChild(currentuserId)){
                         countlikes = (int) dataSnapshot.child(PostKey).getChildrenCount();
-                        Likepostbutton.setImageResource(R.drawable.like);
+                        Likepostbutton.setImageResource(R.mipmap.likepost);
                         Displaynofolikes.setText(Integer.toString(countlikes) + (" Likes"));
                     }
                     else {
                         countlikes = (int) dataSnapshot.child(PostKey).getChildrenCount();
-                        Likepostbutton.setImageResource(R.drawable.dislike);
+                        Likepostbutton.setImageResource(R.mipmap.dislike);
                         Displaynofolikes.setText(Integer.toString(countlikes) + (" Likes"));
                     }
                 }

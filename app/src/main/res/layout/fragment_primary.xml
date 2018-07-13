@@ -71,15 +71,17 @@
         </RelativeLayout>
 
         <TextView
-            android:layout_below="@+id/relat1"
-            android:textColor="#696945"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="10dp"
-            android:text="Pick only one option in which you want help"
             android:id="@+id/text_highlight"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relat1"
+            android:layout_centerInParent="true"
             android:layout_marginBottom="5dp"
-            android:layout_height="wrap_content" />
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/yatra_one"
+            android:text="Pick only one option in which you want help"
+            android:textColor="#555555"
+            android:textSize="16sp" />
 
 
         <LinearLayout

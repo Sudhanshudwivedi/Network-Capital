@@ -112,17 +112,9 @@ public class RequestFragment extends Fragment {
                             @Override
                             public void onClick(View view) {
 
-                                CharSequence options[] = new CharSequence[]{"Open Profile", "Send message"};
 
-                                final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
 
-                                builder.setTitle("Select Options");
-                                builder.setItems(options, new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
 
-                                        //Click Event for each item.
-                                        if(i == 0){
 
                                             Intent profileIntent = new Intent(getContext(), ProfileActivity.class);
                                             profileIntent.putExtra("user_id", list_user_id);
@@ -130,22 +122,13 @@ public class RequestFragment extends Fragment {
 
                                         }
 
-                                        if(i == 1){
 
-                                            Intent chatIntent = new Intent(getContext(), ChatActivity.class);
-                                            chatIntent.putExtra("user_id", list_user_id);
-                                            chatIntent.putExtra("user_name", userName);
-                                            startActivity(chatIntent);
 
-                                        }
 
-                                    }
-                                });
 
-                                builder.show();
 
-                            }
-                        });
+
+                            });
 
 
                     }
