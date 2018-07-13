@@ -106,24 +106,53 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:orientation="horizontal"
                 >
 
                 <ImageButton
-                    android:layout_marginLeft="3dp"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:background="@color/white"
-
-                    android:src="@drawable/outline_mode_comment_black_18dp"/>
-
-                <TextView
-                    android:layout_gravity="end"
-                    android:layout_marginLeft="3dp"
+                    android:id="@+id/dislike"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Comment"/>
+                    android:background="@color/white"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dislike"/>
+
+                <TextView
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:layout_marginTop="-4dp"
+                    android:textColor="@color/black"
+                    android:text=" 0 likes"
+                    android:id="@+id/display_no_of_likes"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:id="@+id/l1"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:src="@drawable/baseline_comment_black_24dp"/>
+
+                <TextView
+
+                    android:id="@+id/comment"
+                    android:layout_gravity="end"
+                    android:layout_marginRight="5dp"
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Comments"/>
+                </LinearLayout>
                 
             </LinearLayout>
 

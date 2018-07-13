@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -37,10 +38,12 @@ public class SecondFragment extends Fragment {
 
     ImageView imageView;
     TextView post,timestamp;
-    DatabaseReference mSUserDatabase, mSPostDatabase;
+    DatabaseReference mSUserDatabase, mSPostDatabase,msLikeDatabase;
     private RecyclerView postList;
     private static Context context = null;
     private ProgressDialog mProgressDialog;
+    Boolean LikeChecker = false;
+    String uid;
 
     public SecondFragment() {
         // Required empty public constructor
@@ -71,9 +74,10 @@ public class SecondFragment extends Fragment {
         postList.setLayoutManager(linearLayoutManager);
 
         FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
-        String uid = current_user.getUid();
+        uid = current_user.getUid();
 
         mSPostDatabase = FirebaseDatabase.getInstance().getReference().child("Post");
+        msLikeDatabase = FirebaseDatabase.getInstance().getReference().child("Likes");
 
         mSPostDatabase.keepSynced(true);
 
@@ -117,7 +121,12 @@ public class SecondFragment extends Fragment {
                 viewHolder.setDescription(model.getDescription());
                 viewHolder.setTimestamp(model.getTimestamp());
                 viewHolder.setThumb_image(model.getThumb_image(), getContext());
+
                 final String user_id = getRef(position).getKey();
+
+                viewHolder.setLikeButtonStatus(user_id);
+
+
 
                 viewHolder.mView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -132,6 +141,33 @@ public class SecondFragment extends Fragment {
 
                     }
                 });
+
+                viewHolder.Likepostbutton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        LikeChecker = true;
+                        msLikeDatabase.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                if(LikeChecker.equals(true)){
+                                    if(dataSnapshot.child(user_id).hasChild(uid)){
+                                        msLikeDatabase.child(user_id).child(uid).removeValue();
+                                        LikeChecker = false;
+
+                                    }else{
+                                        msLikeDatabase.child(user_id).child(uid).setValue(true);
+                                        LikeChecker = false;
+                                    }
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+                        });
+                    }
+                });
             }
         };
 
@@ -142,10 +178,49 @@ public class SecondFragment extends Fragment {
     public static class postsViewHolder extends RecyclerView.ViewHolder{
 
         View mView;
+        ImageButton Likepostbutton;
+        TextView Commentbutton;
+        TextView Displaynofolikes;
+
+        int countlikes;
+        String currentuserId;
+        DatabaseReference likesref;
+
 
         public postsViewHolder(View itemView) {
             super(itemView);
             mView = itemView;
+
+            Likepostbutton = (ImageButton) mView.findViewById(R.id.dislike);
+            Commentbutton = (TextView) mView.findViewById(R.id.comment);
+            Displaynofolikes = (TextView) mView.findViewById(R.id.display_no_of_likes);
+
+            likesref = FirebaseDatabase.getInstance().getReference().child("Likes");
+            currentuserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        }
+
+        public void setLikeButtonStatus(final String PostKey){
+            likesref.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    if(dataSnapshot.child(PostKey).hasChild(currentuserId)){
+                        countlikes = (int) dataSnapshot.child(PostKey).getChildrenCount();
+                        Likepostbutton.setImageResource(R.drawable.like);
+                        Displaynofolikes.setText(Integer.toString(countlikes) + (" Likes"));
+                    }
+                    else {
+                        countlikes = (int) dataSnapshot.child(PostKey).getChildrenCount();
+                        Likepostbutton.setImageResource(R.drawable.dislike);
+                        Displaynofolikes.setText(Integer.toString(countlikes) + (" Likes"));
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
         }
 
         public void setDescription(String description) {
