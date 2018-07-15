@@ -92,8 +92,8 @@ public class edit_details extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_details);
 
-       firebaseAuth= FirebaseAuth.getInstance();
-       storageReference=FirebaseStorage.getInstance().getReference();
+        firebaseAuth= FirebaseAuth.getInstance();
+        storageReference=FirebaseStorage.getInstance().getReference();
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         mImageStorage= FirebaseStorage.getInstance().getReference();
@@ -166,39 +166,14 @@ public class edit_details extends AppCompatActivity {
                         for (int i = 0; i < mUserItems.size(); i++) {
 
                             String sd=listItems[mUserItems.get(i)];
+                            //store(sd);
+
                             item = item + listItems[mUserItems.get(i)];
-                            mLUserDatabase = FirebaseDatabase.getInstance().getReference().child(sd).child(uid);
-
-                            mEHelpDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
-                            //mDatabase2 = FirebaseDatabase.getInstance().getReference().child("Post").child(uid);
-
-
-                            mEHelpDatabase.addValueEventListener(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(DataSnapshot dataSnapshot) {
-
-
-                                    String name = dataSnapshot.child("name").getValue().toString();
-                                    String position=dataSnapshot.child("position").getValue().toString();
-                                    String image = dataSnapshot.child("thumb_image").getValue().toString();
-                                    mLUserDatabase.child("name").setValue(name);
-                                    mLUserDatabase.child("thumb_image").setValue(image);
-                                    mLUserDatabase.child("position").setValue(position);
-
-
-                                    //  Picasso.with(PostActivity.this).load(image).placeholder(R.drawable.user).into(iv);
-                                }
-
-                                @Override
-                                public void onCancelled(DatabaseError databaseError) {
-
-                                }
-                            });
 
 
 
                             if (i != mUserItems.size() - 1) {
-                                item = item + ", ";
+                                item = item + ",";
                             }
                         }
                         mItemSelected.setText(item);
@@ -235,7 +210,7 @@ public class edit_details extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(edit_details.this);
-                builder.setTitle("I can help in...");
+                builder.setTitle("I am looking for...");
                 builder.setMultiChoiceItems(listItems, checkedItems2, new DialogInterface.OnMultiChoiceClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int position, boolean isChecked) {
@@ -290,7 +265,7 @@ public class edit_details extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(edit_details.this);
-                builder.setTitle("I can help in...");
+                builder.setTitle("ShortTerm Goals...");
                 builder.setMultiChoiceItems(goalItems, checkedItems3, new DialogInterface.OnMultiChoiceClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int position, boolean isChecked) {
@@ -419,6 +394,9 @@ public class edit_details extends AppCompatActivity {
 
     }
 
+
+
+
     private boolean check(String lo, String ro, String wor, String ho1, String lo1, String de, String in, String co) {
 
         boolean valid = true;
@@ -521,10 +499,10 @@ public class edit_details extends AppCompatActivity {
 
                             final String download_url = task.getResult().getDownloadUrl().toString();
 
-                          //  UploadTask uploadTask = thumb_filepath.putBytes(thumb_byte);
-                           /// uploadTask.addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                            //  UploadTask uploadTask = thumb_filepath.putBytes(thumb_byte);
+                            /// uploadTask.addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
 
-                             //   public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> thumb_task) {
+                            //   public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> thumb_task) {
 
 
                             FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
@@ -532,36 +510,36 @@ public class edit_details extends AppCompatActivity {
 
 
                             mEUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
-                                    mEUserDatabase.child("thumb_image").setValue(download_url);
+                            mEUserDatabase.child("thumb_image").setValue(download_url);
 
                             //mEUserDatabase2 = FirebaseDatabase.getInstance().getReference().child("Post").child(uid);
-                           // mEUserDatabase2.child("thumb_image").setValue(download_url);
+                            // mEUserDatabase2.child("thumb_image").setValue(download_url);
 
 
                             mEUserDatabase.addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(DataSnapshot dataSnapshot) {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
 
-                                            String image=dataSnapshot.child("thumb_image").getValue().toString();
-                                            Picasso.with(edit_details.this).load(image).placeholder(R.drawable.user).into(mDisplayImage);
-                                        }
+                                    String image=dataSnapshot.child("thumb_image").getValue().toString();
+                                    Picasso.with(edit_details.this).load(image).placeholder(R.drawable.user).into(mDisplayImage);
+                                }
 
-                                        @Override
-                                        public void onCancelled(DatabaseError databaseError) {
-
-                                        }
-                                    });
-
-                                    mProgressDialog.dismiss();
-
-
-
-
-
-
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
 
                                 }
-                            };
+                            });
+
+                            mProgressDialog.dismiss();
+
+
+
+
+
+
+
+                        }
+                    };
 
 
 

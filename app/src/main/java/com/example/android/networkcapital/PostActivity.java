@@ -106,7 +106,7 @@ public class PostActivity extends AppCompatActivity {
 
                 Picasso.with(PostActivity.this).load(image).placeholder(R.drawable.user).into(iv);
 
-              //  Picasso.with(PostActivity.this).load(image).placeholder(R.drawable.user).into(iv);
+                //  Picasso.with(PostActivity.this).load(image).placeholder(R.drawable.user).into(iv);
 
             }
 
@@ -152,22 +152,18 @@ public class PostActivity extends AppCompatActivity {
         mPDatabase2.child("name").setValue(nam.getText());
         mPDatabase2.child("user_id").setValue(uid);
         //mDatabase2.child("user_id").setValue(post);
-        mPDatabase2.child("time");
-
-        mPDatabase2.setValue(ServerValue.TIMESTAMP).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                //Toast.makeText(RegisterActivity.this, "Registration Sucessful", Toast.LENGTH_LONG).show();
-                Intent intent=new Intent(PostActivity.this, MainActivity.class);
+        mPDatabase2.child("time").setValue(ServerValue.TIMESTAMP);
+        Intent intent=new Intent(PostActivity.this, MainActivity.class);
 
 
-                startActivity(intent);
+        startActivity(intent);
+        finish();
 
-                mProgressDialog.dismiss();
 
 
-            }
-        });
+
+
+
 
     }
 

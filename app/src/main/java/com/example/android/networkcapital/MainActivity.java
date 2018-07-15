@@ -36,8 +36,11 @@ import com.squareup.picasso.Picasso;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private DatabaseReference mUserRef;
+    private DatabaseReference mUserRef,mLUserDatabase;
+
+    private FirebaseUser mCurrentUser;
     private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +57,10 @@ public class MainActivity extends AppCompatActivity
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tbl_pages);
         tabLayout.setupWithViewPager(pager);
         mAuth = FirebaseAuth.getInstance();
-        mUserRef = FirebaseDatabase.getInstance().getReference().child("Users").child(mAuth.getCurrentUser().getUid());
+
+        mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
+        final String current_id = mCurrentUser.getUid();
+        mUserRef = FirebaseDatabase.getInstance().getReference().child("Users").child(current_id);
 
 
         mUserRef.addValueEventListener(new ValueEventListener() {
@@ -63,6 +69,18 @@ public class MainActivity extends AppCompatActivity
 
 
                 String name=dataSnapshot.child("First Login").getValue().toString();
+                String help=dataSnapshot.child("help").getValue().toString();
+                String[] helpList = help.split(",");
+                for(String hp : helpList){
+                    mLUserDatabase = FirebaseDatabase.getInstance().getReference().child(hp).child(current_id);
+                   String nme=dataSnapshot.child("name").getValue().toString();
+                    String img=dataSnapshot.child("thumb_image").getValue().toString();
+                    String post=dataSnapshot.child("position").getValue().toString();
+                    mLUserDatabase.child("name").setValue(nme);
+                    mLUserDatabase.child("thumb_image").setValue(img);
+                    mLUserDatabase.child("position").setValue(post);
+
+                }
 
 
                 if(name.equals("true"))

@@ -1,8 +1,6 @@
 package com.example.android.networkcapital.Modules;
 
-/**
- * Created by Nimesh Sachan on 6/19/2018.
- */
+
 
 public class posts {
 
