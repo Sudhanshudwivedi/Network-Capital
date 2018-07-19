@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -10,15 +18,15 @@
         android:id="@+id/rel1"
         android:background="@color/colorPrimary"
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/image1"
             android:layout_marginTop="50dp"
             android:layout_marginLeft="40dp"
-            android:layout_width="50dp"
+            android:layout_width="40dp"
             android:src="@drawable/tick"
-            android:layout_height="50dp" />
+            android:layout_height="40dp" />
 
         <TextView
             android:layout_marginLeft="40dp"
@@ -41,9 +49,9 @@
             android:layout_marginTop="50dp"
             android:layout_marginRight="40dp"
             android:layout_alignParentRight="true"
-            android:layout_width="50dp"
+            android:layout_width="40dp"
             android:src="@drawable/star"
-            android:layout_height="50dp" />
+            android:layout_height="40dp" />
 
         <TextView
             android:layout_marginRight="27dp"
@@ -91,7 +99,8 @@
             android:layout_marginTop="5dp"
             android:layout_below="@id/textView2"
             android:textColor="#ffff"
-            android:text="South Delhi" />
+            android:text="South Delhi"
+            android:layout_marginBottom="5dp"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -258,5 +267,6 @@
     </RelativeLayout>
 
 
-
 </LinearLayout>
+
+</ScrollView>

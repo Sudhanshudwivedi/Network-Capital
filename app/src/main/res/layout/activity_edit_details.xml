@@ -109,20 +109,20 @@
             android:layout_width="350dp"
             android:layout_height="30dp" />
 
-        <EditText
-            android:background="@drawable/edit_button"
-            android:layout_below="@+id/edit_job1"
-            android:id="@+id/edit_job2"
-            android:paddingLeft="20dp"
-            android:hint="Date of Joining"
-            android:layout_marginTop="8dp"
-            android:layout_width="350dp"
-            android:layout_height="30dp" />
+        <!--<EditText-->
+            <!--android:background="@drawable/edit_button"-->
+            <!--android:layout_below="@+id/edit_job1"-->
+            <!--android:id="@+id/edit_job2"-->
+            <!--android:paddingLeft="20dp"-->
+            <!--android:hint="Date of Joining"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_width="350dp"-->
+            <!--android:layout_height="30dp" />-->
 
         <TextView
             android:id="@+id/education"
             android:layout_marginTop="10dp"
-            android:layout_below="@id/edit_job2"
+            android:layout_below="@id/edit_job1"
             android:text="Education"
             android:textSize="18dp"
             android:textColor="@color/black"
@@ -149,20 +149,20 @@
             android:layout_width="350dp"
             android:layout_height="30dp" />
 
-        <EditText
-            android:background="@drawable/edit_button"
-            android:layout_below="@+id/edit_edu1"
-            android:id="@+id/edit_edu2"
-            android:paddingLeft="20dp"
-            android:hint="Class"
-            android:layout_marginTop="8dp"
-            android:layout_width="350dp"
-            android:layout_height="30dp" />
+        <!--<EditText-->
+            <!--android:background="@drawable/edit_button"-->
+            <!--android:layout_below="@+id/edit_edu1"-->
+            <!--android:id="@+id/edit_edu2"-->
+            <!--android:paddingLeft="20dp"-->
+            <!--android:hint="Class"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_width="350dp"-->
+            <!--android:layout_height="30dp" />-->
 
         <TextView
             android:id="@+id/work"
             android:layout_marginTop="10dp"
-            android:layout_below="@id/edit_edu2"
+            android:layout_below="@id/edit_edu1"
             android:text="Work Ex."
             android:textSize="18dp"
             android:textColor="@color/black"
@@ -189,31 +189,31 @@
             android:layout_width="350dp"
             android:layout_height="30dp" />
 
-        <EditText
-            android:background="@drawable/edit_button"
-            android:layout_below="@+id/edit_work2"
-            android:id="@+id/edit_work3"
-            android:paddingLeft="20dp"
-            android:hint="Date of Join.."
-            android:layout_marginTop="8dp"
-            android:layout_width="135dp"
-            android:layout_height="30dp" />
+        <!--<EditText-->
+            <!--android:background="@drawable/edit_button"-->
+            <!--android:layout_below="@+id/edit_work2"-->
+            <!--android:id="@+id/edit_work3"-->
+            <!--android:paddingLeft="20dp"-->
+            <!--android:hint="Date of Join.."-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_width="135dp"-->
+            <!--android:layout_height="30dp" />-->
 
-        <EditText
-            android:background="@drawable/edit_button"
-            android:layout_below="@+id/edit_work2"
-            android:id="@+id/edit_work4"
-            android:paddingLeft="20dp"
-            android:hint="Date of Leaving"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="8dp"
-            android:layout_width="160dp"
-            android:layout_height="30dp" />
+        <!--<EditText-->
+            <!--android:background="@drawable/edit_button"-->
+            <!--android:layout_below="@+id/edit_work2"-->
+            <!--android:id="@+id/edit_work4"-->
+            <!--android:paddingLeft="20dp"-->
+            <!--android:hint="Date of Leaving"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_width="160dp"-->
+            <!--android:layout_height="30dp" />-->
 
         <TextView
             android:id="@+id/help"
             android:layout_marginTop="10dp"
-            android:layout_below="@id/edit_work3"
+            android:layout_below="@id/edit_work2"
             android:text="I can help in... "
             android:textSize="18dp"
             android:textColor="@color/black"
@@ -223,7 +223,7 @@
 
         <RelativeLayout
             android:id="@+id/rl1"
-            android:layout_below="@id/edit_work3"
+            android:layout_below="@id/edit_work2"
             android:layout_alignParentRight="true"
             android:layout_width="60dp"
             android:layout_height="wrap_content">
@@ -313,55 +313,55 @@
             android:layout_height="wrap_content" />
 
 
-        <TextView
-            android:id="@+id/goals"
-            android:layout_marginTop="10dp"
-            android:layout_below="@id/look_text"
-            android:text="Your short-term career goals"
-            android:textSize="18dp"
-            android:textColor="@color/black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <!--<TextView-->
+            <!--android:id="@+id/goals"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_below="@id/look_text"-->
+            <!--android:text="Your short-term career goals"-->
+            <!--android:textSize="18dp"-->
+            <!--android:textColor="@color/black"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
 
-        <RelativeLayout
-            android:id="@+id/rl3"
-            android:layout_below="@id/look_text"
-            android:layout_alignParentRight="true"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content">
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/rl3"-->
+            <!--android:layout_below="@id/look_text"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_width="60dp"-->
+            <!--android:layout_height="wrap_content">-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="18dp"
-                android:textColor="@color/black"
-                android:text="Add"/>
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:textSize="18dp"-->
+                <!--android:textColor="@color/black"-->
+                <!--android:text="Add"/>-->
 
-            <ImageView
-                android:id="@+id/n3"
-                android:src="@drawable/baseline_add_black_48dp"
-                android:layout_marginTop="12dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="7dp"
-                android:layout_width="21dp"
-                android:layout_height="21dp" />
+            <!--<ImageView-->
+                <!--android:id="@+id/n3"-->
+                <!--android:src="@drawable/baseline_add_black_48dp"-->
+                <!--android:layout_marginTop="12dp"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_marginRight="7dp"-->
+                <!--android:layout_width="21dp"-->
+                <!--android:layout_height="21dp" />-->
 
-        </RelativeLayout>
+        <!--</RelativeLayout>-->
 
-        <TextView
-            android:background="@drawable/edit_button"
-            android:layout_below="@+id/rl3"
-            android:id="@+id/goal_text"
-            android:paddingLeft="20dp"
-            android:hint="Skills..."
-            android:layout_marginTop="8dp"
-            android:textSize="18dp"
-            android:paddingTop="3dp"
-            android:paddingBottom="3dp"
-            android:textColor="@color/black"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        <!--<TextView-->
+            <!--android:background="@drawable/edit_button"-->
+            <!--android:layout_below="@+id/rl3"-->
+            <!--android:id="@+id/goal_text"-->
+            <!--android:paddingLeft="20dp"-->
+            <!--android:hint="Skills..."-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:textSize="18dp"-->
+            <!--android:paddingTop="3dp"-->
+            <!--android:paddingBottom="3dp"-->
+            <!--android:textColor="@color/black"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
 
         <Button
             android:id="@+id/save_button"
@@ -373,7 +373,7 @@
             android:textColor="@color/background_color"
             android:textSize="17sp"
             android:textStyle="bold"
-            android:layout_below="@id/goal_text"
+            android:layout_below="@id/look_text"
             android:layout_width="130dp"
             android:layout_height="50dp" />
         </RelativeLayout>

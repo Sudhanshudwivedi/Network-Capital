@@ -104,10 +104,10 @@ public class edit_details extends AppCompatActivity {
         mOptions2 = (ImageView) findViewById(R.id.n2);
         mItemSelected = (TextView) findViewById(R.id.help_text);
         mItemSelected2 = (TextView) findViewById(R.id.look_text);
-        mItemSelected3 = (TextView) findViewById(R.id.goal_text);
+//        mItemSelected3 = (TextView) findViewById(R.id.goal_text);
         rl1 = (RelativeLayout) findViewById(R.id.rl1);
         rl2 = (RelativeLayout) findViewById(R.id.rl2);
-        rl3 = (RelativeLayout) findViewById(R.id.rl3);
+//        rl3 = (RelativeLayout) findViewById(R.id.rl3);
 
         mImagebtn = (Button) findViewById(R.id.upload);
         mDisplayImage = (ImageView) findViewById(R.id.image2);
@@ -116,7 +116,7 @@ public class edit_details extends AppCompatActivity {
         company = (EditText) findViewById(R.id.edit_job1);
         degree = (EditText) findViewById(R.id.edit_edu);
         inst = (EditText) findViewById(R.id.edit_edu1);
-        cls = (EditText) findViewById(R.id.edit_edu2);
+//        cls = (EditText) findViewById(R.id.edit_edu2);
         wr = (EditText) findViewById(R.id.edit_work1);
         wc = (EditText) findViewById(R.id.edit_work2);
 
@@ -261,59 +261,59 @@ public class edit_details extends AppCompatActivity {
         });
 
 
-        rl3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(edit_details.this);
-                builder.setTitle("ShortTerm Goals...");
-                builder.setMultiChoiceItems(goalItems, checkedItems3, new DialogInterface.OnMultiChoiceClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int position, boolean isChecked) {
-                        if(isChecked){
-                            mUserItems3.add(position);
-                        }else {
-                            mUserItems3.remove(Integer.valueOf(position));
-                        }
-                    }
-                });
-
-                builder.setCancelable(false);
-                builder.setPositiveButton(R.string.ok_label, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int which) {
-                        String item = "";
-                        for (int i = 0; i < mUserItems3.size(); i++) {
-                            item = item + goalItems[mUserItems3.get(i)];
-                            if (i != mUserItems3.size() - 1) {
-                                item = item + ", ";
-                            }
-                        }
-                        mItemSelected3.setText(item);
-                    }
-                });
-
-                builder.setNegativeButton(R.string.dismiss_label, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                    }
-                });
-
-                builder.setNeutralButton(R.string.clear_all_label, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int which) {
-                        for (int i = 0; i < checkedItems3.length; i++) {
-                            checkedItems3[i] = false;
-                            mUserItems3.clear();
-                            mItemSelected3.setText("");
-                        }
-                    }
-                });
-
-                AlertDialog mDialog = builder.create();
-                mDialog.show();
-            }
-        });
+//        rl3.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                AlertDialog.Builder builder = new AlertDialog.Builder(edit_details.this);
+//                builder.setTitle("ShortTerm Goals...");
+//                builder.setMultiChoiceItems(goalItems, checkedItems3, new DialogInterface.OnMultiChoiceClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int position, boolean isChecked) {
+//                        if(isChecked){
+//                            mUserItems3.add(position);
+//                        }else {
+//                            mUserItems3.remove(Integer.valueOf(position));
+//                        }
+//                    }
+//                });
+//
+//                builder.setCancelable(false);
+//                builder.setPositiveButton(R.string.ok_label, new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int which) {
+//                        String item = "";
+//                        for (int i = 0; i < mUserItems3.size(); i++) {
+//                            item = item + goalItems[mUserItems3.get(i)];
+//                            if (i != mUserItems3.size() - 1) {
+//                                item = item + ", ";
+//                            }
+//                        }
+//                        mItemSelected3.setText(item);
+//                    }
+//                });
+//
+//                builder.setNegativeButton(R.string.dismiss_label, new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                        dialogInterface.dismiss();
+//                    }
+//                });
+//
+//                builder.setNeutralButton(R.string.clear_all_label, new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int which) {
+//                        for (int i = 0; i < checkedItems3.length; i++) {
+//                            checkedItems3[i] = false;
+//                            mUserItems3.clear();
+//                            mItemSelected3.setText("");
+//                        }
+//                    }
+//                });
+//
+//                AlertDialog mDialog = builder.create();
+//                mDialog.show();
+//            }
+//        });
 
 
 

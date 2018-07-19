@@ -10,28 +10,28 @@
             <!--android:title="Import" />-->
         <item
             android:id="@+id/nav_card"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@mipmap/baseline_card_membership_black_48dp"
             android:title="Network Card" />
         <item
             android:id="@+id/nav_edit_details"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@mipmap/baseline_edit_black_48dp"
             android:title="Edit Your Details" />
         <item
             android:id="@+id/nav_connectionRequest"
-            android:icon="@drawable/help"
+            android:icon="@mipmap/baseline_how_to_reg_black_48dp"
             android:title="Connection Request" />
 
         <item
             android:id="@+id/nav-chat"
-            android:icon="@drawable/baseline_message_black_48dp"
+            android:icon="@mipmap/baseline_message_black_48dp"
             android:title="Chats" />
         <item
             android:id="@+id/nav-friends"
-            android:icon="@drawable/baseline_people_black_48dp"
+            android:icon="@mipmap/baseline_people_black_48dp"
             android:title="Friends" />
         <item
             android:id="@+id/nav-logout"
-            android:icon="@drawable/baseline_lock_black_48dp"
+            android:icon="@mipmap/baseline_lock_black_48dp"
             android:title="Logout" />
     </group>
 

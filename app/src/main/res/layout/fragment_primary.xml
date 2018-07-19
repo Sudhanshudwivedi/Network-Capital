@@ -1,3 +1,10 @@
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
 <ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -5,6 +12,7 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rle1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.android.networkcapital.PrimaryFragment">
@@ -42,6 +50,9 @@
             android:background="#922cc9">
 
 
+
+
+
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/img1"
                 android:layout_marginTop="25dp"
@@ -69,6 +80,8 @@
                 android:layout_height="wrap_content" />
 
         </RelativeLayout>
+
+
 
         <TextView
             android:id="@+id/text_highlight"
@@ -307,6 +320,7 @@
             android:layout_below="@id/b6"
             android:paddingBottom="5dp"
             android:layout_width="match_parent"
+            android:layout_marginBottom="60dp"
             android:layout_height="wrap_content">
 
 
@@ -324,25 +338,23 @@
             android:onClick="onClick"/>
         </LinearLayout>
 
-        <Button
-            android:id="@+id/next"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/b7"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/loginbutton_selector"
-            android:onClick="onClick"
-            android:text="Choose only 1"
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/background_color" />
 
     </RelativeLayout>
-
-
-
-
 
 </RelativeLayout>
 
 </ScrollView>
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/loginbutton_selector"
+        android:onClick="onClick"
+        android:text="Choose only 1"
+        android:textColor="@color/background_color" />
+
+</RelativeLayout>
