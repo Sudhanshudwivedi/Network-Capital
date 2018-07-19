@@ -22,11 +22,12 @@
 
         <ImageView
             android:id="@+id/image1"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="40dp"
-            android:layout_width="50dp"
-            android:src="@drawable/tick"
-            android:layout_height="50dp" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignLeft="@+id/textView4"
+            android:layout_alignStart="@+id/textView4"
+            android:layout_alignTop="@+id/image3"
+            android:src="@drawable/tick" />
 
         <TextView
             android:layout_marginLeft="40dp"
@@ -34,7 +35,8 @@
             android:text="Verified"
             android:textColor="#ffffff"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/image2"
@@ -49,9 +51,9 @@
             android:layout_marginTop="50dp"
             android:layout_marginRight="40dp"
             android:layout_alignParentRight="true"
-            android:layout_width="50dp"
+            android:layout_width="40dp"
             android:src="@drawable/star"
-            android:layout_height="50dp" />
+            android:layout_height="40dp" />
 
         <TextView
             android:layout_marginRight="27dp"
@@ -85,8 +87,8 @@
 
 
         <ImageView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
             android:layout_below="@id/textView2"
             android:layout_marginTop="6dp"
             android:layout_marginLeft="130dp"
@@ -100,7 +102,8 @@
             android:layout_marginTop="5dp"
             android:layout_below="@id/textView2"
             android:textColor="#ffff"
-            android:text="South Delhi" />
+            android:text=" South Delhi"
+            android:layout_marginBottom="10dp"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -271,8 +274,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="10dp"
-            android:background="@color/background_color"
-
+            android:background="@drawable/send_request"
             android:text="SEND FRIEND REQUEST"
             android:textColor="@color/white"
             android:textStyle="bold" />
@@ -284,7 +286,7 @@
             android:layout_alignParentBottom="true"
             android:layout_below="@+id/profile_send_req_btn"
             android:layout_centerHorizontal="true"
-            android:background="@color/background_color"
+            android:background="@drawable/cancel_request"
 
             android:text="DECLINE FRIEND REQUEST"
             android:textColor="@color/white"

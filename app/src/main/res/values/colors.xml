@@ -13,4 +13,6 @@
     <color name="darkColor">#222222</color>
     <color name="button_selectorcolor">#9E9E9E</color>
     <color name="basecolor">#673ab7</color>
+
+    <color name="pick_color">#922cc9</color>
 </resources>

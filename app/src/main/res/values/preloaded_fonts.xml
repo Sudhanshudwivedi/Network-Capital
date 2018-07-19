@@ -3,7 +3,9 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/</item>
         <item>@font/allerta_stencil</item>
+        <item>@font/amarante</item>
         <item>@font/carter_one</item>
+        <item>@font/neuton_extralight</item>
         <item>@font/yatra_one</item>
     </array>
 </resources>

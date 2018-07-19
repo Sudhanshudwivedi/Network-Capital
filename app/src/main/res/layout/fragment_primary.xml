@@ -17,7 +17,6 @@
     android:layout_height="match_parent"
     tools:context="com.example.android.networkcapital.PrimaryFragment">
 
-    <!-- TODO: Update blank fragment layout -->
 
     <!--<EditText-->
         <!--android:id="@+id/hlp"-->
@@ -355,6 +354,7 @@
         android:background="@drawable/connection_button"
         android:onClick="onClick"
         android:text="Choose only 1"
+
         android:textColor="@color/white" />
 
 </RelativeLayout>

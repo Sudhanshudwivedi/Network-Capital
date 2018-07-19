@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="210dp"
+    android:layout_height="190dp"
     android:background="@color/background_color"
     android:padding="16dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
@@ -12,27 +12,34 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/image2"
         android:layout_marginTop="35dp"
-        android:layout_width="55dp"
+        android:layout_width="60dp"
         android:src="@drawable/user"
-        android:layout_height="55dp" />
+        android:layout_height="60dp" />
 
     <TextView
-        android:layout_marginTop="25dp"
         android:id="@+id/user_name"
-        android:layout_below="@id/image2"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/image2"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/amarante"
         android:text="Sandra Adams"
-        android:textStyle="bold"
-        android:textSize="22sp"
-        android:layout_height="wrap_content" />
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
-        android:text="sandra_a88@gmail.com"
-        android:layout_below="@id/user_name"
         android:id="@+id/user_emailid"
-        android:textStyle="bold"
-        android:textSize="18sp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/user_name"
+        android:text="sandra_a88@gmail.com"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
 </RelativeLayout>
