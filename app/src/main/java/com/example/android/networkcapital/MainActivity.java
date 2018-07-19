@@ -2,15 +2,12 @@ package com.example.android.networkcapital;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -19,10 +16,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.networkcapital.Modules.FriendsActivity;
-import com.example.android.networkcapital.Modules.RequestFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -36,10 +35,12 @@ import com.squareup.picasso.Picasso;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private DatabaseReference mUserRef,mLUserDatabase;
+    private DatabaseReference mUserRef,mLUserDatabase,mData;
 
-    private FirebaseUser mCurrentUser;
+    private FirebaseUser mCurrentUser,mDataUser;
     private FirebaseAuth mAuth;
+    private TextView mdName,mEmail;
+    private ImageView mImage;
 
 
     @Override
@@ -57,6 +58,11 @@ public class MainActivity extends AppCompatActivity
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tbl_pages);
         tabLayout.setupWithViewPager(pager);
         mAuth = FirebaseAuth.getInstance();
+
+
+        mEmail=(TextView)findViewById(R.id.user_emailid);
+        mImage=(ImageView)findViewById(R.id.image2);
+
 
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
         final String current_id = mCurrentUser.getUid();
@@ -80,11 +86,16 @@ public class MainActivity extends AppCompatActivity
                     mLUserDatabase.child("thumb_image").setValue(img);
                     mLUserDatabase.child("position").setValue(post);
 
+                    //mEmail.setText(Demail);
+
+                    //Picasso.with(MainActivity.this).load(image).placeholder(R.drawable.user).into(mImage);
+
                 }
 
 
                 if(name.equals("true"))
                 {
+
                     Toast.makeText(MainActivity.this, name, Toast.LENGTH_LONG).show();
                     Intent startIntent = new Intent(MainActivity.this, edit_details.class);
                     startActivity(startIntent);
@@ -103,6 +114,7 @@ public class MainActivity extends AppCompatActivity
 
 
 
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -111,19 +123,45 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        View navHeaderView=navigationView.getHeaderView(0);
+        mdName = (TextView)navHeaderView.findViewById(R.id.userdata_name);
+        mEmail=(TextView)navHeaderView.findViewById(R.id.user_emailid);
+        mImage=(ImageView)navHeaderView.findViewById(R.id.image2);
+
         if (mAuth.getCurrentUser() != null) {
-
-
             mUserRef = FirebaseDatabase.getInstance().getReference().child("Users").child(mAuth.getCurrentUser().getUid());
+            }
 
-
-
-        }
     }
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
+        mDataUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        final String cur_id = mDataUser.getUid();
+
+        mData= FirebaseDatabase.getInstance().getReference().child("Users").child(cur_id);
+        mData.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                String nme=dataSnapshot.child("name").getValue().toString();
+                String emai=dataSnapshot.child("email").getValue().toString();
+                String img=dataSnapshot.child("thumb_image").toString();
+                mdName.setText(nme);
+                mEmail.setText(emai);
+                String image=dataSnapshot.child("thumb_image").getValue().toString();
+                Picasso.with(MainActivity.this).load(image).placeholder(R.drawable.user).into(mImage);
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
 
 
