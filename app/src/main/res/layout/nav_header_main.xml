@@ -8,7 +8,6 @@
     android:padding="16dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/image2"
         android:layout_marginTop="35dp"
@@ -17,6 +16,7 @@
         android:layout_height="60dp" />
 
     <TextView
+<<<<<<< HEAD
         android:id="@+id/user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,6 +31,20 @@
         android:textStyle="bold" />
 
     <TextView
+=======
+        android:layout_marginTop="15dp"
+        android:id="@+id/userdata_name"
+        android:layout_below="@id/image2"
+        android:layout_width="wrap_content"
+        android:text=""
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="sandra_a88@gmail.com"
+        android:layout_below="@id/userdata_name"
+>>>>>>> 03d061b12911b41ad8901e4b1378f00bf36be83a
         android:id="@+id/user_emailid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
