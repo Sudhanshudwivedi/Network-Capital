@@ -120,20 +120,13 @@ public class HelpUsers extends AppCompatActivity {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     String Name=dataSnapshot.child("name").getValue().toString();
-                    if(Name.equals(name)){
-                        ////TextView userNameView = (TextView) mView.findViewById(R.id.help_single_name);
-                        //userNameView.setText(null);
-                       // mView.setVisibility(View.);
 
 
 
-                    }
-                    else
-                    {
                         TextView userNameView = (TextView) mView.findViewById(R.id.help_single_name);
                         userNameView.setText(name);
 
-                    }
+
 
 
                 }
