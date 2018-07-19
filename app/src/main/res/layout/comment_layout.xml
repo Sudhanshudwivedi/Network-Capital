@@ -5,12 +5,13 @@
     android:layout_height="wrap_content">
 
     <android.support.v7.widget.CardView
+        android:id="@+id/card_comment"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="500dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardUseCompatPadding="true"
-        app:cardElevation="1dp"
-        app:cardCornerRadius="2dp" >
+        app:cardElevation="4dp"
+        app:cardCornerRadius="2.5dp" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -105,13 +106,6 @@
 
     </android.support.v7.widget.CardView>
 
-    <View
-        android:id="@+id/v1"
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:layout_below="@id/post"
-        android:layout_marginTop="100dp"
-        android:background="#d6d1d1"></View>
 
 
-</RelativeLayout>
+    </RelativeLayout>

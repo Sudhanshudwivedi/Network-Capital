@@ -122,7 +122,6 @@
                     android:textSize="14sp"
                     android:textStyle="bold"
                     android:padding="10dp"
-                    android:layout_marginTop="0dp"
                     android:textColor="@color/black"
                     android:text=" 0 likes"
                     android:id="@+id/display_no_of_likes"
@@ -139,20 +138,20 @@
                 <ImageButton
                     android:padding="5dp"
                     android:scaleType="centerCrop"
-                    android:layout_width="30dp"
-                    android:layout_height="35dp"
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
                     android:background="@color/white"
-                    android:src="@drawable/baseline_comment_black_24dp"/>
+                    android:src="@mipmap/come"/>
 
                 <TextView
-
                     android:id="@+id/comment"
-                    android:layout_gravity="end"
                     android:layout_marginRight="5dp"
                     android:padding="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
+                    android:layout_marginTop="4dp"
                     android:textSize="14sp"
                     android:textColor="@color/black"
                     android:text=" 0 Comments"/>

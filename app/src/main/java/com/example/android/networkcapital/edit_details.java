@@ -336,7 +336,7 @@ public class edit_details extends AppCompatActivity {
         co = company.getText().toString().trim();
         de = degree.getText().toString().trim();
         in = inst.getText().toString().trim();
-        cl = cls.getText().toString().trim();
+//        cl = cls.getText().toString().trim();
         wor = wr.getText().toString().trim();
         woc = wc.getText().toString().trim();
         ho1 = mItemSelected.getText().toString().trim();
@@ -345,7 +345,7 @@ public class edit_details extends AppCompatActivity {
         lo1 = mItemSelected2.getText().toString().trim();
 //        lo2 = l2.getText().toString().trim();
 //        lo3 = l3.getText().toString().trim();
-        so1 = mItemSelected3.getText().toString().trim();
+//        so1 = mItemSelected3.getText().toString().trim();
 //        so2 = s2.getText().toString().trim();
 //        so3 = s3.getText().toString().trim();
 

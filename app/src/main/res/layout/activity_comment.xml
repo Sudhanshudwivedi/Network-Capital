@@ -20,14 +20,14 @@
 
     <ImageButton
         android:id="@+id/btn"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:paddingTop="6dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:padding="15dp"
         android:background="@color/white"
-        android:src="@drawable/baseline_send_black_18dp" />
+        android:src="@mipmap/send1" />
 
     <EditText
         android:id="@+id/comment"

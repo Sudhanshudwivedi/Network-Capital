@@ -352,9 +352,9 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="20dp"
-        android:background="@drawable/loginbutton_selector"
+        android:background="@drawable/connection_button"
         android:onClick="onClick"
         android:text="Choose only 1"
-        android:textColor="@color/background_color" />
+        android:textColor="@color/white" />
 
 </RelativeLayout>
