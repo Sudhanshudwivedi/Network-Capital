@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity
                 if(name.equals("true"))
                 {
 
-                    Toast.makeText(MainActivity.this, name, Toast.LENGTH_LONG).show();
+
                     Intent startIntent = new Intent(MainActivity.this, edit_details.class);
                     startActivity(startIntent);
                     mUserRef.child("First Login").setValue("False");
