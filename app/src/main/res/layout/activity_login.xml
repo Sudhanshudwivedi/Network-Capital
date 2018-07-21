@@ -75,7 +75,6 @@
             android:textColor="@color/black"
             android:textCursorDrawable="@color/black"
             android:textColorHint="#76000000"
-
             android:textSize="16sp" />
 
         <View

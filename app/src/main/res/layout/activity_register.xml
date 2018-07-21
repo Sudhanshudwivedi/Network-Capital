@@ -116,7 +116,7 @@
                 <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
                     android:id="@+id/password"
                     android:layout_width="fill_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:drawableTint="@color/black"
                     android:drawableLeft="@mipmap/lock_close"
@@ -133,6 +133,7 @@
                     app:drawable_show="@mipmap/eye_close"
                     android:textColor="@color/black"
                     android:textCursorDrawable="@color/black"
+                    android:cursorVisible="true"
                     android:textColorHint="#76000000"
                     android:textSize="16sp" />
                 <View
@@ -146,7 +147,7 @@
                 <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
                     android:id="@+id/confirmPassword"
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:background="@android:color/transparent"
                     android:drawableLeft="@mipmap/lock_close"
