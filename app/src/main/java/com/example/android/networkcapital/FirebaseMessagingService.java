@@ -26,24 +26,14 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
 
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(this)
-                        .setSmallIcon(R.drawable.nc)
+                        .setSmallIcon(R.mipmap.ic_launcher)
                         .setContentTitle(notification_title)
                         .setContentText(notification_message);
 
 
-        Intent resultIntent = new Intent(click_action);
-        resultIntent.putExtra("user_id", from_user_id);
 
 
-        PendingIntent resultPendingIntent =
-                PendingIntent.getActivity(
-                        this,
-                        0,
-                        resultIntent,
-                        PendingIntent.FLAG_UPDATE_CURRENT
-                );
 
-        mBuilder.setContentIntent(resultPendingIntent);
 
 
 

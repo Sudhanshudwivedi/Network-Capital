@@ -15,12 +15,12 @@
 
         <ImageView
             android:id="@+id/img_nc"
-            android:src="@mipmap/nci_capit"
             android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:background="@android:color/transparent"
-            android:layout_centerHorizontal="true"
-            android:layout_height="100dp" />
+            android:src="@mipmap/nci_capit" />
 
         <TextView
             android:id="@+id/login"

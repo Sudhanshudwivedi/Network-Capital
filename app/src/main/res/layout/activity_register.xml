@@ -13,19 +13,19 @@
 
         <RelativeLayout
             android:id="@+id/rel1"
-            android:background="@drawable/top_background"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="-5dp"
-            android:layout_height="wrap_content">
+            android:background="@drawable/top_background">
 
                 <ImageView
                     android:id="@+id/img_nc"
-                    android:src="@mipmap/nci_capit"
                     android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
                     android:background="@android:color/transparent"
-                    android:layout_centerHorizontal="true"
-                    android:layout_height="100dp" />
+                    android:src="@mipmap/nci_capit" />
 
                 <TextView
                     android:id="@+id/login"
@@ -101,9 +101,9 @@
                     android:inputType="textWebEmailAddress"
                     android:padding="15dp"
                     android:singleLine="true"
-                    android:textColor="@color/white"
-                    android:textCursorDrawable="@color/black"
+                    android:textColor="@color/black"
                     android:textColorHint="#76000000"
+                    android:textCursorDrawable="@color/black"
                     android:textSize="16sp" />
 
                 <View
