@@ -2,9 +2,21 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/</item>
+        <item>@font/alegreya_sc_bold</item>
+        <item>@font/alegreya_sc_bold_italic</item>
+        <item>@font/alex_brush</item>
         <item>@font/allerta_stencil</item>
+        <item>@font/allura</item>
         <item>@font/amarante</item>
+        <item>@font/arbutus</item>
+        <item>@font/berkshire_swash</item>
+        <item>@font/boogaloo</item>
+        <item>@font/cantata_one</item>
         <item>@font/carter_one</item>
+        <item>@font/courgette</item>
+        <item>@font/eb_garamond</item>
+        <item>@font/enriqueta</item>
+        <item>@font/enriqueta_bold</item>
         <item>@font/neuton_extralight</item>
         <item>@font/yatra_one</item>
     </array>

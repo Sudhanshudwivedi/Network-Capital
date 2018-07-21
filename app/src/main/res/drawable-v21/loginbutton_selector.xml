@@ -9,7 +9,13 @@
         </shape></item>
 
     <!-- By default the background will be this item -->
+
     <item><shape android:shape="rectangle">
+
+        <gradient
+            android:endColor="#8AE3FB"
+            android:centerColor="#2CBFFF"
+            android:startColor="#34AAFC" />
         <corners
             android:topLeftRadius="10dp"
             android:topRightRadius="10dp"
@@ -18,7 +24,9 @@
 
             />
 
-            <solid android:color="@color/white_greyish" />
-        </shape></item>
+        <!--<solid android:color="@color/background_color" />-->
+    </shape>
+    </item>
+
 
 </selector>

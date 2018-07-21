@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- When item pressed this item will be triggered -->
+    <item android:state_pressed="true"><shape android:shape="rectangle">
+        <corners android:radius="20dp" />
+
+        <solid android:color="#34AAFC"/>
+    </shape></item>
+
+    <!-- By default the background will be this item -->
+
+    <item><shape android:shape="rectangle">
+
+        <gradient
+            android:endColor="#8AE3FB"
+            android:centerColor="#2CBFFF"
+            android:startColor="#34AAFC" />
+        <corners
+            android:topLeftRadius="20dp"
+            android:topRightRadius="20dp"
+            android:bottomLeftRadius="20dp"
+            android:bottomRightRadius="20dp"
+
+            />
+
+        <!--<solid android:color="@color/background_color" />-->
+    </shape>
+    </item>
+
+
+</selector>

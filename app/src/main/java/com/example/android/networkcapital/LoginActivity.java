@@ -122,6 +122,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void Signin() {
         final String email, pass;
+        boolean empty = false;
 
         email = lgnEmail.getText().toString();
         pass = lgnPassword.getText().toString();
@@ -131,45 +132,48 @@ public class LoginActivity extends AppCompatActivity {
         pd.setCanceledOnTouchOutside(false);
         pd.show();
 
-        if (TextUtils.isEmpty(email))
-            if (TextUtils.isEmpty(pass)) {
-                Toast.makeText(LoginActivity.this, "Enter Password", Toast.LENGTH_LONG).show();
-                return;
-            }
-        firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
+        if (TextUtils.isEmpty(email)) {
+            lgnEmail.setError("Enter your email");
+            empty=true;
+            pd.dismiss();
+        }
+        if (TextUtils.isEmpty(pass)) {
+            lgnPassword.setError("Enter your password");
+            empty = true;
+            pd.dismiss();
+        }
+        if(!empty){
+            firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
 
-                    pd.dismiss();
-                    String current_userId=firebaseAuth.getCurrentUser().getUid();
-                    String deviceToken= FirebaseInstanceId.getInstance().getToken();
-                    mUserDatabase.child(current_userId).child("device_token").setValue(deviceToken).addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void aVoid) {
+                        pd.dismiss();
+                        String current_userId = firebaseAuth.getCurrentUser().getUid();
+                        String deviceToken = FirebaseInstanceId.getInstance().getToken();
+                        mUserDatabase.child(current_userId).child("device_token").setValue(deviceToken).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
 
-                            Intent intent = (new Intent(LoginActivity.this, MainActivity.class));
-                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                            startActivity(intent);
-                            finish();
+                                Intent intent = (new Intent(LoginActivity.this, MainActivity.class));
+                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent);
+                                finish();
 
-                        }
-                    });
+                            }
+                        });
+
+
+                    } else {
+                        pd.hide();
+                        Toast.makeText(LoginActivity.this, "Invalid Email/Password", Toast.LENGTH_SHORT).show();
+
+                    }
 
 
                 }
-
-
-
-                else {
-                    pd.hide();
-                    Toast.makeText(LoginActivity.this, "Invalid Email/Password", Toast.LENGTH_SHORT).show();
-
-                }
-
-            }
-        });
-
+            });
+    }
 
     }
 }
