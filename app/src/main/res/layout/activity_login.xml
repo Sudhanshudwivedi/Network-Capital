@@ -73,7 +73,7 @@
             android:singleLine="true"
             android:cursorVisible="true"
             android:textColor="@color/black"
-            android:textCursorDrawable="@color/black"
+            android:textCursorDrawable="@null"
             android:textColorHint="#76000000"
             android:textSize="16sp" />
 
@@ -109,7 +109,7 @@
             android:textColor="@color/black"
             android:textColorHint="#76000000"
             app:additionalTouchTargetSize="50dp"
-            android:textCursorDrawable="@color/black"
+            android:textCursorDrawable="@null"
             android:textSize="16sp"
             />
 
