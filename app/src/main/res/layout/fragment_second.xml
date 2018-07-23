@@ -1,63 +1,53 @@
-<ScrollView android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    android:background="@color/white"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.android.networkcapital.SecondFragment">
-
-<FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:background="@color/white">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/user_image"
+        android:src="@drawable/user"/>
+
+    <TextView
+        android:id="@+id/post"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_button"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="280dp"
+        android:paddingTop="15dp"
+        android:textColor="@color/black"
+        android:hint="Make a post."
+        android:paddingLeft="10dp"
+        android:layout_height="50dp"
+        />
+
+    <View
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/post"
+        android:background="#d6d1d1"
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:id="@+id/v1"></View>
 
     <RelativeLayout
-        android:id="@+id/relative1"
+        android:layout_below="@id/v1"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
-            android:id="@+id/user_image"
-            android:src="@drawable/user"/>
-
-        <TextView
-            android:id="@+id/post"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/edit_button"
-            android:layout_marginLeft="80dp"
-            android:layout_marginRight="10dp"
-            android:layout_width="280dp"
-            android:paddingTop="15dp"
-            android:textColor="@color/black"
-            android:hint="Make a post."
-            android:paddingLeft="10dp"
-            android:layout_height="50dp"
-            />
-
-        <View
-            android:layout_marginTop="15dp"
-            android:layout_below="@id/post"
-            android:background="#d6d1d1"
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/post_recycler"
             android:layout_width="match_parent"
-            android:layout_height="1.5dp"
-            android:id="@+id/v1"></View>
-
-        <RelativeLayout
-            android:layout_below="@id/v1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/post_recycler"
-                android:layout_width="match_parent"
-                android:layout_height="400dp"></android.support.v7.widget.RecyclerView>
-
-        </RelativeLayout>
+            android:layout_height="match_parent"
+            android:elevation="24dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"></android.support.v7.widget.RecyclerView>
 
     </RelativeLayout>
-</FrameLayout>
 
-</ScrollView>
+</RelativeLayout>
