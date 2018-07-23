@@ -6,9 +6,13 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
     Button btn;
     TextView login;
     FirebaseAuth mAuth;
+    CheckBox mcbshowpass;
 
     Button card_btn;
 
@@ -60,6 +65,8 @@ public class RegisterActivity extends AppCompatActivity {
         btn = (Button) findViewById(R.id.signUpBtn);
         login = (TextView) findViewById(R.id.already_user);
 
+        mcbshowpass = (CheckBox) findViewById(R.id.cbShowPwd);
+
 //        card_btn = (Button) findViewById(R.id.network_btn);
 
 
@@ -79,6 +86,23 @@ public class RegisterActivity extends AppCompatActivity {
                 register();
             }
         });
+
+        mcbshowpass.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                // checkbox status is changed from uncheck to checked.
+                if (!isChecked) {
+                    // show password
+                    pass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    cpass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                } else {
+                    // hide password
+                    pass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    cpass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }
+            }
+        });
+
 
         /*card_btn.setOnClickListener(new View.OnClickListener() {
             @Override

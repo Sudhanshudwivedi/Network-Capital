@@ -57,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_below="@+id/rel1"
             android:layout_height="wrap_content"
-            android:paddingBottom="70dp"
+            android:paddingBottom="40dp"
             android:layout_marginTop="-55dp"
             android:layout_centerInParent="true"
             android:orientation="vertical"
@@ -79,7 +79,7 @@
                     android:singleLine="true"
                     android:textColorHint="#76000000"
                     android:textColor="@color/black"
-                    android:textCursorDrawable="@drawable/custom_cursor_drawer"
+                    android:textCursorDrawable="@null"
                     android:textSize="16sp" />
 
                 <View
@@ -104,7 +104,7 @@
                     android:padding="15dp"
                     android:singleLine="true"
                     android:textColor="@color/black"
-                    android:textCursorDrawable="@drawable/custom_cursor_drawer"
+                    android:textCursorDrawable="@null"
                     android:textColorHint="#76000000"
                     android:textSize="16sp" />
 
@@ -115,48 +115,14 @@
                     android:layout_marginRight="12dp"
                     android:background="@color/black" />
 
-                <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
+                <EditText
                     android:id="@+id/password"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:drawableTint="@color/black"
-                    android:drawableLeft="@mipmap/lock_close"
-                    android:drawablePadding="5dp"
-                    android:gravity="center_vertical"
-                    android:hint="Password"
-                    android:inputType="textPassword"
-                    android:paddingTop="15dp"
-                    android:paddingRight="15dp"
-                    android:paddingLeft="10dp"
-                    android:paddingBottom="15dp"
-                    android:singleLine="true"
-                    app:drawable_hide="@mipmap/eye_opens"
-                    app:drawable_show="@mipmap/eye_close"
-                    android:textColor="@color/black"
-                    android:textCursorDrawable="@drawable/custom_cursor_drawer"
-                    android:cursorVisible="true"
-                    android:textColorHint="#76000000"
-                    android:textSize="16sp" />
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="1px"
-                    android:layout_marginRight="12dp"
-                    android:layout_marginLeft="12dp"
-                    android:background="@color/black" />
-
-
-                <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
-                    android:id="@+id/confirmPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:background="@android:color/transparent"
                     android:drawableLeft="@mipmap/lock_close"
-                    android:drawableTint="@color/black"
                     android:drawablePadding="5dp"
-                    app:drawable_hide="@mipmap/eye_opens"
-                    app:drawable_show="@mipmap/eye_close"
                     android:gravity="center_vertical"
                     android:hint="Confirm Password"
                     android:inputType="textPassword"
@@ -166,7 +132,36 @@
                     android:paddingBottom="15dp"
                     android:singleLine="true"
                     android:textColor="@color/black"
-                    android:textCursorDrawable="@drawable/custom_cursor_drawer"
+                    android:textCursorDrawable="@null"
+                    android:textColorHint="#76000000"
+                    android:textSize="16sp" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:background="@color/black" />
+
+
+                <EditText
+                    android:id="@+id/confirmPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@android:color/transparent"
+                    android:drawableLeft="@mipmap/lock_close"
+                    android:drawableTint="@color/black"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:hint="Again Confirm Password"
+                    android:inputType="textPassword"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="15dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="@null"
                     android:textColorHint="#76000000"
                     android:textSize="16sp" />
 
@@ -176,6 +171,17 @@
                     android:layout_marginRight="12dp"
                     android:layout_height="1px"
                     android:background="@color/black" />
+
+                <CheckBox
+                    android:layout_marginLeft="12dp"
+                    android:id="@+id/cbShowPwd"
+                    android:paddingLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#9b9999"
+                    android:textSize="16sp"
+                    android:text="@string/show_pwd" />
 
 
         </LinearLayout>

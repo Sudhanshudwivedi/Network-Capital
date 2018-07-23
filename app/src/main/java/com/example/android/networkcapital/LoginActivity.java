@@ -44,6 +44,8 @@ public class LoginActivity extends AppCompatActivity {
     private RadioButton chk1,chk2;
     private DatabaseReference mUserDatabase;
 
+    CheckBox mshowpass;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +78,9 @@ public class LoginActivity extends AppCompatActivity {
         lgnButton = (Button) findViewById(R.id.loginBtn);
         mUserDatabase=FirebaseDatabase.getInstance().getReference().child("Users");
 
+
+        mshowpass = (CheckBox) findViewById(R.id.cbShowPwd);
+
         TextView text = (TextView) findViewById(R.id.createAccount);
         pd = new ProgressDialog(this);
         firebaseAuth = FirebaseAuth.getInstance();
@@ -103,7 +108,19 @@ public class LoginActivity extends AppCompatActivity {
         });
         */
 
+        mshowpass.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                // checkbox status is changed from uncheck to checked.
+                if (!isChecked) {
+                    // show password
+                    lgnPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    } else {
+                    // hide password
+                    lgnPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    }
+            }
+        });
 
         text.setOnClickListener(new View.OnClickListener() {
             @Override

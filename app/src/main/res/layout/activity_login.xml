@@ -15,12 +15,12 @@
 
         <ImageView
             android:id="@+id/img_nc"
-            android:src="@mipmap/nci_capit"
             android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:background="@android:color/transparent"
-            android:layout_centerHorizontal="true"
-            android:layout_height="100dp" />
+            android:src="@mipmap/nci_capit" />
 
         <TextView
             android:id="@+id/login"
@@ -51,7 +51,7 @@
         android:layout_width="match_parent"
         android:layout_below="@+id/rel1"
         android:layout_height="wrap_content"
-        android:paddingBottom="70dp"
+        android:paddingBottom="50dp"
         android:layout_marginTop="-55dp"
         android:layout_centerInParent="true"
         android:orientation="vertical"
@@ -85,7 +85,7 @@
             android:background="@color/black" />
 
 
-        <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
+        <EditText
             android:id="@+id/login_password"
             android:layout_width="fill_parent"
             android:cursorVisible="true"
@@ -96,19 +96,14 @@
             android:drawablePadding="5dp"
             android:gravity="center_vertical"
             android:hint="@string/passowrd"
-            app:drawable_hide="@mipmap/eye_opens"
-            app:drawable_show="@mipmap/eye_close"
             android:inputType="textPassword"
             android:paddingTop="15dp"
             android:paddingRight="15dp"
             android:paddingLeft="10dp"
             android:paddingBottom="15dp"
             android:singleLine="true"
-
-            app:tint_color="@android:color/black"
             android:textColor="@color/black"
             android:textColorHint="#76000000"
-            app:additionalTouchTargetSize="50dp"
             android:textCursorDrawable="@null"
             android:textSize="16sp"
             />
@@ -119,6 +114,17 @@
             android:layout_marginLeft="12dp"
             android:layout_marginRight="12dp"
             android:background="@color/black" />
+
+        <CheckBox
+            android:layout_marginLeft="12dp"
+            android:id="@+id/cbShowPwd"
+            android:paddingLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textColor="#9b9999"
+            android:textSize="16sp"
+            android:text="@string/show_pwd" />
 
         <!--<LinearLayout-->
             <!--android:layout_width="fill_parent"-->
