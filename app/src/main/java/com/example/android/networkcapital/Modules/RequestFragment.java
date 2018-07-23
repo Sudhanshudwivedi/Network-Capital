@@ -1,4 +1,4 @@
-package com.example.android.networkcapital.Modules;
+package com.network.android.networkcapital.Modules;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -15,10 +15,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.android.networkcapital.ChatActivity;
-import com.example.android.networkcapital.Friends;
-import com.example.android.networkcapital.ProfileActivity;
-import com.example.android.networkcapital.R;
+import com.network.android.networkcapital.ChatActivity;
+import com.network.android.networkcapital.Friends;
+import com.network.android.networkcapital.ProfileActivity;
+import com.network.android.networkcapital.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;

@@ -15,7 +15,7 @@
     android:id="@+id/rle1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.networkcapital.PrimaryFragment">
+    tools:context="com.network.android.networkcapital.PrimaryFragment">
 
 
     <!--<EditText-->

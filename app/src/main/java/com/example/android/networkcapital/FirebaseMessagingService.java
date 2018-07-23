@@ -1,11 +1,11 @@
-package com.example.android.networkcapital;
+package com.network.android.networkcapital;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 
-import com.example.android.networkcapital.R;
+import com.network.android.networkcapital.R;
 import com.google.firebase.messaging.RemoteMessage;
 
 

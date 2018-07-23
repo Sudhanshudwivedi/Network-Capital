@@ -1,4 +1,4 @@
-package com.example.android.networkcapital;
+package com.network.android.networkcapital;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;

@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:875779976718:android:b95ab1603a806147",
         "android_client_info": {
-          "package_name": "com.example.android.networkcapital"
+          "package_name": "com.network.android.networkcapital"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "875779976718-ikd10lb1qjrqar637q667ep4a9u8e2e5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.android.networkcapital",
+            "package_name": "com.network.android.networkcapital",
             "certificate_hash": "44395243c5b34078ef084bf782d4fb5204a2e0f1"
           }
         },
@@ -26,7 +26,7 @@
           "client_id": "875779976718-qjum0u4bv479fc897lk9c9t4sji798bo.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.android.networkcapital",
+            "package_name": "com.network.android.networkcapital",
             "certificate_hash": "dae735989cb6c5e603ee6f5cd9b0da5da667e79c"
           }
         },

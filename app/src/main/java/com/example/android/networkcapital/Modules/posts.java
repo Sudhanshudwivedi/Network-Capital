@@ -1,4 +1,4 @@
-package com.example.android.networkcapital.Modules;
+package com.network.android.networkcapital.Modules;
 
 
 

@@ -1,4 +1,4 @@
-package com.example.android.networkcapital;
+package com.network.android.networkcapital;
 
 /**
  * Created by AkshayeJH on 24/07/17.

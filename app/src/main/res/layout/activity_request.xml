@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/fragment3"
-        android:name="com.example.android.networkcapital.Modules.RequestFragment"
+        android:name="com.network.android.networkcapital.Modules.RequestFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="84dp"

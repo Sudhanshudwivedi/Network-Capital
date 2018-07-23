@@ -1,4 +1,4 @@
-package com.example.android.networkcapital;
+package com.network.android.networkcapital;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -20,7 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.android.networkcapital.Modules.posts;
+import com.network.android.networkcapital.Modules.posts;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

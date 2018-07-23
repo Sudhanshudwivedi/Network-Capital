@@ -1,4 +1,4 @@
-package com.example.android.networkcapital;
+package com.network.android.networkcapital;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,7 +21,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.android.networkcapital.Modules.FriendsActivity;
+import com.network.android.networkcapital.Modules.FriendsActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -232,7 +232,10 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            mUserRef.child("online").setValue(ServerValue.TIMESTAMP);
+            FirebaseAuth.getInstance().signOut();
+            sendToStart();
+
         }
 
         return super.onOptionsItemSelected(item);

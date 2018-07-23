@@ -1,4 +1,4 @@
-package com.example.android.networkcapital;
+package com.network.android.networkcapital;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -16,7 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.android.networkcapital.Modules.posts;
+import com.network.android.networkcapital.Modules.posts;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -148,15 +148,15 @@ public class CommentActivity extends AppCompatActivity {
                 usersViewHolder.setTimestamp(users.getTimestamp());
                 usersViewHolder.setThumb_image(users.getThumb_image(), getApplicationContext());
 
-               // final String user_id = getRef(position).getKey();
+                 final String user_id = getRef(position).getKey();
 
                 usersViewHolder.mView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
 
-                       // Intent profileIntent = new Intent(AllUserActivity.this, ProfileActivity.class);
-                       // profileIntent.putExtra("user_id", user_id);
-                       // startActivity(profileIntent);
+                         Intent profileIntent = new Intent(CommentActivity.this, ProfileActivity.class);
+                        profileIntent.putExtra("user_id", user_id);
+                         startActivity(profileIntent);
 
                     }
                 });

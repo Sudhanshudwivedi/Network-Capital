@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.networkcapital">
+    package="com.network.android.networkcapital">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -54,7 +54,7 @@
         <activity android:name=".ProfileActivity">
 
             <intent-filter>
-                <action android:name="com.example.android.networkcapital_TARGET_NOTIFICATION" />
+                <action android:name="com.network.android.networkcapital_TARGET_NOTIFICATION" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
