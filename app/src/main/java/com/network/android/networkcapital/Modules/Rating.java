@@ -28,7 +28,7 @@ public class Rating extends AppCompatActivity{
         user_rating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                usr_login_rating = rating; //ratings store in variable if it changes. 
+                usr_login_rating = rating; //ratings store in variable if it changes.
             }
         });
 
