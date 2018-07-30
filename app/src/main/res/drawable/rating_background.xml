@@ -14,17 +14,10 @@
 
         <gradient
             android:angle="90"
-            android:endColor="#3B5998"
-            android:centerColor="#3B5998"
-            android:startColor="#3B5998" />
-        <corners
-            android:topLeftRadius="10dp"
-            android:topRightRadius="10dp"
-            android:bottomLeftRadius="10dp"
-            android:bottomRightRadius="10dp"
-
-            />
-
+            android:endColor="#afbdd4"
+            android:centerColor="#d8dfea"
+            android:startColor="#ffffff"
+            android:type="linear"/>
         <!--<solid android:color="@color/background_color" />-->
     </shape>
     </item>
