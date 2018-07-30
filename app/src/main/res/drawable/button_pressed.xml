@@ -4,13 +4,13 @@
 
     <gradient
         android:angle="270"
-        android:endColor="#673ab7"
-        android:startColor="#673ab7"
-        android:centerColor="#673ab7"/>
+        android:endColor="@color/background_color"
+        android:startColor="@color/background_color"
+        android:centerColor="@color/background_color"/>
 
     <corners android:radius="7dp" />
 
     <stroke
         android:width="2px"
-        android:color="#673ab7" />
+        android:color="@color/background_color" />
 </shape>

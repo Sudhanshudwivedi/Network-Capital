@@ -17,7 +17,7 @@
         android:id="@+id/rel1"
         android:background="@color/colorPrimary"
         android:layout_width="match_parent"
-        android:layout_height="150dp">
+        android:layout_height="160dp">
 
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -32,10 +32,10 @@
             android:id="@+id/upload"
             android:layout_width="150sp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:text="Upload Image"
-            android:background="@drawable/loginbutton_selector"
-            android:textColor="@color/background_color"
+            android:background="@drawable/upload_image"
+            android:textColor="@color/white"
             android:textSize="17sp"
             android:textStyle="bold"
             android:layout_below="@id/image2"
@@ -370,7 +370,7 @@
             android:text="Save"
             android:background="@drawable/loginbutton_selector"
             android:layout_centerInParent="true"
-            android:textColor="@color/background_color"
+            android:textColor="@color/white"
             android:textSize="17sp"
             android:textStyle="bold"
             android:layout_below="@id/look_text"

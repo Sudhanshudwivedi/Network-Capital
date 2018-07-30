@@ -3,6 +3,7 @@ package com.network.android.networkcapital;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -236,6 +237,7 @@ public class SecondFragment extends Fragment {
                     if(dataSnapshot.child(PostKey).hasChild(currentuserId)){
                         countlikes = (int) dataSnapshot.child(PostKey).getChildrenCount();
                         Likepostbutton.setImageResource(R.mipmap.likepost);
+                        Likepostbutton.setColorFilter(Likepostbutton.getContext().getResources().getColor(R.color.background_color), PorterDuff.Mode.SRC_ATOP);
                         Displaynofolikes.setText(Integer.toString(countlikes) + (" Likes"));
                     }
                     else {

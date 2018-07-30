@@ -3,16 +3,23 @@
 
 
 
-    <color name="colorPrimary">#673ab7</color>
-    <color name="colorPrimaryDark">#673ab7</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="background_color">#673ab7</color>
+    <color name="colorPrimary">#3B5998</color>
+    <color name="colorPrimaryDark">#3B5998</color>
+
+    <color name="colorAccent">#6d84b4</color>
+
+    <!--<color name="colorAccent">#FF4081</color>-->
+
+    <color name="background_color">#3B5998</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="white_greyish">#EEEEEE</color>
     <color name="darkColor">#222222</color>
     <color name="button_selectorcolor">#9E9E9E</color>
-    <color name="basecolor">#673ab7</color>
+
+    <color name="basecolor">#3B5998</color>
+
+    <color name="base_color">#673ab7</color>
 
     <color name="grey">#8c8a8a</color>
 

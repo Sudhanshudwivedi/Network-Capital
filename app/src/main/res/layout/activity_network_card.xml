@@ -112,6 +112,7 @@
         <ImageView
             android:id="@+id/image4"
             android:layout_width="15dp"
+            android:tint="@color/background_color"
             android:src="@drawable/education"
             android:layout_height="15dp" />
 
@@ -149,6 +150,7 @@
             android:id="@+id/image5"
             android:layout_below="@+id/v1"
             android:layout_width="15dp"
+            android:tint="@color/background_color"
             android:src="@drawable/work"
             android:layout_height="15dp"
             android:layout_marginTop="15dp"/>
@@ -190,6 +192,7 @@
             android:layout_marginTop="15dp"
             android:layout_width="15dp"
             android:src="@drawable/help"
+            android:tint="@color/background_color"
             android:layout_height="15dp" />
 
         <TextView
@@ -228,6 +231,7 @@
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_below="@+id/v3"
+            android:tint="@color/background_color"
             android:layout_marginTop="15dp"
             android:src="@drawable/lo"
             />

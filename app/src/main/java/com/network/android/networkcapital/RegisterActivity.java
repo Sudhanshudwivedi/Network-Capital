@@ -201,11 +201,10 @@ public class RegisterActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
                             Toast.makeText(RegisterActivity.this, "Registration Sucessful", Toast.LENGTH_LONG).show();
                             Intent intent=new Intent(RegisterActivity.this, LoginActivity.class);
-
-
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
-
                             mProgress.dismiss();
+                            finish();
 
                         }
                     });

@@ -61,7 +61,7 @@
         android:background="@drawable/loginbutton_selector"
         android:padding="3dp"
         android:text="SUBMIT"
-        android:textColor="@color/background_color"
+        android:textColor="@color/white"
         android:textSize="17sp"
         android:textStyle="bold" />
 
