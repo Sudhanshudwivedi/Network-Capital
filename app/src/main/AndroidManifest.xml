@@ -52,20 +52,20 @@
         <activity android:name=".CommentActivity" />
         <activity android:name=".HelpUsers" />
         <activity android:name=".ProfileActivity">
-
             <intent-filter>
                 <action android:name="com.network.android.networkcapital_TARGET_NOTIFICATION" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ChatActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".ChatActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Modules.FriendsActivity" />
         <activity android:name=".ChatListActivity" />
-        <activity android:name=".RequestActivity"></activity>
+        <activity android:name=".RequestActivity" />
+        <activity android:name=".Modules.Rating"></activity>
     </application>
 
 </manifest>

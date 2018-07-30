@@ -227,7 +227,7 @@
             android:layout_below="@+id/login_layout"
             android:background="@drawable/login_select"
             android:padding="3dp"
-            android:text="Sign In"
+            android:text="Sign Up"
             android:textColor="@color/white"
             android:textSize="17sp"
             android:layout_marginBottom="10dp"
@@ -239,7 +239,7 @@
             android:layout_below="@+id/signUpBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="20dp">
                 <TextView
                     android:id="@+id/create"
                     android:text="Already have an account?"
@@ -249,7 +249,8 @@
                 <TextView
                     android:id="@+id/already_user"
                     android:textStyle="bold"
-                    android:text=" Sign Up"
+                    android:text=" Sign In"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 

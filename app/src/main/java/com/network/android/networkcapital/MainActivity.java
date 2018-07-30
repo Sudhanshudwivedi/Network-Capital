@@ -30,6 +30,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
+import com.network.android.networkcapital.Modules.Rating;
 import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity
@@ -275,7 +276,10 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_friends) {
             Intent intent = new Intent(MainActivity.this, FriendsActivity.class);
             startActivity(intent);
-        }
+        } else if(id == R.id.nav_ratings){
+              Intent intent = new Intent(MainActivity.this, Rating.class);
+              startActivity(intent);
+          }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
