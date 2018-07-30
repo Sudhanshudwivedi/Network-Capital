@@ -249,10 +249,9 @@
                 <TextView
                     android:id="@+id/already_user"
                     android:textStyle="bold"
-                    android:text=" Sign in"
+                    android:text=" Sign Up"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
-
 
 
         </LinearLayout>

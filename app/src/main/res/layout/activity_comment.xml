@@ -9,12 +9,15 @@
     android:background="@color/white"
     tools:context=".CommentActivity">
 
+    <!--<RelativeLayout0-->
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/Clist"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/ll1"
         android:layout_margin="5dp"
+        android:layout_marginBottom="50dp"
         android:background="@color/white" />
 
 
