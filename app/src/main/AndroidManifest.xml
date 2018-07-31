@@ -58,12 +58,17 @@
         <activity android:name=".PostActivity" />
 
         <activity android:name=".LikeActivity"
-            android:label="People who liked your post"/>
+            android:label="People who liked your post"
+            android:parentActivityName=".MainActivity"/>
 
         <activity android:name=".CommentActivity"
-            android:label="Comments"/>
+            android:label="Comments"
+            android:parentActivityName=".MainActivity"/>
 
-        <activity android:name=".HelpUsers" />
+        <activity android:name=".HelpUsers"
+            android:label="Mentors"
+            android:parentActivityName=".MainActivity"
+            />
 
         <activity android:name=".ProfileActivity">
             <intent-filter>
@@ -79,20 +84,26 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity android:name=".Modules.FriendsActivity"
-            android:label="Friends"/>
+            android:label="Friends"
+            android:parentActivityName=".MainActivity"/>
 
         <activity android:name=".ChatListActivity"
-            android:label="Chats"/>
+            android:label="Chats"
+            android:parentActivityName=".MainActivity"/>
 
         <activity android:name=".RequestActivity"
-            android:label="Friend Requests"/>
+            android:label="Friend Requests"
+            android:parentActivityName=".MainActivity"/>
 
         <activity android:name=".Modules.Rating"
             android:label="Ratings"/>
 
         <activity android:name=".CommentNC" />
 
-        <activity android:name=".RateYourFriends" />
+        <activity android:name=".RateYourFriends"
+            android:parentActivityName=".MainActivity"
+            android:label="Friends Rating"
+            />
 
         <activity android:name=".AlreadyRated"
             android:label="Ratings"></activity>
