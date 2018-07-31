@@ -173,16 +173,24 @@ public class edit_details extends AppCompatActivity {
 
 
                             if (i != mUserItems.size() - 1) {
-                                item = item + ",";
+                                item = item + ", ";
                             }
                         }
                         mItemSelected.setText(item);
+
+                        if(mItemSelected.getText().toString().isEmpty()){
+                            mItemSelected.setText("None ");
+                        }
+
                     }
                 });
 
                 builder.setNegativeButton(R.string.dismiss_label, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        if(mItemSelected.getText().toString().isEmpty()){
+                            mItemSelected.setText("None ");
+                        }
                         dialogInterface.dismiss();
                     }
                 });
@@ -193,7 +201,7 @@ public class edit_details extends AppCompatActivity {
                         for (int i = 0; i < checkedItems.length; i++) {
                             checkedItems[i] = false;
                             mUserItems.clear();
-                            mItemSelected.setText("");
+                            mItemSelected.setText("None ");
                         }
                     }
                 });
@@ -234,12 +242,20 @@ public class edit_details extends AppCompatActivity {
                             }
                         }
                         mItemSelected2.setText(item);
+
+                        if(mItemSelected2.getText().toString().isEmpty()){
+                            mItemSelected2.setText("None ");
+                        }
+
                     }
                 });
 
                 builder.setNegativeButton(R.string.dismiss_label, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        if(mItemSelected2.getText().toString().isEmpty()){
+                            mItemSelected2.setText("None ");
+                        }
                         dialogInterface.dismiss();
                     }
                 });
@@ -250,7 +266,7 @@ public class edit_details extends AppCompatActivity {
                         for (int i = 0; i < checkedItems2.length; i++) {
                             checkedItems2[i] = false;
                             mUserItems2.clear();
-                            mItemSelected2.setText("");
+                            mItemSelected2.setText("None ");
                         }
                     }
                 });
@@ -340,9 +356,18 @@ public class edit_details extends AppCompatActivity {
         wor = wr.getText().toString().trim();
         woc = wc.getText().toString().trim();
         ho1 = mItemSelected.getText().toString().trim();
+        if(ho1.isEmpty()){
+            mItemSelected.setText("None ");
+            ho1 = mItemSelected.getText().toString().trim();
+        }
 //        ho2 = h2.getText().toString().trim();
 //        ho3 = h3.getText().toString().trim();
         lo1 = mItemSelected2.getText().toString().trim();
+        if(lo1.isEmpty()){
+            mItemSelected2.setText("None ");
+            lo1 = mItemSelected2.getText().toString().trim();
+        }
+//        Toast.makeText(getApplicationContext(),lo1,Toast.LENGTH_SHORT).show();
 //        lo2 = l2.getText().toString().trim();
 //        lo3 = l3.getText().toString().trim();
 //        so1 = mItemSelected3.getText().toString().trim();
