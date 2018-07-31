@@ -27,9 +27,11 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
+
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -39,19 +41,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".NetworkCard"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".edit_details"
+            android:label="Network Card Details"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity android:name=".PostActivity" />
-        <activity android:name=".LikeActivity" />
-        <activity android:name=".CommentActivity" />
+
+        <activity android:name=".LikeActivity"
+            android:label="People who liked your post"/>
+
+        <activity android:name=".CommentActivity"
+            android:label="Comments"/>
+
         <activity android:name=".HelpUsers" />
+
         <activity android:name=".ProfileActivity">
             <intent-filter>
                 <action android:name="com.network.android.networkcapital_TARGET_NOTIFICATION" />
@@ -59,17 +72,30 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".ChatActivity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Modules.FriendsActivity" />
-        <activity android:name=".ChatListActivity" />
-        <activity android:name=".RequestActivity" />
-        <activity android:name=".Modules.Rating" />
+
+        <activity android:name=".Modules.FriendsActivity"
+            android:label="Friends"/>
+
+        <activity android:name=".ChatListActivity"
+            android:label="Chats"/>
+
+        <activity android:name=".RequestActivity"
+            android:label="Friend Requests"/>
+
+        <activity android:name=".Modules.Rating"
+            android:label="Ratings"/>
+
         <activity android:name=".CommentNC" />
+
         <activity android:name=".RateYourFriends" />
-        <activity android:name=".AlreadyRated"></activity>
+
+        <activity android:name=".AlreadyRated"
+            android:label="Ratings"></activity>
     </application>
 
 </manifest>

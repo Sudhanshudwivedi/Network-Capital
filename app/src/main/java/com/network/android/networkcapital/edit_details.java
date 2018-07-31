@@ -353,7 +353,7 @@ public class edit_details extends AppCompatActivity {
 
 
         if(!co.isEmpty())
-            ro = ro + "," + co;
+            ro = ro + ", " + co;
         if(!in.isEmpty())
             de = de + " " + in;
         if(!woc.isEmpty())

@@ -7,8 +7,6 @@
     >
 
 
-
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/likes_list"
         android:layout_marginTop="5dp"
