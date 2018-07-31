@@ -14,14 +14,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.network.android.networkcapital.Modules.Rating;
 import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -36,12 +39,14 @@ public class FriendsFragment extends Fragment {
 
     private DatabaseReference mFriendsDatabase;
     private DatabaseReference mUsersDatabase;
+    private DatabaseReference rDatabase,frDatabase;
 
     private FirebaseAuth mAuth;
 
     private String mCurrent_user_id;
 
     private View mMainView;
+    private FirebaseUser mCurrentUser;
     private LinearLayoutManager mLayoutManager;
 
 
@@ -70,6 +75,7 @@ public class FriendsFragment extends Fragment {
         mFriendsList.setHasFixedSize(true);
         mFriendsList.setLayoutManager(new LinearLayoutManager(getContext()));
 
+
         // Inflate the layout for this fragment
         return mMainView;
     }
@@ -92,8 +98,23 @@ public class FriendsFragment extends Fragment {
             protected void populateViewHolder(final FriendsViewHolder friendsViewHolder, Friends friends, int i) {
 
                // friendsViewHolder.setDate(friends.getDate());
+                final int[] sd = {0};
 
                 final String list_user_id = getRef(i).getKey();
+
+
+                if(sd[0]==1)
+                {
+                    friendsViewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Toast.makeText(getActivity(),"You have already rated your friends",Toast.LENGTH_SHORT).show();
+
+
+                        }
+                    });
+                }
+
 
                 mUsersDatabase.child(list_user_id).addValueEventListener(new ValueEventListener() {
                     @Override
@@ -110,7 +131,7 @@ public class FriendsFragment extends Fragment {
                             @Override
                             public void onClick(View view) {
 
-                                CharSequence options[] = new CharSequence[]{"Open Profile", "Send message"};
+                                CharSequence options[] = new CharSequence[]{"Open Profile", "Send message","Rate your Friend"};
 
                                 final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
 
@@ -120,7 +141,7 @@ public class FriendsFragment extends Fragment {
                                     public void onClick(DialogInterface dialogInterface, int i) {
 
                                         //Click Event for each item.
-                                        if(i == 0){
+                                        if (i == 0) {
 
                                             Intent profileIntent = new Intent(getContext(), ProfileActivity.class);
                                             profileIntent.putExtra("user_id", list_user_id);
@@ -128,7 +149,7 @@ public class FriendsFragment extends Fragment {
 
                                         }
 
-                                        if(i == 1){
+                                        if (i == 1) {
 
                                             Intent chatIntent = new Intent(getContext(), ChatActivity.class);
                                             chatIntent.putExtra("user_id", list_user_id);
@@ -136,11 +157,52 @@ public class FriendsFragment extends Fragment {
                                             startActivity(chatIntent);
 
                                         }
+                                        if (i == 2)
+                                        {
+                                            mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
+                                            final String uid = mCurrentUser.getUid();
+                                            frDatabase= FirebaseDatabase.getInstance().getReference().child("Friends").child(uid).child(list_user_id);
+
+                                            frDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                @Override
+                                                public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                                    String da=dataSnapshot.child("date").getValue().toString();
+
+
+                                                    {
+
+                                                        Intent intent = new Intent(getContext(), Rating.class);
+                                                        intent.putExtra("user_id", list_user_id);
+                                                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK |  Intent.FLAG_ACTIVITY_CLEAR_TOP) ;
+
+                                                        startActivity(intent);
+
+
+
+
+                                                    }
+
+
+
+                                                }
+
+
+
+                                                @Override
+                                                public void onCancelled(DatabaseError databaseError) {
+
+                                                }
+                                            });
+
+
+                                        }
 
                                     }
                                 });
 
                                 builder.show();
+
 
                             }
                         });
@@ -153,6 +215,7 @@ public class FriendsFragment extends Fragment {
 
                     }
                 });
+
 
             }
         };

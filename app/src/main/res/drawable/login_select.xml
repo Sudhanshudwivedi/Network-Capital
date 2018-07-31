@@ -5,8 +5,8 @@
     <item android:state_pressed="true"><shape android:shape="rectangle">
         <corners android:radius="20dp" />
 
-        <solid android:color="#3B5998"/>
-    </shape></item>
+
+        <solid android:color="#3B5998"/>    </shape></item>
 
     <!-- By default the background will be this item -->
 

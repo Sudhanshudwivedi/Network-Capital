@@ -49,6 +49,7 @@
             android:name=".edit_details"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".PostActivity" />
+        <activity android:name=".LikeActivity" />
         <activity android:name=".CommentActivity" />
         <activity android:name=".HelpUsers" />
         <activity android:name=".ProfileActivity">
@@ -65,7 +66,10 @@
         <activity android:name=".Modules.FriendsActivity" />
         <activity android:name=".ChatListActivity" />
         <activity android:name=".RequestActivity" />
-        <activity android:name=".Modules.Rating"></activity>
+        <activity android:name=".Modules.Rating" />
+        <activity android:name=".CommentNC" />
+        <activity android:name=".RateYourFriends" />
+        <activity android:name=".AlreadyRated"></activity>
     </application>
 
 </manifest>

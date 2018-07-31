@@ -56,15 +56,16 @@
             android:layout_height="40dp" />
 
         <TextView
-            android:layout_marginRight="27dp"
-            android:layout_alignParentRight="true"
-            android:textColor="#ffffff"
-            android:layout_below="@id/image3"
-            android:text="Trust Score"
             android:id="@+id/text3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/image3"
+            android:layout_marginRight="27dp"
+            android:layout_marginTop="0dp"
+            android:text="Trust Score"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"

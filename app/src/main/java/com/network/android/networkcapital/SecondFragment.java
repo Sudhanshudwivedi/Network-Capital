@@ -41,7 +41,7 @@ public class SecondFragment extends Fragment {
     TextView post,timestamp;
     DatabaseReference mSUserDatabase;
     DatabaseReference mSPostDatabase;
-    DatabaseReference msLikeDatabase;
+    DatabaseReference msLikeDatabase,mLikeDatabase;
     DatabaseReference cmnt;
     private RecyclerView postList;
     private static Context context = null;
@@ -159,13 +159,38 @@ public class SecondFragment extends Fragment {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
                                 if(LikeChecker.equals(true)){
-                                    if(dataSnapshot.child(user_id).hasChild(uid)){
-                                        msLikeDatabase.child(user_id).child(uid).removeValue();
+                                    if(dataSnapshot.child(user_id).child("LIKES").hasChild(uid)){
+
+                                        msLikeDatabase.child(user_id).child("LIKES").child(uid).child("bool").removeValue();
+                                        msLikeDatabase.child(user_id).child("LIKES").child(uid).child("name").removeValue();
+                                        msLikeDatabase.child(user_id).child("LIKES").child(uid).child("thumb_image").removeValue();
                                         LikeChecker = false;
 
                                     }else{
-                                        msLikeDatabase.child(user_id).child(uid).setValue(true);
-                                        LikeChecker = false;
+                                        mLikeDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+
+                                        mLikeDatabase.addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                                String image=dataSnapshot.child("thumb_image").getValue().toString();
+                                                String name=dataSnapshot.child("name").getValue().toString();
+
+                                                msLikeDatabase.child(user_id).child("LIKES").child(uid).child("name").setValue(name);
+                                                msLikeDatabase.child(user_id).child("LIKES").child(uid).child("thumb_image").setValue(image);
+
+                                                msLikeDatabase.child(user_id).child("LIKES").child(uid).child("bool").setValue(true);
+
+
+                                                LikeChecker = false;
+
+                                            }
+
+                                            @Override
+                                            public void onCancelled(DatabaseError databaseError) {
+
+                                            }
+                                        });
                                     }
                                 }
                             }
@@ -217,33 +242,54 @@ public class SecondFragment extends Fragment {
         {
             final DatabaseReference comment = cmnt.child(PostKey).child("Comment");
             comment.addValueEventListener(new ValueEventListener() {
-             @Override
-             public void onDataChange(DataSnapshot dataSnapshot) {
-                 commentCount = (int) dataSnapshot.getChildrenCount();
-                 CommentLikes.setText(Integer.toString(commentCount) + (" Comments"));
-             }
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    commentCount = (int) dataSnapshot.getChildrenCount();
+                    CommentLikes.setText(Integer.toString(commentCount) + (" Comments"));
+                }
 
-             @Override
-             public void onCancelled(DatabaseError databaseError) {
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
-             }
-         });
+                }
+            });
         }
 
         public void setLikeButtonStatus(final String PostKey){
             likesref.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    if(dataSnapshot.child(PostKey).hasChild(currentuserId)){
-                        countlikes = (int) dataSnapshot.child(PostKey).getChildrenCount();
+                    if(dataSnapshot.child(PostKey).child("LIKES").hasChild(currentuserId)){
+                        countlikes = (int) dataSnapshot.child(PostKey).child("LIKES").getChildrenCount();
                         Likepostbutton.setImageResource(R.mipmap.likepost);
                         Likepostbutton.setColorFilter(Likepostbutton.getContext().getResources().getColor(R.color.background_color), PorterDuff.Mode.SRC_ATOP);
+
                         Displaynofolikes.setText(Integer.toString(countlikes) + (" Likes"));
+                        Displaynofolikes.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent intent = new Intent(mView.getContext(), LikeActivity.class);
+                                intent.putExtra("user_id", PostKey);
+
+                                mView.getContext().startActivity(intent);
+
+                            }
+                        });
                     }
                     else {
-                        countlikes = (int) dataSnapshot.child(PostKey).getChildrenCount();
+                        countlikes = (int) dataSnapshot.child(PostKey).child("LIKES").getChildrenCount();
                         Likepostbutton.setImageResource(R.mipmap.dislike);
                         Displaynofolikes.setText(Integer.toString(countlikes) + (" Likes"));
+                        Displaynofolikes.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent intent = new Intent(mView.getContext(), LikeActivity.class);
+                                intent.putExtra("user_id", PostKey);
+
+                                mView.getContext().startActivity(intent);
+
+                            }
+                        });
                     }
                 }
 
@@ -273,9 +319,9 @@ public class SecondFragment extends Fragment {
         }
         public void setThumb_image(String thumb_image, Context ctx){
 
-           CircleImageView userImageView = (CircleImageView) mView.findViewById(R.id.post_profile_img);
+            CircleImageView userImageView = (CircleImageView) mView.findViewById(R.id.post_profile_img);
 
-           Picasso.with(ctx).load(thumb_image).placeholder(R.drawable.user).into(userImageView);
+            Picasso.with(ctx).load(thumb_image).placeholder(R.drawable.user).into(userImageView);
 
 
         }
@@ -298,10 +344,10 @@ public class SecondFragment extends Fragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-               String image=dataSnapshot.child("thumb_image").getValue().toString();
+                String image=dataSnapshot.child("thumb_image").getValue().toString();
                 if(!image.equals("default")) {
 
-                   Picasso.with(context).load(image).placeholder(R.drawable.user).into(imageView);
+                    Picasso.with(context).load(image).placeholder(R.drawable.user).into(imageView);
                 }
                 mProgressDialog.dismiss();
             }

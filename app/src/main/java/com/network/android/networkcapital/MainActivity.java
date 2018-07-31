@@ -200,7 +200,7 @@ public class MainActivity extends AppCompatActivity
         finish();
 
     }
-
+    
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -276,7 +276,7 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this, FriendsActivity.class);
             startActivity(intent);
         } else if(id == R.id.nav_ratings){
-              Intent intent = new Intent(MainActivity.this, Rating.class);
+              Intent intent = new Intent(MainActivity.this, RateYourFriends.class);
               startActivity(intent);
           }
 

@@ -3,16 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/rating_background"
     android:layout_height="match_parent"
+    android:background="@drawable/rating_background"
     tools:context="com.network.android.networkcapital.Modules.Rating">
 
-    <!--<ImageView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:src="@drawable/background_clean1"-->
-        <!--android:scaleType="centerCrop"-->
-        <!--/>-->
+    
 
     <android.support.v7.widget.CardView
         android:layout_width="300dp"
@@ -39,13 +34,13 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:layout_gravity="center"
-                android:text="RATE YOUR FRIENDS"
-                android:textStyle="bold"
-                android:textSize="25dp"
-                android:textColor="@color/background_color"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="RATE YOUR FRIEND"
+                android:textColor="@color/background_color"
+                android:textSize="25dp"
+                android:textStyle="bold" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -63,12 +58,13 @@
                 />
 
             <TextView
-                android:layout_marginTop="10dp"
-                android:textSize="18dp"
-                android:text="Utkarsh Amitabh"
-                android:layout_gravity="center_horizontal"
+                android:id="@+id/user_name"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="Utkarsh Amitabh"
+                android:textSize="18dp" />
 
             <RatingBar
                 android:id="@+id/ratings"
@@ -83,7 +79,6 @@
                 android:background="@drawable/login_select"
                 android:text="Submit"
                 android:id="@+id/Submit"
-                android:textColor="@color/white"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"

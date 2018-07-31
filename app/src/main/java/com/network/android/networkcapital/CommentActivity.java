@@ -16,6 +16,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ServerValue;
 import com.network.android.networkcapital.Modules.posts;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -32,6 +34,7 @@ import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.UUID;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -43,8 +46,9 @@ public class CommentActivity extends AppCompatActivity {
     private ProgressDialog pd;
     private FirebaseAuth firebaseAuth;
     private String saveCurrentDate;
-    private String user_id,uid;
+    private String user_id,uid,uNid,Puserr_id;
     private int countCmnt;
+    private DatabaseReference mNcDatabase;
 
     private DatabaseReference mCDatabase,mCUserDatabase,mCUsersDatabase;
     @Override
@@ -62,8 +66,10 @@ public class CommentActivity extends AppCompatActivity {
         FirebaseUser current_user=FirebaseAuth.getInstance().getCurrentUser();
         uid=current_user.getUid();
         user_id = getIntent().getStringExtra("user_id");
+        Puserr_id=getIntent().getStringExtra("user_id");
         mCUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Post").child(user_id).child("Comment");
-        display_user_post();
+        Query query =  mCUsersDatabase.orderByChild("time");
+        display_user_post(query);
 
         mText=(EditText)findViewById(R.id.comment);
         imgbtn=(ImageButton)findViewById(R.id.btn);
@@ -83,8 +89,8 @@ public class CommentActivity extends AppCompatActivity {
                 pd.setMessage("Please wait while we check your credentials");
                 pd.setCanceledOnTouchOutside(false);
                 pd.show();
-
-                mCDatabase = FirebaseDatabase.getInstance().getReference().child("Post").child(user_id).child("Comment").child(uid);
+                final String randomName = UUID.randomUUID().toString();
+                mCDatabase = FirebaseDatabase.getInstance().getReference().child("Post").child(user_id).child("Comment").child(randomName);
                 final String desc = mText.getText().toString();
                 mCUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
 
@@ -96,11 +102,12 @@ public class CommentActivity extends AppCompatActivity {
                         String image=dataSnapshot.child("thumb_image").getValue().toString();
 
 
-
+                        mCDatabase.child("uid").setValue(uid);
                         mCDatabase.child("name").setValue(name);
                         mCDatabase.child("thumb_image").setValue(image);
                         mCDatabase.child("timestamp").setValue(saveCurrentDate);
                         mCDatabase.child("comment").setValue(desc);
+                        mCDatabase.child("time").setValue(ServerValue.TIMESTAMP);
                         pd.hide();
 
 
@@ -127,9 +134,11 @@ public class CommentActivity extends AppCompatActivity {
         });
 
 
+
+
     }
 
-    public void display_user_post() {
+    public void display_user_post(Query query) {
 
 
         FirebaseRecyclerAdapter<Users, UsersViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Users, UsersViewHolder>(
@@ -137,26 +146,42 @@ public class CommentActivity extends AppCompatActivity {
                 Users.class,
                 R.layout.comment_layout,
                 UsersViewHolder.class,
-                mCUsersDatabase
+                query
 
         ) {
             @Override
-            protected void populateViewHolder(UsersViewHolder usersViewHolder, Users users, int position) {
+            protected void populateViewHolder(UsersViewHolder usersViewHolder, Users users, final int position) {
 
                 usersViewHolder.setName(users.getName());
                 usersViewHolder.setComment(users.getComment());
                 usersViewHolder.setTimestamp(users.getTimestamp());
                 usersViewHolder.setThumb_image(users.getThumb_image(), getApplicationContext());
 
-                 final String user_id = getRef(position).getKey();
+
+                final String user_id = getRef(position).getKey();
+                mNcDatabase=FirebaseDatabase.getInstance().getReference().child("Post").child(Puserr_id).child("Comment").child(user_id);
+                mNcDatabase.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        uNid=dataSnapshot.child("uid").getValue().toString();
+
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
 
                 usersViewHolder.mView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
 
-                         Intent profileIntent = new Intent(CommentActivity.this, ProfileActivity.class);
-                        profileIntent.putExtra("user_id", user_id);
-                         startActivity(profileIntent);
+
+
+                        Intent profileIntent = new Intent(CommentActivity.this, CommentNC.class);
+                        profileIntent.putExtra("Cuser_id", uNid);
+                        startActivity(profileIntent);
 
                     }
                 });

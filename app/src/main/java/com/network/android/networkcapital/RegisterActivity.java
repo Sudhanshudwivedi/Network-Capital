@@ -185,13 +185,17 @@ public class RegisterActivity extends AppCompatActivity {
 
                     userMap.put("name",user1);
                     userMap.put("email",email1);
-                    userMap.put("help","default");
-                    userMap.put("look","default");
-                    userMap.put("education","default");
-                    userMap.put("work","default");
-                    userMap.put("location","default");
-                    userMap.put("position","default");
+                    userMap.put("help"," ");
+                    userMap.put("look"," ");
+                    userMap.put("education"," ");
+                    userMap.put("work"," ");
+                    userMap.put("location"," ");
+                    userMap.put("position"," ");
                     userMap.put("thumb_image","default");
+                    userMap.put("rating","0");
+                    userMap.put("TrustScore","0");
+                    userMap.put("count","0");
+
                     userMap.put("device_token",deviceToken);
                     String details_fill = "true";
                     userMap.put("First Login",details_fill);
@@ -202,9 +206,12 @@ public class RegisterActivity extends AppCompatActivity {
                             Toast.makeText(RegisterActivity.this, "Registration Sucessful", Toast.LENGTH_LONG).show();
                             Intent intent=new Intent(RegisterActivity.this, LoginActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+
                             startActivity(intent);
+
                             mProgress.dismiss();
                             finish();
+
 
                         }
                     });

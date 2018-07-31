@@ -22,6 +22,8 @@ public class NetworkCard extends Activity {
     private FirebaseUser mCurrentUser;
     private TextView mName,mLoc,mPost,mWork,mHelp,mEd,mLook;
     private ImageView img;
+    private float Nrating;
+    private float Count;
 
 
     @Override
@@ -38,6 +40,7 @@ public class NetworkCard extends Activity {
         mEd=(TextView)findViewById(R.id.txt2);
         mLook=(TextView)findViewById(R.id.txt8);
         img=(ImageView)findViewById(R.id.image2);
+        final TextView ts=(TextView)findViewById(R.id.text3);
 
         mNUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(current_id);
 
@@ -52,10 +55,13 @@ public class NetworkCard extends Activity {
                 String ed=dataSnapshot.child("education").getValue().toString();
                 String look=dataSnapshot.child("look").getValue().toString();
                 String image=dataSnapshot.child("thumb_image").getValue().toString();
+               String tscore=dataSnapshot.child("TrustScore").getValue().toString();
                 Picasso.with(NetworkCard.this).load(image).placeholder(R.drawable.user).into(img);
 
 
+                //TrustScore=
                 mName.setText(name);
+                ts.setText(tscore);
 
                 mLoc.setText(loc);
                mPost.setText(pos);

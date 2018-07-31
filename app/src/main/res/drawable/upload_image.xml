@@ -13,11 +13,17 @@
     <item><shape android:shape="rectangle">
 
         <gradient
-            android:angle="90"
-            android:endColor="#afbdd4"
-            android:centerColor="#d8dfea"
-            android:startColor="#ffffff"
-            android:type="linear"/>
+            android:endColor="#6d84b4"
+            android:centerColor="#6d84b4"
+            android:startColor="#6d84b4" />
+        <corners
+            android:topLeftRadius="10dp"
+            android:topRightRadius="10dp"
+            android:bottomLeftRadius="10dp"
+            android:bottomRightRadius="10dp"
+
+            />
+
         <!--<solid android:color="@color/background_color" />-->
     </shape>
     </item>
