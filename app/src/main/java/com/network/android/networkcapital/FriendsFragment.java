@@ -174,7 +174,6 @@ public class FriendsFragment extends Fragment {
 
                                                         Intent intent = new Intent(getContext(), Rating.class);
                                                         intent.putExtra("user_id", list_user_id);
-                                                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_CLEAR_TASK |  Intent.FLAG_ACTIVITY_CLEAR_TOP) ;
 
                                                         startActivity(intent);
 

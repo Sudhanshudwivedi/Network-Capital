@@ -119,8 +119,11 @@ public class ProfileActivity extends Activity {
 
         mCurrent_state = "not_friends";
 
-      mDeclineBtn.setVisibility(View.INVISIBLE);
-      mDeclineBtn.setEnabled(false);
+      
+
+        mDeclineBtn.setVisibility(View.INVISIBLE);
+        mDeclineBtn.setEnabled(false);
+
 
 
         mProgressDialog = new ProgressDialog(this);

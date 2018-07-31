@@ -96,7 +96,8 @@
             android:parentActivityName=".MainActivity"/>
 
         <activity android:name=".Modules.Rating"
-            android:label="Ratings"/>
+            android:label="Ratings"
+            android:parentActivityName=".RateYourFriends"/>
 
         <activity android:name=".CommentNC" />
 
