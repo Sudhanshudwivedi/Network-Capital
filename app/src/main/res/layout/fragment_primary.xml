@@ -1,4 +1,4 @@
-<RelativeLayout
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -49,34 +49,31 @@
                     android:background="@color/background_color">
 
 
-
-
-
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/img1"
-                        android:layout_marginTop="25dp"
-                        android:layout_centerHorizontal="true"
-                        app:civ_circle_background_color="#3B5998"
-                        app:civ_border_width="1dp"
-                        app:civ_border_color="@color/white"
-                        android:src="@drawable/baseline_waves_white_48dp"
                         android:layout_width="40dp"
-                        android:layout_height="40dp" />
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="25dp"
+                        android:src="@drawable/baseline_waves_white_48dp"
+                        app:civ_border_color="@color/white"
+                        app:civ_border_width="1dp"
+                        app:civ_circle_background_color="#3B5998" />
 
 
                     <TextView
+                        android:id="@+id/text_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_below="@+id/img1"
                         android:layout_centerInParent="true"
-                        android:textStyle="bold"
-                        android:textSize="18dp"
-                        android:fontFamily="sans-serif"
                         android:layout_marginTop="10dp"
-                        android:textColor="@color/white"
+                        android:fontFamily="sans-serif"
                         android:text="Pick your interests"
-                        android:id="@+id/text_1"
+                        android:textColor="@color/white"
 
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
 
@@ -89,9 +86,8 @@
                     android:layout_centerInParent="true"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="10dp"
-                    android:fontFamily="@font/yatra_one"
                     android:text="Pick only one option in which you want help"
-                    android:textColor="#555555"
+                    android:textColor="@color/black"
                     android:textSize="16sp" />
 
 

@@ -16,27 +16,26 @@
         android:layout_height="60dp" />
 
     <TextView
-        android:layout_marginTop="15dp"
         android:id="@+id/userdata_name"
-        android:layout_below="@id/image2"
         android:layout_width="wrap_content"
-        android:text=""
-        android:textStyle="bold"
-        android:fontFamily="@font/amarante"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image2"
+        android:layout_marginTop="15dp"
+        android:text="Sudhanshu"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:layout_height="wrap_content" />
+        android:textStyle="bold" />
 
     <TextView
-        android:text="sandra_a88@gmail.com"
-        android:layout_below="@id/userdata_name"
         android:id="@+id/user_emailid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textSize="16sp"
+        android:layout_below="@id/userdata_name"
+        android:text="sandra_a88@gmail.com"
         android:textColor="@color/white"
+        android:textSize="16sp"
         android:textStyle="bold" />
 
 </RelativeLayout>

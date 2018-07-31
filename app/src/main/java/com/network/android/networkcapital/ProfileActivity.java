@@ -67,6 +67,7 @@ public class ProfileActivity extends Activity {
         mEd=(TextView)findViewById(R.id.txt2);
         mLook=(TextView)findViewById(R.id.txt8);
         img=(ImageView)findViewById(R.id.image2);
+        final TextView ts=(TextView)findViewById(R.id.text3);
 
         mUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(current_id);
 
@@ -82,10 +83,10 @@ public class ProfileActivity extends Activity {
                 String look=dataSnapshot.child("look").getValue().toString();
                 String image=dataSnapshot.child("thumb_image").getValue().toString();
                 Picasso.with(ProfileActivity.this).load(image).placeholder(R.drawable.user).into(img);
-
+                String tscore=dataSnapshot.child("TrustScore").getValue().toString();
 
                 mName.setText(name);
-
+                ts.setText(tscore);
                 mLoc.setText(loc);
                 mPost.setText(pos);
                 mWork.setText(work);
@@ -118,8 +119,8 @@ public class ProfileActivity extends Activity {
 
         mCurrent_state = "not_friends";
 
-        mDeclineBtn.setVisibility(View.INVISIBLE);
-        mDeclineBtn.setEnabled(false);
+//        mDeclineBtn.setVisibility(View.INVISIBLE);
+        //mDeclineBtn.setEnabled(false);
 
 
         mProgressDialog = new ProgressDialog(this);
