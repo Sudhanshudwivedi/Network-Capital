@@ -108,7 +108,7 @@ public class FriendsFragment extends Fragment {
                     friendsViewHolder.mView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Toast.makeText(getActivity(),"You have already rated your friends",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(),"You have already rated",Toast.LENGTH_SHORT).show();
 
 
                         }
@@ -131,7 +131,7 @@ public class FriendsFragment extends Fragment {
                             @Override
                             public void onClick(View view) {
 
-                                CharSequence options[] = new CharSequence[]{"Open Profile", "Send message","Rate your Friend"};
+                                CharSequence options[] = new CharSequence[]{"Open Profile", "Send message","Rate Interaction Quality"};
 
                                 final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
 

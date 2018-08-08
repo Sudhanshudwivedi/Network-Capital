@@ -18,7 +18,7 @@ import com.squareup.picasso.Picasso;
 
 public class NetworkCard extends Activity {
 
-    private DatabaseReference mNUserDatabase;
+    private DatabaseReference mNUserDatabase,mCheckDatabase;
     private FirebaseUser mCurrentUser;
     private TextView mName,mLoc,mPost,mWork,mHelp,mEd,mLook;
     private ImageView img;

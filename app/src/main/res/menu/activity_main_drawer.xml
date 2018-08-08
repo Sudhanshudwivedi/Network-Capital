@@ -28,7 +28,7 @@
         <item
             android:id="@+id/nav-friends"
             android:icon="@mipmap/baseline_people_black_48dp"
-            android:title="Friends" />
+            android:title="Connections" />
         <item
             android:id="@+id/nav-ratings"
             android:icon="@mipmap/outline_star_white_48dp"

@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rel1"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignLeft="@+id/textView4"
+                android:layout_alignStart="@+id/textView4"
+                android:layout_marginTop="45dp"
+                android:src="@drawable/tick" />
+
+            <TextView
+                android:layout_marginLeft="40dp"
+                android:layout_below="@id/image1"
+                android:text="Verified"
+                android:textColor="#ffffff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView4" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_width="100dp"
+                android:src="@drawable/user"
+                android:layout_height="100dp" />
+
+            <RelativeLayout
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="0dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp">
+
+                <ImageView
+                    android:id="@+id/image3"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="40dp"
+                    android:src="@drawable/star"
+                    android:layout_height="40dp" />
+
+                <TextView
+                    android:id="@+id/text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/image3"
+                    android:text="0"
+                    android:layout_centerInParent="true"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Utkarsh"
+                android:textColor="#ffff"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/textView"
+                android:textColor="#ffff"
+                android:text="Microsoft" />
+
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_below="@id/textView2"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="120dp"
+                android:src="@drawable/baseline_location_on_white_18dp"/>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/textView2"
+                android:textColor="#ffff"
+                android:text=" Soutdffsfsh Delhi"
+                android:layout_marginBottom="10dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel2"
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/image4"
+                android:layout_width="15dp"
+                android:tint="@color/background_color"
+                android:src="@drawable/education"
+                android:layout_height="15dp" />
+            <TextView
+                android:id="@+id/txt1"
+                android:layout_marginTop="-6dp"
+                android:layout_marginLeft="25dp"
+                android:textSize="18dp"
+                android:textColor="@color/colorPrimary"
+                android:text="Education"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="25dp" />
+
+            <TextView
+                android:id="@+id/txt2"
+                android:textSize="15dp"
+                android:textColor="#000000"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/txt1"
+                android:text="Wharton-Insted, Young India fellowship, Delhi College of Engineering"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:id="@+id/v1"
+                android:layout_marginTop="10dp"
+                android:layout_width="400dp"
+                android:layout_height="2dp"
+                android:layout_below="@+id/txt2"
+                android:background="@color/colorPrimary"
+                />
+
+            <ImageView
+                android:id="@+id/image5"
+                android:layout_below="@+id/v1"
+                android:layout_width="15dp"
+                android:tint="@color/background_color"
+                android:src="@drawable/work"
+                android:layout_height="15dp"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/txt3"
+                android:layout_below="@+id/v1"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="25dp"
+                android:textSize="18dp"
+                android:textColor="@color/colorPrimary"
+                android:text="Previous Work"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"/>
+
+            <TextView
+                android:id="@+id/txt4"
+                android:textSize="15dp"
+                android:textColor="#000000"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/txt3"
+                android:text="Microsoft, World Economic Forum, Network Capital, Deloitte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:id="@+id/v2"
+                android:layout_marginTop="10dp"
+                android:layout_width="400dp"
+                android:layout_height="2dp"
+                android:layout_below="@+id/txt4"
+                android:background="@color/colorPrimary"
+                />
+
+            <ImageView
+                android:id="@+id/image6"
+                android:layout_below="@+id/v2"
+                android:layout_marginTop="15dp"
+                android:layout_width="15dp"
+                android:src="@drawable/help"
+                android:tint="@color/background_color"
+                android:layout_height="15dp" />>
+
+            <TextView
+                android:id="@+id/txt5"
+                android:layout_below="@+id/v2"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:textSize="18dp"
+                android:textColor="@color/colorPrimary"
+                android:text="I can help in..."
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="25dp" />
+
+            <TextView
+                android:id="@+id/txt6"
+                android:textSize="15dp"
+                android:textColor="#000000"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/txt5"
+                android:text="Strategy, Business, Startups, Business Development, Marketing Strategy, Project Management"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:id="@+id/v3"
+                android:layout_marginTop="10dp"
+                android:layout_width="400dp"
+                android:layout_height="2dp"
+                android:layout_below="@+id/txt6"
+                android:background="@color/colorPrimary"
+                />
+
+            <ImageView
+                android:id="@+id/image7"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_below="@+id/v3"
+                android:tint="@color/background_color"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/lo"
+                />
+
+
+            <TextView
+                android:id="@+id/txt7"
+                android:layout_below="@+id/v3"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="25dp"
+                android:textSize="18dp"
+                android:textColor="@color/colorPrimary"
+                android:text="I am looking for..."
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="25dp" />
+
+            <TextView
+                android:id="@+id/txt8"
+                android:textSize="15dp"
+                android:textColor="#000000"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/txt7"
+                android:text="Venture Capitalists, Investment, Seed Funding, Incubation, Product Designers, Web Developers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:id="@+id/v4"
+                android:layout_marginTop="10dp"
+                android:layout_width="400dp"
+                android:layout_height="2dp"
+                android:layout_below="@+id/txt8"
+                android:background="@color/colorPrimary"
+                />
+
+            <Button
+                android:id="@+id/profile_send_req_btn"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/v4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/send_request"
+                android:text="SEND Connection REQUEST"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/profile_decline_btn"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/profile_send_req_btn"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/cancel_request"
+
+                android:text="DECLINE Connection REQUEST"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>

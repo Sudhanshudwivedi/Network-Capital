@@ -42,7 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     private ProgressDialog mProgress;
-    private DatabaseReference mRDatabase;
+    private DatabaseReference mRDatabase,mCheckDatabase;
 
 
     @Override
@@ -181,6 +181,8 @@ public class RegisterActivity extends AppCompatActivity {
                     String uid=current_user.getUid();
                     String deviceToken= FirebaseInstanceId.getInstance().getToken();
                     mRDatabase= FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+                    mCheckDatabase= FirebaseDatabase.getInstance().getReference().child("Check").child(uid);
+
                     HashMap<String,String> userMap=new HashMap<>();
 
                     userMap.put("name",user1);
@@ -195,14 +197,19 @@ public class RegisterActivity extends AppCompatActivity {
                     userMap.put("rating","0");
                     userMap.put("TrustScore","0");
                     userMap.put("count","0");
+                    userMap.put("Verified","False");
+                    userMap.put("Reject","0");
+                    userMap.put("Card","False");
 
                     userMap.put("device_token",deviceToken);
                     String details_fill = "true";
                     userMap.put("First Login",details_fill);
+                    mCheckDatabase.setValue(userMap);
 
                     mRDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
+
                             Toast.makeText(RegisterActivity.this, "Registration Sucessful", Toast.LENGTH_LONG).show();
                             Intent intent=new Intent(RegisterActivity.this, LoginActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);

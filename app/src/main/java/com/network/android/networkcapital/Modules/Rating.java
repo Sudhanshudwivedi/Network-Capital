@@ -108,15 +108,13 @@ public class Rating extends AppCompatActivity{
                 String s = Float.toString(Rrating);
 
                 //String s=String.valueOf(n2);
-                rDatabase.child("rating").setValue(s);
+
                 Count=Count+1;
-                rDatabase.child("count").setValue(Count);
+
                 float Ts=Float.parseFloat(String.valueOf(Rrating/Count));
 
                 float number2 = (int)Math.round(Ts * 100)/(float)100;
                 String ts=Float.toString(number2);
-
-                rDatabase.child("TrustScore").setValue(ts);
 
 
 
@@ -128,6 +126,11 @@ public class Rating extends AppCompatActivity{
                 }
                 else
                 {
+                    rDatabase.child("rating").setValue(s);
+                    rDatabase.child("count").setValue(Count);
+
+                    rDatabase.child("TrustScore").setValue(ts);
+
                     frDatabase.child("date").setValue("True");
                     //Toast.makeText(getApplicationContext(),"Succesfully Rated",Toast.LENGTH_LONG).show();
 

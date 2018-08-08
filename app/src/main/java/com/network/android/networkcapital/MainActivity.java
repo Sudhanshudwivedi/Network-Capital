@@ -76,21 +76,35 @@ public class MainActivity extends AppCompatActivity
 
 
                 String name=dataSnapshot.child("First Login").getValue().toString();
+                String email=dataSnapshot.child("email").getValue().toString();
                 String help=dataSnapshot.child("help").getValue().toString();
+                String Reject=dataSnapshot.child("Reject").getValue().toString();
+                String card=dataSnapshot.child("Card").getValue().toString();
+                String verified=dataSnapshot.child("Verified").getValue().toString();
                 String[] helpList = help.split(",");
                 for(String hp : helpList){
                     mLUserDatabase = FirebaseDatabase.getInstance().getReference().child(hp).child(current_id);
                    String nme=dataSnapshot.child("name").getValue().toString();
                     String img=dataSnapshot.child("thumb_image").getValue().toString();
                     String post=dataSnapshot.child("position").getValue().toString();
-                    mLUserDatabase.child("name").setValue(nme);
+
+                     mLUserDatabase.child("name").setValue(nme);
                     mLUserDatabase.child("thumb_image").setValue(img);
                     mLUserDatabase.child("position").setValue(post);
+
 
                     //mEmail.setText(Demail);
 
                     //Picasso.with(MainActivity.this).load(image).placeholder(R.drawable.user).into(mImage);
 
+                }
+
+                if(email.equals("networkcapitalapp@gmail.com"))
+                {
+                    Intent startIntent = new Intent(MainActivity.this, CheckActivity.class);
+                    startActivity(startIntent);
+
+                    finish();
                 }
 
 
@@ -101,6 +115,21 @@ public class MainActivity extends AppCompatActivity
                     Intent startIntent = new Intent(MainActivity.this, edit_details.class);
                     startActivity(startIntent);
                     mUserRef.child("First Login").setValue("False");
+                    finish();
+                }
+                if(Reject.equals("1"))
+                {
+                    Intent startIntent = new Intent(MainActivity.this, RejectApplication.class);
+                    startActivity(startIntent);
+
+                    finish();
+
+                }
+                if(verified.equals("False")&&card.equals("True"))
+                {
+                    Intent startIntent = new Intent(MainActivity.this, AcceptApplication.class);
+                    startActivity(startIntent);
+
                     finish();
                 }
 
@@ -276,7 +305,7 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this, FriendsActivity.class);
             startActivity(intent);
         } else if(id == R.id.nav_ratings){
-              Intent intent = new Intent(MainActivity.this, RateYourFriends.class);
+              Intent intent = new Intent(MainActivity.this, CheckActivity.class);
               startActivity(intent);
           }
 

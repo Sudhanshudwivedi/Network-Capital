@@ -59,7 +59,7 @@ public class edit_details extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
     private FirebaseUser mCurrentUser;
-    private DatabaseReference mEUserDatabase;
+    private DatabaseReference mEUserDatabase,mCheckDatabase;
     private DatabaseReference mEUserDatabase2;
     private DatabaseReference mLUserDatabase;
     private DatabaseReference mEHelpDatabase;
@@ -401,6 +401,8 @@ public class edit_details extends AppCompatActivity {
 
             mEDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
 
+            mCheckDatabase = FirebaseDatabase.getInstance().getReference().child("Check").child(uid);
+
 
             mEDatabase.child("location").setValue(lo);
             mEDatabase.child("position").setValue(ro);
@@ -408,6 +410,15 @@ public class edit_details extends AppCompatActivity {
             mEDatabase.child("help").setValue(ho1);
             mEDatabase.child("look").setValue(lo1);
             mEDatabase.child("education").setValue(de);
+            mEDatabase.child("Card").setValue("True");
+            mCheckDatabase.child("location").setValue(lo);
+            mCheckDatabase.child("position").setValue(ro);
+            mCheckDatabase.child("work").setValue(wor);
+            mCheckDatabase.child("help").setValue(ho1);
+            mCheckDatabase.child("look").setValue(lo1);
+            mCheckDatabase.child("education").setValue(de);
+            mCheckDatabase.child("Card").setValue("True");
+
 
 
             Intent intent = new Intent(edit_details.this, MainActivity.class);
@@ -533,9 +544,11 @@ public class edit_details extends AppCompatActivity {
                             FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
                             String uid = current_user.getUid();
 
+                            mCheckDatabase = FirebaseDatabase.getInstance().getReference().child("Check").child(uid);
 
                             mEUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
                             mEUserDatabase.child("thumb_image").setValue(download_url);
+                            mCheckDatabase.child("thumb_image").setValue(download_url);
 
                             //mEUserDatabase2 = FirebaseDatabase.getInstance().getReference().child("Post").child(uid);
                             // mEUserDatabase2.child("thumb_image").setValue(download_url);
