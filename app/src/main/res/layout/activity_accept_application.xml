@@ -1,16 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/rating_background"
     android:layout_height="match_parent"
     tools:context=".AcceptApplication">
 
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_centerVertical="true"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/appl"
+        android:text="Application"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Please wait we are processing your application"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="156dp" />
-</android.support.constraint.ConstraintLayout>
+        android:textStyle="bold"
+        android:textSize="35sp"
+        android:textColor="@color/background_color"/>
+
+    <TextView
+        android:layout_below="@+id/appl"
+        android:id="@+id/rec"
+        android:text="Received"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="35sp"
+        android:layout_centerVertical="true"
+        android:textColor="@color/background_color"/>
+
+    <TextView
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/rec"
+        android:text="@string/h_content"
+        android:id="@+id/hard_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/loginbutton_selector"
+        android:text="Exit"
+        android:layout_marginBottom="25dp"
+        android:layout_width="200dp"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
