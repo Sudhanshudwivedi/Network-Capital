@@ -103,34 +103,41 @@ public class MainActivity extends AppCompatActivity
                 {
                     Intent startIntent = new Intent(MainActivity.this, CheckActivity.class);
                     startActivity(startIntent);
+                    startIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 
                     finish();
                 }
 
 
-                if(name.equals("true"))
+                else if(name.equals("true"))
                 {
 
 
                     Intent startIntent = new Intent(MainActivity.this, edit_details.class);
+                    startIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(startIntent);
                     mUserRef.child("First Login").setValue("False");
                     finish();
                 }
-                if(Reject.equals("1"))
+                else if(Reject.equals("1"))
                 {
                     Intent startIntent = new Intent(MainActivity.this, RejectApplication.class);
                     startActivity(startIntent);
+                    startIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+
 
                     finish();
 
                 }
-                if(verified.equals("False")&&card.equals("True"))
+                else if(verified.equals("False")&&card.equals("True"))
                 {
                     Intent startIntent = new Intent(MainActivity.this, AcceptApplication.class);
                     startActivity(startIntent);
-
+                    startIntent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT| Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     finish();
+
+
+
                 }
 
                 //  Picasso.with(PostActivity.this).load(image).placeholder(R.drawable.user).into(iv);

@@ -35,28 +35,30 @@
             android:textColor="@color/background_color"/>
 
         <TextView
-            android:textSize="18sp"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/rec"
-            android:text="@string/reject_content"
             android:id="@+id/hard_content"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rec"
+            android:layout_marginTop="10dp"
+            android:text="@string/reject_content"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
 
     </RelativeLayout>
 
     <Button
+        android:id="@+id/logout"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/loginbutton_selector"
         android:text="Exit"
-        android:layout_marginBottom="25dp"
-        android:layout_width="200dp"
-        android:textStyle="bold"
-        android:textSize="17sp"
         android:textColor="@color/white"
-        android:layout_height="wrap_content" />
+        android:textSize="17sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

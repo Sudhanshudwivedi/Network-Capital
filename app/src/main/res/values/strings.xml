@@ -58,7 +58,7 @@
     <string name="clear_all_label">Clear all</string>
 
 
-    <string name="h_content">You will hear from us via push notification if you fit our criteria.</string>
+    <string name="h_content">You will hear from us shortly if you fit our criteria.</string>
     <string name="reject_content">Sorry, to tell you but your application has been rejected.</string>
 
     <string-array name="helping_item">

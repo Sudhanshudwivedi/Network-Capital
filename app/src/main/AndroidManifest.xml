@@ -100,13 +100,18 @@
         <activity
             android:name=".AlreadyRated"
             android:label="Ratings" />
-        <activity android:name=".AcceptActivity" />
+        <activity android:name=".AcceptActivity"
+            android:launchMode="singleInstance"/>
         <activity android:name=".CheckActivity"
             android:label="Review Applications"
+            android:launchMode="singleInstance"
              />
 
-        <activity android:name=".RejectApplication" />
-        <activity android:name=".AcceptApplication"></activity>
+        <activity android:name=".RejectApplication"
+            android:launchMode="singleInstance"/>
+
+        <activity android:name=".AcceptApplication"
+            android:launchMode="singleTask"></activity>
     </application>
 
 </manifest>

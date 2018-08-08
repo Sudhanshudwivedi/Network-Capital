@@ -2,6 +2,7 @@ package com.network.android.networkcapital;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -129,6 +130,11 @@ public class AcceptActivity extends Activity {
                 mCheckDatabase.child("name").setValue(null);
                 mCheckDatabase.child("Reject").setValue(null);
                 mCheckDatabase.child("Card").setValue(null);
+                Intent profileIntent = new Intent(AcceptActivity.this,CheckActivity.class);
+                profileIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(profileIntent);
+                finish();
+
 
 
             }
@@ -155,6 +161,10 @@ public class AcceptActivity extends Activity {
                 mCheckDatabase.child("name").setValue(null);
                 mCheckDatabase.child("Reject").setValue(null);
                 mCheckDatabase.child("Card").setValue(null);
+                Intent profileIntent = new Intent(AcceptActivity.this,CheckActivity.class);
+                profileIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(profileIntent);
+                finish();
 
 
             }
