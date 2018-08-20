@@ -29,8 +29,14 @@
             android:id="@+id/nav-friends"
             android:icon="@mipmap/baseline_people_black_48dp"
             android:title="Connections" />
+
         <item
             android:id="@+id/nav-ratings"
+            android:icon="@mipmap/baseline_event_available_black_48dp"
+            android:title="Events" />
+
+        <item
+            android:id="@+id/nav_events"
             android:icon="@mipmap/outline_star_white_48dp"
             android:title="Ratings" />
         <item

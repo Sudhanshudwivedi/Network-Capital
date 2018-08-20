@@ -311,7 +311,10 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_friends) {
             Intent intent = new Intent(MainActivity.this, FriendsActivity.class);
             startActivity(intent);
-        } else if(id == R.id.nav_ratings){
+        }else if(id == R.id.nav_events){
+              Intent intent = new Intent(MainActivity.this, EventActivity.class);
+              startActivity(intent);
+          } else if(id == R.id.nav_ratings){
               Intent intent = new Intent(MainActivity.this, CheckActivity.class);
               startActivity(intent);
           }
