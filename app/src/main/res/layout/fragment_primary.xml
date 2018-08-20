@@ -102,42 +102,22 @@
 
                     <Button
                         android:id="@+id/mba"
-                        android:text="MBA"
+                        android:text="MBA Further Studies"
                         android:layout_weight="0.5"
-                        android:layout_width="50dp"
+                        android:layout_width="100dp"
                         android:layout_height="30dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginLeft="20dp"
-                        android:textColor="@color/background_color"
-                        android:background="@drawable/buttonselect"
-                        android:onClick="onClick"/>
-
-                    <Button
-                        android:id="@+id/entre"
-                        android:text="Entrepreneurship"
-                        android:layout_marginTop="5dp"
-                        android:layout_width="160dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_gravity="center"
-                        android:layout_height="30dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="50dp"
                         android:textColor="@color/background_color"
                         android:background="@drawable/buttonselect"
                         android:onClick="onClick"/>
 
 
 
-                    <Button
-                        android:id="@+id/startup"
-                        android:layout_weight="0.8"
-                        android:text="Startups"
-                        android:layout_width="90dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_height="30dp"
-                        android:layout_marginTop="10dp"
-                        android:textColor="@color/background_color"
-                        android:background="@drawable/buttonselect"
-                        android:onClick="onClick"/>
+
+
+
 
                 </LinearLayout>
 
@@ -150,8 +130,8 @@
 
                     <Button
                         android:id="@+id/business"
-                        android:text="Business Development"
-                        android:layout_width="190dp"
+                        android:text="Changing Careers"
+                        android:layout_width="100dp"
                         android:layout_weight="0.5"
                         android:layout_height="30dp"
                         android:layout_marginRight="20dp"
@@ -163,7 +143,7 @@
 
                     <Button
                         android:id="@+id/fund"
-                        android:text="Funding"
+                        android:text="Resume Advice"
                         android:layout_marginTop="20dp"
                         android:layout_width="80dp"
                         android:layout_weight="0.5"
@@ -185,29 +165,17 @@
 
                     <Button
                         android:id="@+id/project"
-                        android:text="Project Management"
-                        android:layout_width="190dp"
+                        android:text="Finding Right Career"
+                        android:layout_width="100dp"
                         android:layout_weight="0.5"
                         android:layout_height="30dp"
-                        android:layout_marginRight="20dp"
+                        android:layout_marginRight="50dp"
                         android:layout_marginTop="20dp"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="50dp"
                         android:textColor="@color/background_color"
                         android:background="@drawable/buttonselect"
                         android:onClick="onClick"/>
 
-                    <Button
-                        android:id="@+id/mentor"
-                        android:text="Mentorship"
-                        android:layout_marginTop="20dp"
-                        android:layout_width="110dp"
-                        android:layout_weight="0.5"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="20dp"
-                        android:layout_height="30dp"
-                        android:textColor="@color/background_color"
-                        android:background="@drawable/buttonselect"
-                        android:onClick="onClick"/>
 
                 </LinearLayout>
 
@@ -220,8 +188,8 @@
 
                     <Button
                         android:id="@+id/collab"
-                        android:text="Collaboration"
-                        android:layout_width="130dp"
+                        android:text="Scaling Startups"
+                        android:layout_width="100dp"
                         android:layout_height="30dp"
                         android:layout_weight="0.5"
                         android:layout_marginTop="20dp"
@@ -233,9 +201,9 @@
 
                     <Button
                         android:id="@+id/network"
-                        android:text="Networking"
+                        android:text="Raising Capitals"
                         android:layout_marginTop="20dp"
-                        android:layout_width="110dp"
+                        android:layout_width="80dp"
                         android:layout_weight="0.5"
                         android:layout_marginRight="20dp"
                         android:layout_height="30dp"
@@ -255,7 +223,7 @@
 
                     <Button
                         android:id="@+id/marketing"
-                        android:text="Marketing Strategy"
+                        android:text="Raising Support for Cause"
                         android:layout_below="@+id/security"
                         android:layout_marginTop="20dp"
                         android:layout_width="180dp"
@@ -275,62 +243,27 @@
                     android:orientation="horizontal"
                     android:paddingBottom="5dp"
                     android:layout_width="match_parent"
+                    android:layout_marginBottom="60dp"
                     android:layout_height="wrap_content">
 
                     <Button
                         android:id="@+id/security"
-                        android:text="Security"
-                        android:layout_width="90dp"
+                        android:text="Leadership Coaching"
+                        android:layout_width="100dp"
                         android:layout_weight="0.5"
                         android:layout_height="30dp"
                         android:layout_marginTop="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginLeft="50dp"
                         android:textColor="@color/background_color"
                         android:background="@drawable/buttonselect"
                         android:onClick="onClick"/>
 
 
 
-
-
-                    <Button
-                        android:id="@+id/virtual"
-                        android:text="Virtual Reality"
-                        android:layout_marginTop="20dp"
-                        android:layout_width="150dp"
-                        android:layout_weight="0.5"
-                        android:layout_marginRight="20dp"
-                        android:layout_height="30dp"
-                        android:textColor="@color/background_color"
-                        android:background="@drawable/buttonselect"
-                        android:onClick="onClick"/>
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/b7"
-                    android:orientation="horizontal"
-                    android:layout_below="@id/b6"
-                    android:paddingBottom="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_marginBottom="60dp"
-                    android:layout_height="wrap_content">
-
-
-                    <Button
-                        android:id="@+id/product"
-                        android:text="Product Development"
-                        android:layout_marginTop="20dp"
-                        android:layout_width="200dp"
-                        android:layout_weight="0.5"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginRight="30dp"
-                        android:layout_height="30dp"
-                        android:textColor="@color/background_color"
-                        android:background="@drawable/buttonselect"
-                        android:onClick="onClick"/>
-                </LinearLayout>
 
 
             </RelativeLayout>
