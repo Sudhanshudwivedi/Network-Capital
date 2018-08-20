@@ -31,6 +31,7 @@ public class HelpUsers extends AppCompatActivity {
     private DatabaseReference mUsersDatabase;
     private static DatabaseReference mLoginData;
     private LinearLayoutManager mLayoutManager;
+    String s;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +47,18 @@ public class HelpUsers extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         String search = bundle.getString("button_select_text");
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if(!search.equals("MBA Further Studies"))
+        {
+            s=" "+search;
+        }
+        else
+        {
+            s=search;
+        }
+
         String current_id = mCurrentUser.getUid();
-        mUsersDatabase = FirebaseDatabase.getInstance().getReference().child(search);
+        mUsersDatabase = FirebaseDatabase.getInstance().getReference().child(s);
+        Toast.makeText(this, search, Toast.LENGTH_LONG).show();
         mLoginData = FirebaseDatabase.getInstance().getReference().child("Users").child(current_id);
 
 

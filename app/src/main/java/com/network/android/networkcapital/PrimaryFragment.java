@@ -138,7 +138,8 @@ public class PrimaryFragment extends Fragment implements View.OnClickListener{
 //                virtu.setTextColor(v.getResources().getColor(R.color.basecolor));
 //                product.setBackgroundResource(R.drawable.button_not_pressed);
 //                product.setTextColor(v.getResources().getColor(R.color.basecolor));
-                button_select = "MBA";
+
+                button_select ="MBA Further Studies";
 
                 break;
 //            case R.id.entre:
@@ -227,7 +228,7 @@ public class PrimaryFragment extends Fragment implements View.OnClickListener{
 //                virtu.setTextColor(v.getResources().getColor(R.color.basecolor));
 //                product.setBackgroundResource(R.drawable.button_not_pressed);
 //                product.setTextColor(v.getResources().getColor(R.color.basecolor));
-                button_select = "Business Development";
+                button_select ="Changing Careers";
                 break;
             case R.id.fund:
                 fund.setBackgroundResource(R.drawable.button_pressed);
@@ -256,7 +257,7 @@ public class PrimaryFragment extends Fragment implements View.OnClickListener{
 //                virtu.setTextColor(v.getResources().getColor(R.color.basecolor));
 //                product.setBackgroundResource(R.drawable.button_not_pressed);
 //                product.setTextColor(v.getResources().getColor(R.color.basecolor));
-                button_select = "Funding";
+                button_select ="Resume Advice";
                 break;
             case R.id.project:
                 proje.setBackgroundResource(R.drawable.button_pressed);
@@ -285,7 +286,7 @@ public class PrimaryFragment extends Fragment implements View.OnClickListener{
 //                virtu.setTextColor(v.getResources().getColor(R.color.basecolor));
 //                product.setBackgroundResource(R.drawable.button_not_pressed);
 //                product.setTextColor(v.getResources().getColor(R.color.basecolor));
-                button_select = "Project Management";
+                button_select ="Finding Right Career";
                 break;
 //            case R.id.mentor:
 //                mentor.setBackgroundResource(R.drawable.button_pressed);
@@ -343,7 +344,7 @@ public class PrimaryFragment extends Fragment implements View.OnClickListener{
 //                virtu.setTextColor(v.getResources().getColor(R.color.basecolor));
 //                product.setBackgroundResource(R.drawable.button_not_pressed);
 //                product.setTextColor(v.getResources().getColor(R.color.basecolor));
-                button_select = "Collaboration";
+                button_select ="Scaling Startups";
                 break;
             case R.id.network:
                 net.setBackgroundResource(R.drawable.button_pressed);
@@ -372,7 +373,7 @@ public class PrimaryFragment extends Fragment implements View.OnClickListener{
 //                virtu.setTextColor(v.getResources().getColor(R.color.basecolor));
 //                product.setBackgroundResource(R.drawable.button_not_pressed);
 //                product.setTextColor(v.getResources().getColor(R.color.basecolor));
-                button_select = "Networking";
+                button_select ="Leadership Coaching";
                 break;
             case R.id.security:
                 secu.setBackgroundResource(R.drawable.button_pressed);
@@ -401,7 +402,7 @@ public class PrimaryFragment extends Fragment implements View.OnClickListener{
 //                virtu.setTextColor(v.getResources().getColor(R.color.basecolor));
 //                product.setBackgroundResource(R.drawable.button_not_pressed);
 //                product.setTextColor(v.getResources().getColor(R.color.basecolor));
-                button_select = "Security";
+                button_select ="Raising Support for Cause";
                 break;
             case R.id.marketing:
                 market.setBackgroundResource(R.drawable.button_pressed);
@@ -430,7 +431,7 @@ public class PrimaryFragment extends Fragment implements View.OnClickListener{
 //                virtu.setTextColor(v.getResources().getColor(R.color.basecolor));
 //                product.setBackgroundResource(R.drawable.button_not_pressed);
 //                product.setTextColor(v.getResources().getColor(R.color.basecolor));
-                button_select = "Marketing Strategy";
+                button_select ="Raising Capitals";
                 break;
 //            case R.id.virtual:
 //                virtu.setBackgroundResource(R.drawable.button_pressed);

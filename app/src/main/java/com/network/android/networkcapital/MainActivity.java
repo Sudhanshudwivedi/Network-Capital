@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity
 
                 if(email.equals("networkcapitalapp@gmail.com"))
                 {
-                    Intent startIntent = new Intent(MainActivity.this, CheckActivity.class);
+                    Intent startIntent = new Intent(MainActivity.this, AdminMainActivity.class);
                     startActivity(startIntent);
                     startIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 
@@ -315,7 +315,7 @@ public class MainActivity extends AppCompatActivity
               Intent intent = new Intent(MainActivity.this, EventActivity.class);
               startActivity(intent);
           } else if(id == R.id.nav_ratings){
-              Intent intent = new Intent(MainActivity.this, CheckActivity.class);
+              Intent intent = new Intent(MainActivity.this, AddEvent.class);
               startActivity(intent);
           }
 

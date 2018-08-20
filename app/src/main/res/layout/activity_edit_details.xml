@@ -61,7 +61,7 @@
                 />
 
             <TextView
-                android:id="@+id/location"
+                android:id="@+id/Elocation"
                 android:layout_below="@id/details"
                 android:text="Location"
                 android:textSize="18dp"
@@ -71,7 +71,7 @@
 
             <EditText
                 android:background="@drawable/edit_button"
-                android:layout_below="@+id/location"
+                android:layout_below="@+id/Elocation"
                 android:id="@+id/loca"
                 android:paddingLeft="20dp"
                 android:hint="Current Location"

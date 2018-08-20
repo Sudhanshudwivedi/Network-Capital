@@ -113,7 +113,12 @@
         <activity
             android:name=".AcceptApplication"
             android:launchMode="singleTask" />
-        <activity android:name=".EventActivity"></activity>
+        <activity android:name=".EventActivity" />
+        <activity android:name=".AddEvent" />
+        <activity android:name=".DetailEvent" />
+        <activity android:name=".AdminMainActivity"
+            android:label="Admin Page"
+            android:launchMode="singleInstance"></activity>
     </application>
 
 </manifest>

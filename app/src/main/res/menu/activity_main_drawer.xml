@@ -31,12 +31,12 @@
             android:title="Connections" />
 
         <item
-            android:id="@+id/nav-ratings"
+            android:id="@+id/nav-events"
             android:icon="@mipmap/baseline_event_available_black_48dp"
             android:title="Events" />
 
         <item
-            android:id="@+id/nav_events"
+            android:id="@+id/nav_ratings"
             android:icon="@mipmap/outline_star_white_48dp"
             android:title="Ratings" />
         <item

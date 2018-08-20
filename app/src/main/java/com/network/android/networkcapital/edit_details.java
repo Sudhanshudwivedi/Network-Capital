@@ -59,7 +59,7 @@ public class edit_details extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private ProgressDialog mProgressDialog;
     private FirebaseUser mCurrentUser;
-    private DatabaseReference mEUserDatabase,mCheckDatabase;
+    private DatabaseReference mEUserDatabase,mCheckDatabase,mUsersDatabase;
     private DatabaseReference mEUserDatabase2;
     private DatabaseReference mLUserDatabase;
     private DatabaseReference mEHelpDatabase;
@@ -401,7 +401,10 @@ public class edit_details extends AppCompatActivity {
 
             mEDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
 
+
+
             mCheckDatabase = FirebaseDatabase.getInstance().getReference().child("Check").child(uid);
+            mUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
 
 
             mEDatabase.child("location").setValue(lo);
@@ -411,13 +414,31 @@ public class edit_details extends AppCompatActivity {
             mEDatabase.child("look").setValue(lo1);
             mEDatabase.child("education").setValue(de);
             mEDatabase.child("Card").setValue("True");
-            mCheckDatabase.child("location").setValue(lo);
-            mCheckDatabase.child("position").setValue(ro);
-            mCheckDatabase.child("work").setValue(wor);
-            mCheckDatabase.child("help").setValue(ho1);
-            mCheckDatabase.child("look").setValue(lo1);
-            mCheckDatabase.child("education").setValue(de);
-            mCheckDatabase.child("Card").setValue("True");
+            mUsersDatabase.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    String Reject=dataSnapshot.child("Reject").getValue().toString();
+                    String Verified=dataSnapshot.child("Verified").getValue().toString();
+                    if(Reject.equals("0")&&Verified.equals("false"))
+                    {
+                        mCheckDatabase.child("location").setValue(lo);
+                        mCheckDatabase.child("position").setValue(ro);
+                        mCheckDatabase.child("work").setValue(wor);
+                        mCheckDatabase.child("help").setValue(ho1);
+                        mCheckDatabase.child("look").setValue(lo1);
+                        mCheckDatabase.child("education").setValue(de);
+                        mCheckDatabase.child("Card").setValue("True");
+
+                    }
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+
 
 
 
