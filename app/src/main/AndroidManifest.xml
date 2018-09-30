@@ -113,9 +113,13 @@
         <activity
             android:name=".AcceptApplication"
             android:launchMode="singleTask" />
-        <activity android:name=".EventActivity" />
-        <activity android:name=".AddEvent" />
-        <activity android:name=".DetailEvent" />
+        <activity android:name=".EventActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".AddEvent"
+            android:label="Add Event"/>
+        <activity android:name=".DetailEvent"
+            android:label="Event"
+            android:parentActivityName=".EventActivity"/>
         <activity android:name=".AdminMainActivity"
             android:label="Admin Page"
             android:launchMode="singleInstance"></activity>

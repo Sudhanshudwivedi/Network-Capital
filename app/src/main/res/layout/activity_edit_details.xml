@@ -70,14 +70,15 @@
                 android:layout_height="wrap_content" />
 
             <EditText
-                android:background="@drawable/edit_button"
-                android:layout_below="@+id/Elocation"
                 android:id="@+id/loca"
-                android:paddingLeft="20dp"
-                android:hint="Current Location"
-                android:layout_marginTop="5dp"
                 android:layout_width="350dp"
-                android:layout_height="30dp" />
+                android:layout_height="30dp"
+                android:layout_below="@+id/Elocation"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edit_button"
+                android:hint="Current Location"
+                android:paddingLeft="20dp"
+                android:singleLine="true" />
 
             <TextView
                 android:id="@+id/job"
@@ -90,24 +91,26 @@
                 android:layout_height="wrap_content" />
 
             <EditText
-                android:background="@drawable/edit_button"
-                android:layout_below="@+id/job"
                 android:id="@+id/edit_job"
-                android:paddingLeft="20dp"
-                android:hint="Role"
-                android:layout_marginTop="8dp"
                 android:layout_width="350dp"
-                android:layout_height="30dp" />
+                android:layout_height="30dp"
+                android:layout_below="@+id/job"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_button"
+                android:hint="Role"
+                android:paddingLeft="20dp"
+                android:singleLine="true" />
 
             <EditText
-                android:background="@drawable/edit_button"
-                android:layout_below="@+id/edit_job"
                 android:id="@+id/edit_job1"
-                android:paddingLeft="20dp"
-                android:hint="Company"
-                android:layout_marginTop="8dp"
                 android:layout_width="350dp"
-                android:layout_height="30dp" />
+                android:layout_height="30dp"
+                android:layout_below="@+id/edit_job"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_button"
+                android:hint="Company"
+                android:paddingLeft="20dp"
+                android:singleLine="true" />
 
             <!--<EditText-->
             <!--android:background="@drawable/edit_button"-->
@@ -130,24 +133,26 @@
                 android:layout_height="wrap_content" />
 
             <EditText
-                android:background="@drawable/edit_button"
-                android:layout_below="@+id/education"
                 android:id="@+id/edit_edu"
-                android:paddingLeft="20dp"
-                android:hint="Degree"
-                android:layout_marginTop="8dp"
                 android:layout_width="350dp"
-                android:layout_height="30dp" />
+                android:layout_height="30dp"
+                android:layout_below="@+id/education"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_button"
+                android:hint="Degree"
+                android:paddingLeft="20dp"
+                android:singleLine="true" />
 
             <EditText
-                android:background="@drawable/edit_button"
-                android:layout_below="@+id/edit_edu"
                 android:id="@+id/edit_edu1"
-                android:paddingLeft="20dp"
-                android:hint="Institute"
-                android:layout_marginTop="8dp"
                 android:layout_width="350dp"
-                android:layout_height="30dp" />
+                android:layout_height="30dp"
+                android:layout_below="@+id/edit_edu"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_button"
+                android:hint="Institute"
+                android:paddingLeft="20dp"
+                android:singleLine="true" />
 
             <!--<EditText-->
             <!--android:background="@drawable/edit_button"-->
@@ -161,33 +166,35 @@
 
             <TextView
                 android:id="@+id/work"
-                android:layout_marginTop="10dp"
-                android:layout_below="@id/edit_edu1"
-                android:text="Work Ex."
-                android:textSize="18dp"
-                android:textColor="@color/black"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_edu1"
+                android:layout_marginTop="10dp"
+                android:text="Previous Work Ex."
+                android:textColor="@color/black"
+                android:textSize="18dp" />
 
             <EditText
-                android:background="@drawable/edit_button"
-                android:layout_below="@+id/work"
                 android:id="@+id/edit_work1"
-                android:paddingLeft="20dp"
-                android:hint="Role"
-                android:layout_marginTop="8dp"
                 android:layout_width="350dp"
-                android:layout_height="30dp" />
+                android:layout_height="30dp"
+                android:layout_below="@+id/work"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_button"
+                android:hint="Role"
+                android:paddingLeft="20dp"
+                android:singleLine="true" />
 
             <EditText
-                android:background="@drawable/edit_button"
-                android:layout_below="@+id/edit_work1"
                 android:id="@+id/edit_work2"
-                android:paddingLeft="20dp"
-                android:hint="Company"
-                android:layout_marginTop="8dp"
                 android:layout_width="350dp"
-                android:layout_height="30dp" />
+                android:layout_height="30dp"
+                android:layout_below="@+id/edit_work1"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_button"
+                android:hint="Company"
+                android:paddingLeft="20dp"
+                android:singleLine="true" />
 
             <!--<EditText-->
             <!--android:background="@drawable/edit_button"-->

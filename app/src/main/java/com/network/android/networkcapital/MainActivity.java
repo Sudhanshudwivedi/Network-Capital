@@ -315,7 +315,7 @@ public class MainActivity extends AppCompatActivity
               Intent intent = new Intent(MainActivity.this, EventActivity.class);
               startActivity(intent);
           } else if(id == R.id.nav_ratings){
-              Intent intent = new Intent(MainActivity.this, AddEvent.class);
+              Intent intent = new Intent(MainActivity.this, RateYourFriends.class);
               startActivity(intent);
           }
 
@@ -359,7 +359,7 @@ public class MainActivity extends AppCompatActivity
                 //Your tab titles
                 //
                 case 0:return "Newsfeed";
-                case 1:return "Connections";
+                case 1:return "Mentors";
 //                case 2:return "Connections";
 //                case 3:return "Chats";
 

@@ -14,34 +14,39 @@
         android:orientation="vertical">
 
 
+        <RelativeLayout
+            android:background="@color/background_color"
+            android:backgroundTint="@color/background_color"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
         <ImageView
             android:id="@+id/EventImage"
-            android:layout_width="wrap_content"
-            android:layout_height="213dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            app:srcCompat="@drawable/post_placeholder" />
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="-3dp"
+            android:src="@drawable/baseline_add_a_photo_white_24dp"
+            />
+        </RelativeLayout>
 
         <EditText
             android:id="@+id/Ename"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="100dp"
+            android:padding="18dp"
             android:ems="10"
             android:hint="Event Name"
+            android:textColor="#000000"
+            android:textSize="20sp"
             android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/Elocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="0dp"
-            android:layout_marginTop="-70dp"
+            android:padding="18dp"
             android:ems="10"
+            android:textSize="20sp"
             android:hint="Location"
             android:inputType="textPersonName" />
 
@@ -49,10 +54,9 @@
             android:id="@+id/date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="169dp"
+            android:padding="18dp"
             android:ems="10"
+            android:textSize="20sp"
             android:hint="Date"
             android:inputType="textPersonName" />
 
@@ -60,11 +64,9 @@
             android:id="@+id/day"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="0dp"
-            android:layout_marginTop="-160dp"
             android:ems="10"
+            android:padding="18dp"
+            android:textSize="20sp"
             android:hint="Day"
             android:inputType="textPersonName" />
 
@@ -72,10 +74,9 @@
             android:id="@+id/time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="32dp"
             android:ems="10"
+            android:textSize="20sp"
+            android:padding="18dp"
             android:hint="Time"
             android:inputType="textPersonName" />
 
@@ -84,6 +85,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:textSize="20sp"
+            android:padding="18dp"
             android:hint="Description"
             android:inputType="textPersonName" />
 
@@ -92,12 +95,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:padding="18dp"
+            android:textSize="20sp"
             android:hint="Ticket Link"
+            android:layout_marginBottom="20dp"
             android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/Esubmit"
-            android:layout_width="match_parent"
+            android:background="@drawable/loginbutton_selector"
+            android:layout_width="120dp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:text="Submit" />
 

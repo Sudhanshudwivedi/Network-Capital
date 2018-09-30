@@ -128,7 +128,7 @@ public class EventActivity extends AppCompatActivity {
 
             CircleImageView userImageView = (CircleImageView) mView.findViewById(R.id.help_single_image);
 
-            Picasso.with(ctx).load(thumb_image).placeholder(R.drawable.nc).into(userImageView);
+            Picasso.with(ctx).load(thumb_image).placeholder(R.drawable.nc_round).into(userImageView);
 
 
         }

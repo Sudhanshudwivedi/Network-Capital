@@ -19,7 +19,7 @@
         <item
             android:id="@+id/nav_connectionRequest"
             android:icon="@mipmap/baseline_how_to_reg_black_48dp"
-            android:title="Connection Request" />
+            android:title="Connection Requests" />
 
         <item
             android:id="@+id/nav-chat"

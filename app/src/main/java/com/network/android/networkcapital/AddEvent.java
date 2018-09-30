@@ -161,9 +161,9 @@ public class AddEvent extends AppCompatActivity {
 
 
                 Bitmap thumb_bitmap = new Compressor(this)
-                        .setMaxWidth(200)
-                        .setMaxHeight(200)
-                        .setQuality(75)
+                        .setMaxWidth(1500)
+                        .setMaxHeight(1500)
+                        .setQuality(275)
 
                         .compressToBitmap(thumb_filePath);
 
