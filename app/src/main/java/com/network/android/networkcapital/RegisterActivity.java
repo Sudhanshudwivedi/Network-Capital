@@ -197,9 +197,13 @@ public class RegisterActivity extends AppCompatActivity {
                     userMap.put("rating","0");
                     userMap.put("TrustScore","0");
                     userMap.put("count","0");
-                    userMap.put("Verified","False");
+                    //userMap.put("Verified","False");
+                    //userMap.put("Reject","0");
+                    //userMap.put("Card","False");
+                    userMap.put("Card","True");
+                    userMap.put("Verified","1");
                     userMap.put("Reject","0");
-                    userMap.put("Card","False");
+
 
                     userMap.put("device_token",deviceToken);
                     String details_fill = "true";

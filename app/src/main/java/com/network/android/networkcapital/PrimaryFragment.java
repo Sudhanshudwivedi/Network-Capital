@@ -373,7 +373,7 @@ public class PrimaryFragment extends Fragment implements View.OnClickListener{
 //                virtu.setTextColor(v.getResources().getColor(R.color.basecolor));
 //                product.setBackgroundResource(R.drawable.button_not_pressed);
 //                product.setTextColor(v.getResources().getColor(R.color.basecolor));
-                button_select ="Leadership Coaching";
+                button_select ="Raising Capital";
                 break;
             case R.id.security:
                 secu.setBackgroundResource(R.drawable.button_pressed);
@@ -402,7 +402,7 @@ public class PrimaryFragment extends Fragment implements View.OnClickListener{
 //                virtu.setTextColor(v.getResources().getColor(R.color.basecolor));
 //                product.setBackgroundResource(R.drawable.button_not_pressed);
 //                product.setTextColor(v.getResources().getColor(R.color.basecolor));
-                button_select ="Raising Support for Cause";
+                button_select ="Leadership Coaching";
                 break;
             case R.id.marketing:
                 market.setBackgroundResource(R.drawable.button_pressed);
@@ -431,7 +431,7 @@ public class PrimaryFragment extends Fragment implements View.OnClickListener{
 //                virtu.setTextColor(v.getResources().getColor(R.color.basecolor));
 //                product.setBackgroundResource(R.drawable.button_not_pressed);
 //                product.setTextColor(v.getResources().getColor(R.color.basecolor));
-                button_select ="Raising Capitals";
+                button_select ="Raising Support for Cause";
                 break;
 //            case R.id.virtual:
 //                virtu.setBackgroundResource(R.drawable.button_pressed);
