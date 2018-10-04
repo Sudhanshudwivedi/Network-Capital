@@ -1,5 +1,6 @@
 package com.network.android.networkcapital;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -14,9 +15,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +46,7 @@ public class MainActivity extends AppCompatActivity
     private FirebaseAuth mAuth;
     private TextView mdName,mEmail;
     private ImageView mImage;
+    private EditText search;
 
 
     @Override
@@ -59,6 +64,33 @@ public class MainActivity extends AppCompatActivity
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tbl_pages);
         tabLayout.setupWithViewPager(pager);
         mAuth = FirebaseAuth.getInstance();
+
+
+        search = (EditText) findViewById(R.id.edit);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(view.getId() == search.getId()){
+                    search.setCursorVisible(true);
+                }
+            }
+        });
+
+        search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                search.setCursorVisible(false);
+                search.clearFocus();
+                if (keyEvent != null&& (keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
+                    InputMethodManager in = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    in.hideSoftInputFromWindow(search.getApplicationWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
+                }
+                return false;
+            }
+        });
+
+
+
 
 
         mEmail=(TextView)findViewById(R.id.user_emailid);

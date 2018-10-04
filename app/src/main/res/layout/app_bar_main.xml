@@ -15,10 +15,46 @@
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
+            android:layout_gravity="left"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+            
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:paddingTop="3dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_marginRight="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Search"
+                    android:cursorVisible="false"
+                    android:id="@+id/edit"
+                    android:singleLine="true"
+                    android:background="@drawable/edt_bg_selected"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:backgroundTint="#cccccc"/>
+
+                <ImageButton
+                    android:layout_alignRight="@+id/edit"
+                    android:layout_width="wrap_content"
+                    android:tint="#cccccc"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="6dp"
+                    android:backgroundTint="@color/background_color"
+                    android:src="@mipmap/magnifying_glass"/>
+
+            </RelativeLayout>
+            
+            
+        </android.support.v7.widget.Toolbar>
+
+
+
 
         <android.support.design.widget.TabLayout
             android:background="@color/white"
