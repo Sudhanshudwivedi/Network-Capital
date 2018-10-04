@@ -128,7 +128,8 @@
             android:label="Admin Page"
             android:launchMode="singleInstance" />
         <activity android:name=".SearchActivity" />
-        <activity android:name=".Modules.UserProfile"></activity>
+        <activity android:name=".Modules.UserProfile"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

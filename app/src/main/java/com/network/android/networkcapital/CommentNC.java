@@ -69,6 +69,7 @@ public class CommentNC extends Activity {
         mEd=(TextView)findViewById(R.id.txt2);
         mLook=(TextView)findViewById(R.id.txt8);
         img=(ImageView)findViewById(R.id.image2);
+        final TextView ts=(TextView)findViewById(R.id.text3);
 
 
 
@@ -87,8 +88,10 @@ public class CommentNC extends Activity {
                 String ed=dataSnapshot.child("education").getValue().toString();
                 String look=dataSnapshot.child("look").getValue().toString();
                 String image=dataSnapshot.child("thumb_image").getValue().toString();
+                String tscore=dataSnapshot.child("TrustScore").getValue().toString();
                 Picasso.with(CommentNC.this).load(image).placeholder(R.drawable.user).into(img);
 
+                ts.setText(tscore);
 
                 mName.setText(name);
 

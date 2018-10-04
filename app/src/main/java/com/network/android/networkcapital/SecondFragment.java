@@ -142,8 +142,8 @@ public class SecondFragment extends Fragment {
                     public void onClick(View v) {
                         Intent i = new Intent(getContext(), UserProfile.class);
                         i.putExtra("Puser_id", user_id);
-                        Toast.makeText(getContext(), user_id.toString(), Toast.LENGTH_LONG).show();
-                        System.out.print("String user id" + user_id.toString());
+                        //Toast.makeText(getContext(), user_id.toString(), Toast.LENGTH_LONG).show();
+                        //System.out.print("String user id" + user_id.toString());
                         startActivity(i);
                     }
                 });
