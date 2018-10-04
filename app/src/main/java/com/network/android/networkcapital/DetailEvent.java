@@ -26,7 +26,7 @@ public class DetailEvent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_event);
         final String current_id = getIntent().getStringExtra("user_id");
-        Toast.makeText(DetailEvent.this,current_id,Toast.LENGTH_LONG).show();
+        //Toast.makeText(DetailEvent.this,current_id,Toast.LENGTH_LONG).show();
 
         DtImage=(ImageView)findViewById(R.id.EvImage);
 
