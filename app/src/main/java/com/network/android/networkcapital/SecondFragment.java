@@ -21,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.network.android.networkcapital.Modules.UserProfile;
 import com.network.android.networkcapital.Modules.posts;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
@@ -47,6 +48,7 @@ public class SecondFragment extends Fragment {
     private static Context context = null;
     private ProgressDialog mProgressDialog;
     Boolean LikeChecker = false;
+//    LinearLayout linearLayout;
     String uid;
 
 
@@ -135,6 +137,16 @@ public class SecondFragment extends Fragment {
                 viewHolder.setCommentCount(user_id);
 
 
+                viewHolder.linearLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(getContext(), UserProfile.class);
+                        i.putExtra("Puser_id", user_id);
+                        Toast.makeText(getContext(), user_id.toString(), Toast.LENGTH_LONG).show();
+                        System.out.print("String user id" + user_id.toString());
+                        startActivity(i);
+                    }
+                });
 
 
                 viewHolder.mView.setOnClickListener(new View.OnClickListener() {
@@ -216,6 +228,7 @@ public class SecondFragment extends Fragment {
         TextView Commentbutton;
         TextView Displaynofolikes;
         TextView CommentLikes;
+        LinearLayout linearLayout;
 
         int countlikes;
         int commentCount;
@@ -232,6 +245,9 @@ public class SecondFragment extends Fragment {
             Commentbutton = (TextView) mView.findViewById(R.id.comment);
             Displaynofolikes = (TextView) mView.findViewById(R.id.display_no_of_likes);
             CommentLikes=(TextView)mView.findViewById(R.id.comment);
+
+
+            linearLayout = (LinearLayout) mView.findViewById(R.id.user_name);
 
             likesref = FirebaseDatabase.getInstance().getReference().child("Likes");
             currentuserId = FirebaseAuth.getInstance().getCurrentUser().getUid();

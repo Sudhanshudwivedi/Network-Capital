@@ -159,29 +159,33 @@ public class CommentActivity extends AppCompatActivity {
 
 
                 final String user_id = getRef(position).getKey();
-                mNcDatabase=FirebaseDatabase.getInstance().getReference().child("Post").child(Puserr_id).child("Comment").child(user_id);
-                mNcDatabase.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        uNid=dataSnapshot.child("uid").getValue().toString();
 
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
 
                 usersViewHolder.mView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        mNcDatabase=FirebaseDatabase.getInstance().getReference().child("Post").child(Puserr_id).child("Comment").child(user_id);
+                        mNcDatabase.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                uNid=dataSnapshot.child("uid").getValue().toString();
+
+                                //Toast.makeText(getApplicationContext(),uNid.toString(),Toast.LENGTH_SHORT).show();
+                                Intent profileIntent = new Intent(CommentActivity.this, CommentNC.class);
+                                profileIntent.putExtra("Cuser_id", uNid);
+                                startActivity(profileIntent);
+
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+                        });
 
 
 
-                        Intent profileIntent = new Intent(CommentActivity.this, CommentNC.class);
-                        profileIntent.putExtra("Cuser_id", uNid);
-                        startActivity(profileIntent);
+
 
                     }
                 });

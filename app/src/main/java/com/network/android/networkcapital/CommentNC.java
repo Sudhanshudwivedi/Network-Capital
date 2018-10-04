@@ -43,7 +43,7 @@ public class CommentNC extends Activity {
 
     private DatabaseReference mFriendReqDatabase;
     private DatabaseReference mFriendDatabase;
-    private DatabaseReference mNotificationDatabase;
+    private DatabaseReference mNotificationDatabase,MpostDatabase;
 
     private DatabaseReference mRootRef,mNcDatabase;
 
@@ -58,6 +58,7 @@ public class CommentNC extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comment_nc);
             final String current_id = getIntent().getStringExtra("Cuser_id");
+        //final String c_id = getIntent().getStringExtra("Puser_id");
 
 
         mName=(TextView)findViewById(R.id.textView);
@@ -68,6 +69,7 @@ public class CommentNC extends Activity {
         mEd=(TextView)findViewById(R.id.txt2);
         mLook=(TextView)findViewById(R.id.txt8);
         img=(ImageView)findViewById(R.id.image2);
+
 
 
 

@@ -127,7 +127,8 @@
             android:name=".AdminMainActivity"
             android:label="Admin Page"
             android:launchMode="singleInstance" />
-        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".Modules.UserProfile"></activity>
     </application>
 
 </manifest>
