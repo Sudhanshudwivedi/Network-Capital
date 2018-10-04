@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:paddingTop="3dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Search"
+                    android:id="@+id/search_field"
+                    android:inputType="textCapWords|textCapSentences"
+                    android:singleLine="true"
+                    android:background="@drawable/edt_bg_selected"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:backgroundTint="#cccccc"/>
+
+                <ImageButton
+                    android:layout_alignRight="@+id/search_field"
+                    android:layout_width="wrap_content"
+                    android:tint="#cccccc"
+                    android:id="@+id/search_btn"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="6dp"
+                    android:backgroundTint="@color/background_color"
+                    android:src="@mipmap/magnifying_glass"/>
+
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/result_list">
+    </android.support.v7.widget.RecyclerView>
+
+
+    <!--<include layout="@layout/content_main" />-->
+
+
+
+</LinearLayout>

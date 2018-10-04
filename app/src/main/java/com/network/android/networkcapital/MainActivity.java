@@ -72,6 +72,8 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 if(view.getId() == search.getId()){
                     search.setCursorVisible(true);
+                    Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+                    startActivity(intent);
                 }
             }
         });

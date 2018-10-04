@@ -129,7 +129,15 @@
             android:name=".AdminMainActivity"
             android:label="Admin Page"
             android:launchMode="singleInstance" />
-        <activity android:name=".SearchActivity" />
+
+        <activity android:name=".SearchActivity"
+            android:supportsRtl="true"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+
+
         <activity android:name=".Modules.UserProfile"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
