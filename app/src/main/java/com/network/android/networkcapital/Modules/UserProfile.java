@@ -33,7 +33,7 @@ public class UserProfile extends AppCompatActivity {
     private DatabaseReference mNotificationDatabase,MpostDatabase;
     private DatabaseReference mNUserDatabase;
     private FirebaseUser mCurrentUser;
-    private TextView mName,mLoc,mPost,mWork,mHelp,mEd,mLook;
+    private TextView mName,mLoc,mPost,mWork,mHelp,mEd,mLook,ts;
     private ImageView img;
 
     private ImageView mProfileImage;
@@ -68,6 +68,7 @@ public class UserProfile extends AppCompatActivity {
         mEd=(TextView)findViewById(R.id.txt2);
         mLook=(TextView)findViewById(R.id.txt8);
         img=(ImageView)findViewById(R.id.image2);
+        ts=(TextView)findViewById(R.id.text3);
 
 
 
@@ -107,11 +108,12 @@ public class UserProfile extends AppCompatActivity {
                 String ed=dataSnapshot.child("education").getValue().toString();
                 String look=dataSnapshot.child("look").getValue().toString();
                 String image=dataSnapshot.child("thumb_image").getValue().toString();
+                String tscore=dataSnapshot.child("TrustScore").getValue().toString();
                 Picasso.with(UserProfile.this).load(image).placeholder(R.drawable.user).into(img);
 
 
                 mName.setText(name);
-
+                ts.setText(tscore);
                 mLoc.setText(loc);
                 mPost.setText(pos);
                 mWork.setText(work);

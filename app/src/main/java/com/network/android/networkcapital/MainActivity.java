@@ -335,7 +335,7 @@ public class MainActivity extends AppCompatActivity
 
         }
           else if (id == R.id.nav_connectionRequest) {
-              Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+              Intent intent = new Intent(MainActivity.this, RequestActivity.class);
               startActivity(intent);
 
           }else if (id == R.id.nav_chat) {

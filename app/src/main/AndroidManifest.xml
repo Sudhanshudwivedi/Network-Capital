@@ -131,10 +131,10 @@
             android:launchMode="singleInstance" />
 
         <activity android:name=".SearchActivity"
-            android:supportsRtl="true"
-            android:windowSoftInputMode="stateAlwaysHidden"
+
+
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"
+
             />
 
 

@@ -373,7 +373,7 @@ public class PrimaryFragment extends Fragment implements View.OnClickListener{
 //                virtu.setTextColor(v.getResources().getColor(R.color.basecolor));
 //                product.setBackgroundResource(R.drawable.button_not_pressed);
 //                product.setTextColor(v.getResources().getColor(R.color.basecolor));
-                button_select ="Raising Capital";
+                button_select ="Raising Capitals";
                 break;
             case R.id.security:
                 secu.setBackgroundResource(R.drawable.button_pressed);

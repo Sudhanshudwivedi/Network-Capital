@@ -58,7 +58,7 @@ public class HelpUsers extends AppCompatActivity {
 
         String current_id = mCurrentUser.getUid();
         mUsersDatabase = FirebaseDatabase.getInstance().getReference().child(s);
-        Toast.makeText(this, search, Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, search, Toast.LENGTH_LONG).show();
         mLoginData = FirebaseDatabase.getInstance().getReference().child("Users").child(current_id);
 
 
